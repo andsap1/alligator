@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', 'ShopController@indexHome');
 
-Route::get('/shop', 'ShopController@index')->name('shop');
-Route::get('/shop/{category}', 'ShopController@getCategory');
+Route::get('/shop1', 'ShopController@index')->name('shop1');
+Route::get('/shop1/{category}', 'ShopController@getCategory');
+Route::get('/item/{id}', 'ShopController@openPreke');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

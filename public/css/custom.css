@@ -104,15 +104,7 @@ footer {
 /*.sidebar {*/
 /*   display: initial;*/
 
-/*}*/
-/*!****!*/
-/*#wrapper*/
-/*{*/
-/*    padding-left: 50px;*/
-/*}*/
 
-
-/*!****!*/
 /*@media (min-width: 768px) {*/
 /*    .sidebar {*/
 /*        position: fixed;*/
@@ -127,7 +119,6 @@ footer {
 /*        border-right: 2px solid #eee;*/
 
 /*    }*/
-/*>>>>>>> 717650083b3b08ddac41dad81517c4e7925e1b06*/
 /*}*/
 
 .wrapper {
@@ -165,7 +156,7 @@ footer {
     color: #7386D5;
     background: #fff;
 }
-
+/*KAS CIA NZN*/
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
     background: #6d7fcc;

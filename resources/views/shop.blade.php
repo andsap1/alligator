@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <title>Bootstrap Example</title>
+    <title>Alligator PDR online store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -64,14 +64,11 @@
 </nav>
 
 <div class="wrapper">
-{{--<div class="col-sm-3 col-md-2 ">--}}
-
-        <!-- Sidebar -->
         <nav id="sidebar">
           <ul class="list-unstyled components">
-            <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}">Visos prekės</a></li>
+            <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
              @foreach($allcategories as $category)
-            <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+            <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
              @endforeach
           </ul>
         </nav>
@@ -79,7 +76,7 @@
     <div id="content">
         <div class="container-fluid" >
              <div class="row">
-                <h1 >Shop tools</h1>
+                <h1>Shop tools</h1>
 
                     @foreach($items as $item)
                             <div class="col-md-4">
