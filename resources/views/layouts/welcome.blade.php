@@ -106,16 +106,7 @@
                     <h1 id="name">Alligator PDR tools</h1>
                 </div>
             </div>
-{{--        </div>--}}
-{{--        <h1>Example Page Header</h1>--}}
     </div>
-
-{{--<div class="jumbotron">--}}
-{{--    <div class="container text-center">--}}
-{{--        <h1>Online Store</h1>--}}
-{{--        <p>Mission, Vission & Values</p>--}}
-{{--    </div>--}}
-{{--</div>--}}
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -161,6 +152,10 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh">
             <ul class="nav nav-sidebar">
+                    @foreach($allcategories as $category)
+                        <li><a href="{{ action('ShopController@getCategory', $category->id_kategorija)}}">{{ $category->pavadinimas }}</a>
+                        </li>
+                    @endforeach
                 <li class="active"><a href="#">Overview</a></li>
                 <li><a href="#">Reports</a></li>
                 <li><a href="#">Analytics</a></li>

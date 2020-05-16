@@ -142,7 +142,7 @@
             <ul class="nav nav-sidebar">
                 <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}">Visos prekės</a></li>
                 @foreach($allcategories as $category)
-{{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
+                    {{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
                     <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
 
                 @endforeach
@@ -154,19 +154,39 @@
             <h1 >Shop tools</h1>
 
             <div class="row placeholders">
-                <h1> O CIA HOMEEEEEE</h1>
-{{--                @foreach($items as $item)--}}
-{{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
-{{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
-{{--                    <h4>{{$item->pavadinimas}}</h4>--}}
-{{--                    <span class="text-muted">Something else</span>--}}
-{{--                </div>--}}
-{{--                @endforeach--}}
+                @foreach($items as $item)
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                        <h4>{{$item->pavadinimas}}</h4>
+                        <span class="text-muted">Something else</span>
+                    </div>
+                @endforeach
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
             </div>
-        </div>
+
             <h2 class="sub-header">Section title</h2>
 
         </div>
+    </div>
 </div>
 </div>
 
