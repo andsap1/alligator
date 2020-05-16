@@ -91,8 +91,8 @@
 <body >
 
 <div class="fixed-top galva">
-    <p>lalalcccccccccccccccccccccccc cddddddddddddd dddd ddddddddddddddddd dddd dddddddddd ddddddd dd  ddddd  ddddd ddd ddd</p>
-    <p>Attention! VAT is not included!</p>
+    <p>lalalcccccccccccccccccccccccc cddddddddddddd dddd ddddddddddddddddd dddd dddddddddd ddddddd dd  ddddd  ddddd ddd dddbbbbbbbbbb</p>
+    <p>Attention! VAT is not included!jj</p>
 </div>
 
     <div class="jumbotron container-fluid">
