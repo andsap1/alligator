@@ -117,10 +117,20 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">Logo</a>
+
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
+                <li> <span style="position: relative;top: 10px">
+                        <img class="img" src="{{asset('images/icons8-important-mail-24.png')}} " style="width: 25px; height: 25px;"/>
+                   <a> info@betarent.lt</a>
+                 </span>
+
+                    <span style="position: relative;top: 10px" >  <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
+                    <a> +370 600 00000</a> </span>
+                </li>
                 <li class="active"><a href="#">Home</a></li>
+
                 <li><a href="#">Products</a></li>
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Stores</a></li>

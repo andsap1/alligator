@@ -129,7 +129,8 @@
                    <a> info@betarent.lt</a>
                  </span>
 
-                 <span style="position: relative;top: 10px" >  <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
+                 <span style="position: relative;top: 10px" >
+                     <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
                     <a> +370 600 00000</a> </span>
                 </li>
                 <li class="active"><a href="#">Home</a></li>
