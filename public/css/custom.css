@@ -97,9 +97,38 @@ footer {
     padding: 15px;
     border-top: 1px solid #eee;
 }
-.float-right{
+.float-right {
     float: right;
 }
+/* Hide for mobile, show later */
+/*.sidebar {*/
+/*   display: initial;*/
+
+/*}*/
+/*!****!*/
+/*#wrapper*/
+/*{*/
+/*    padding-left: 50px;*/
+/*}*/
+
+
+/*!****!*/
+/*@media (min-width: 768px) {*/
+/*    .sidebar {*/
+/*        position: fixed;*/
+/*        bottom: 0;*/
+/*        left: 0;*/
+/*        z-index: 1000;*/
+/*        display: block;*/
+/*        padding: 20px;*/
+/*        overflow-x: hidden;*/
+/*        overflow-y: auto; !* Scrollable contents if viewport is shorter than content. *!*/
+/*        background-color: #ffffff;*/
+/*        border-right: 2px solid #eee;*/
+
+/*    }*/
+/*>>>>>>> 717650083b3b08ddac41dad81517c4e7925e1b06*/
+/*}*/
 
 .wrapper {
     display: flex;
