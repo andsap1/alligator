@@ -27,8 +27,17 @@ a {
 
 /* Hide for mobile, show later */
 .sidebar {
-    display: none;
+   display: initial;
+
 }
+/****/
+#wrapper
+{
+    padding-left: 50px;
+}
+
+
+/****/
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;

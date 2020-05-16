@@ -11,6 +11,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
     <style>
         footer {
@@ -137,6 +140,10 @@
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Stores</a></li>
                 <li><a href="#">Contact</a></li>
+              <li> <form class="form-inline my-2 my-lg-0" style="position: relative;top: 10px">
+                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #474B4B;">
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
@@ -149,9 +156,44 @@
 
 
 <div class="container-fluid" >
+
     <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh">
-            <ul class="nav nav-sidebar">
+        <!------>
+
+        <div id="wrapper">
+
+                <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh" >
+
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
+                            aria-controls="navbarSide" aria-expanded="false" aria-label="Toggle navigation">
+                        <span><h3>↑ ☰</h3></span>
+
+                    </button>
+
+                    <div class="bg-dark p-4">
+                        <div  class="nav-item active" id="navbarSide">
+                        <ul class="nav nav-sidebar" >
+                            <li   class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}" style="color: #424242">Visos prekės</a></li>
+                            @foreach($allcategories as $category)
+                                {{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
+                                <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}"
+                                                                                                     style="color: #424242">{{ $category->pavadinimas }}</a></li>
+
+                            @endforeach
+                        </ul>
+
+                    </div>
+
+                </div>
+                </nav>
+
+                </div>
+
+        <!-------->
+      <!--  <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh">
+
+                <ul class="nav nav-sidebar">
                 <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}" style="color: #424242">Visos prekės</a></li>
                 @foreach($allcategories as $category)
 {{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
@@ -162,7 +204,10 @@
             </ul>
 
 
-        </div>
+        </div>-->
+
+
+
         <div class="col-sm-9 col-md-10 main">
             <h1 >Shop tools</h1>
 
@@ -180,7 +225,6 @@
             <h2 class="sub-header">Section title</h2>
 
         </div>
-</div>
 </div>
 
 
@@ -254,6 +298,11 @@
         <button type="button" class="btn btn-danger">Sign Up</button>
     </form>
 </footer>
-
+<script>	/*Menu-toggle*/
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+        alert(1);
+    });</script>
 </body>
 </html>
