@@ -51,7 +51,7 @@
             font-size: 32px;
         }
         @media only screen and (max-width: 500px) {
-           #name{
+            #name{
                 font-size: unset;
             }
         }
@@ -95,18 +95,18 @@
     <p>Attention! VAT is not included!jj</p>
 </div>
 
-    <div class="jumbotron container-fluid">
-{{--        <div class="container">--}}
-            <div class="row vertical-align" >
-                <div class=" col-xs-2 col-md-2 img-col">
-                    <img class="img" src="{{asset('images/log.png')}}" />
+<div class="jumbotron container-fluid">
+    {{--        <div class="container">--}}
+    <div class="row vertical-align" >
+        <div class=" col-xs-2 col-md-2 img-col">
+            <img class="img" src="{{asset('images/log.png')}}" />
 
-                </div>
-                <div class="col-xs-10 col-md-10 ">
-                    <h1 id="name">Alligator PDR tools</h1>
-                </div>
-            </div>
+        </div>
+        <div class="col-xs-10 col-md-10 ">
+            <h1 id="name">Alligator PDR tools</h1>
+        </div>
     </div>
+</div>
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -140,54 +140,54 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh">
             <ul class="nav nav-sidebar">
-                    @foreach($allcategories as $category)
-                        <li><a href="{{ action('ShopController@getCategory', $category->id_kategorija)}}">{{ $category->pavadinimas }}</a>
-                        </li>
-                    @endforeach
-                <li class="active"><a href="#">Overview</a></li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Analytics</a></li>
-                <li><a href="#">Export</a></li>
+                <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}">Visos prekės</a></li>
+                @foreach($allcategories as $category)
+                    {{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
+                    <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+
+                @endforeach
             </ul>
 
 
         </div>
         <div class="col-sm-9 col-md-10 main">
-            <h1 >Dashboard</h1>
+            <h1 >Shop tools</h1>
 
-                <div class="row placeholders">
+            <div class="row placeholders">
+                @foreach($items as $item)
                     <div class="col-xs-6 col-sm-3 placeholder">
                         <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
+                        <h4>{{$item->pavadinimas}}</h4>
                         <span class="text-muted">Something else</span>
                     </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                    <div class="col-xs-6 col-sm-3 placeholder">
-                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-                        <h4>Label</h4>
-                        <span class="text-muted">Something else</span>
-                    </div>
-                </div>
-
-                <h2 class="sub-header">Section title</h2>
-
+                @endforeach
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xs-6 col-sm-3 placeholder">--}}
+                {{--                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">--}}
+                {{--                    <h4>Label</h4>--}}
+                {{--                    <span class="text-muted">Something else</span>--}}
+                {{--                </div>--}}
             </div>
+
+            <h2 class="sub-header">Section title</h2>
+
         </div>
     </div>
+</div>
 </div>
 
 
@@ -254,13 +254,13 @@
     </div>
 </div><br><br>--}}
 
-{{--<footer class="container-fluid text-center">--}}
-{{--    <p>Online Store Copyright</p>--}}
-{{--    <form class="form-inline">Get deals:--}}
-{{--        <input type="email" class="form-control" size="50" placeholder="Email Address">--}}
-{{--        <button type="button" class="btn btn-danger">Sign Up</button>--}}
-{{--    </form>--}}
-{{--</footer>--}}
+<footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+    <form class="form-inline">Get deals:
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-danger">Sign Up</button>
+    </form>
+</footer>
 
 </body>
 </html>

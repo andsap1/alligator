@@ -12,11 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'ShopController@indexHome');
 
-Route::get('/', function () {
-    return view('layouts/welcome');
-});
-
+Route::get('/shop', 'ShopController@index')->name('shop');
+Route::get('/shop/{category}', 'ShopController@getCategory');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
