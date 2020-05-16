@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html >
 <head>
-    <title>Bootstrap Example</title>
+    <title>Alligator PDR online store</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -91,8 +91,9 @@
 <body >
 
 <div class="fixed-top galva">
-    <p>lalalcccccccccccccccccccccccc cddddddddddddd dddd ddddddddddddddddd dddd dddddddddd ddddddd dd  ddddd  ddddd ddd dddbbbbbbbbbb</p>
-    <p>Attention! VAT is not included!jj</p>
+    <p>Important!
+        </p>
+    <p>VAT. (+21%) does not apply for countries outside EU</p>
 </div>
 
 <div class="jumbotron container-fluid">
@@ -126,7 +127,8 @@
                    <a> info@betarent.lt</a>
                  </span>
 
-                    <span style="position: relative;top: 10px" >  <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
+                    <span style="position: relative;top: 10px" >
+                        <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
                     <a> +370 600 00000</a> </span>
                 </li>
                 <li class="active"><a href="#">Home</a></li>
@@ -150,10 +152,11 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar" style="height: 100vh">
             <ul class="nav nav-sidebar">
-                <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}">Visos prekės</a></li>
+                <li class="{{ Request::url() ==  'shop' ? 'active' : ''  }}"><a href="{{asset('shop')}}" style="color: #424242">Visos prekės</a></li>
                 @foreach($allcategories as $category)
 {{--                    <li><a href="#">{{ $category->pavadinimas }}</a></li>--}}
-                    <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+                    <li class="{{ Request::url() == url('/shop*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}"
+                                                                                         style="color: #424242">{{ $category->pavadinimas }}</a></li>
 
                 @endforeach
             </ul>
