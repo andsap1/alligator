@@ -20,3 +20,6 @@ Route::get('/item/{id}', 'ShopController@openPreke');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/view', 'ViewController@index');
