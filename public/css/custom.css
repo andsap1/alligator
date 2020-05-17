@@ -210,25 +210,25 @@ footer {
 }
 
 /* Hide for mobile, show later */
-/*.sidebar {*/
-/*   display: initial;*/
+/*.sidebar {
+   display: initial;
 
 
-/*@media (min-width: 768px) {*/
-/*    .sidebar {*/
-/*        position: fixed;*/
-/*        bottom: 0;*/
-/*        left: 0;*/
-/*        z-index: 1000;*/
-/*        display: block;*/
-/*        padding: 20px;*/
-/*        overflow-x: hidden;*/
-/*        overflow-y: auto; !* Scrollable contents if viewport is shorter than content. *!*/
-/*        background-color: #ffffff;*/
-/*        border-right: 2px solid #eee;*/
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; !* Scrollable contents if viewport is shorter than content. *!
+        background-color: #ffffff;
+        border-right: 2px solid #eee;
 
-/*    }*/
-/*}*/
+    }
+}*/
 
 .wrapper {
     display: flex;
