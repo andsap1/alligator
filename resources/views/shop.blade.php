@@ -16,12 +16,86 @@
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     <style>
-    .meniu
-    {
-        padding-left: 225px;
-    }
+       #meniu{
 
+           padding: auto;
+        }
+       #search{
+           padding-top: 10px;
+           padding-left: 225px;
+       }
+       /*.topnav .search-container {
+           float: right;
 
+       }
+
+       .topnav input[type=text] {
+           padding: 6px;
+           margin-top: 8px;
+           font-size: 17px;
+           border: none;
+       }
+
+       .topnav .search-container button {
+           float: right;
+           padding: 6px 10px;
+           margin-top: 8px;
+           margin-right: 16px;
+           background: #ddd;
+           font-size: 17px;
+           border: none;
+           cursor: pointer;
+       }
+
+       .topnav .search-container button:hover {
+           background: #ccc;
+       }
+
+       @media screen and (min-width: 600px) {
+           .topnav .search-container {
+               float: none;
+           }
+           .topnav a, .topnav input[type=text], .topnav .search-container button {
+               float: none;
+               display: block;
+               text-align: left;
+               width: 100%;
+               margin: 0;
+               padding: 14px;
+
+           }
+           .topnav input[type=text] {
+               border: 1px solid #ccc;
+
+           }
+       }*/
+       @media (max-width: 766px) {
+           form#hide {
+                display: none;
+             visibility: hidden;
+           }
+           form#paslepti {
+               display: block;
+               padding: auto;
+               padding-top: 10px;
+               position: absolute;
+           }
+           span#icon
+           {
+               padding-bottom: 10px;
+           }
+       }
+        #paslepti{
+            display: none;
+        }
+#icon{
+    position: relative;top: 15px;
+    padding-left: auto;
+}
+        #pic{
+            width: 20px;
+            height: 20px;
+        }
     </style>
 </head>
 <body >
@@ -32,18 +106,29 @@
 
 <div class="jumbotron container-fluid">
     <div class="row vertical-align" >
-        <div class=" col-xs-2 col-md-2 img-col">
-            <img class="img" src="{{asset('images/log.png')}}" />
+        <div class=" col-sm-2 img-col">
+            <img class="log" src="{{asset('images/log.png')}}" />
         </div>
-        <div class="col-xs-10 col-md-10 ">
+        <div class="col-sm-8 ">
             <h1 id="name">Alligator PDR tools</h1>
         </div>
+        <div class="col-sm-2 img-col">
+            <img class="cart" src="{{asset('images/shopping-cart.png')}}" />
+        </div>
     </div>
+
 </div>
 
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="container-fluid" >
+        <div class="search-container" >
+            <form action="/paieska.php"id ="paslepti" media="(min-width: 766px)">
+                <input type="text" placeholder="Search..." name="search">
+                <button type="search">search</button>
+            </form>
+        </div>
         <div class="navbar-header">
+
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -52,18 +137,29 @@
 
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <div class="meniu">
-            <ul class="nav navbar-nav" style="padding-left: 225px">
-                <li class="active" style="padding: 100px"><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Stores</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul class="nav navbar-nav"  id="meniu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Product</a></li>
+                <li> <div class="search-container" id="search" >
+                        <form action="/paieska.php" id="hide">
+                            <input type="text" placeholder="Search..." name="search">
+                            <button type="search">search</button>
+                        </form>
+                    </div></li>
             </ul>
-            </div>
             <ul class="nav navbar-nav navbar-right">
+                <li> <span id ="icon" >
+                        <img class="img" src="{{asset('images/icons8-important-mail-24.png')}} " id="pic"/>
+                   <a> info@betarent.lt</a>
+                 </span>
+
+                    <span id ="icon" >
+                        <img class="img" src="{{asset('images/icons8-phone-24.png')}} " id="pic"/>
+                    <a> +370 600 00000</a>
+                    <p></p></span>
+                </li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
             </ul>
         </div>
     </div>
