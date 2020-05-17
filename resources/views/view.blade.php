@@ -13,6 +13,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+
+
+
+
+
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
     <style>
@@ -82,11 +87,9 @@
                 padding-top: 10px;
                 position: absolute;
             }
-            /*atidengti paieska*/
-            div#paslepti {
-                display: block;
-                padding: auto;
-                padding-top: 10px;
+            /*atidengti sidebar*/
+            div#sideNot {
+                display:contents;
                 position: absolute;
             }
             span#icon
@@ -97,6 +100,11 @@
         /*paslepta paieska suskleidus*/
         #paslepti{
             display: none;
+        }
+        /*paslepta sidebar  suskleidus*/
+        #sideNot{
+            display: none;
+
         }
         #icon{
             position: relative;top: 15px;
@@ -118,6 +126,7 @@
                 margin-left: 0;
             }
         }
+
 
 
 
@@ -189,28 +198,30 @@
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
             </ul>
         </div>
-        {{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
-        <div class="container" id="paslepti"  media="(min-width: 766px)">
-            <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
-                    aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation">
-                <span><h3>↑ ☰</h3></span>
 
-            </button>
-
-            <div class="bg-dark p-4">
-                <div  class="nav-item active" id="navbarSide">
-                    <ul class="list-unstyled components">
-                        <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
-                        @foreach($allcategories as $category)
-                            <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
-        </div>
-        {{--  /**************************************************/--}}
     </div>
+
 </nav>
+{{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
+<div class="container" id="sideNot"  media="(min-width: 766px)" >
+    <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
+            aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation">
+        <span><h3>↑ ☰</h3></span>
+
+    </button>
+
+    <div class="bg-dark p-4">
+        <div  class="nav-item active" id="navbarSide">
+            <ul class="list-unstyled components">
+                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
+                @foreach($allcategories as $category)
+                    <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</div>
+{{--  /**************************************************/--}}
 
 <div class="wrapper">
 
@@ -235,14 +246,36 @@
     </nav>
 
     <div id="content">
-        <div class="container-fluid" >
+           <div class="container-fluid" >
             <div class="row">
-                {{--                 <h1 >Shop tools</h1>--}}
-                @yield('turinys')
+                <h1>Shop tools</h1>
 
+                @foreach($items as $item)
+                    <div class="col-md-4">
+                        <div class="card item">
+                            <div class="img-wrap"><img src="{{asset('images/log.png')}}"> </div>
+                            <div class="info-wrap">
+                                <h4 class="title">{{$item->pavadinimas}}</h4>
+                                <p class="desc">{{$item->aprasymas}}</p>
+                                <div class="rating-wrap">
+                                    <div class="label-rating">{{$item->diametras}}</div>
+                                    <div class="label-rating">{{$item->ilgis}} </div>
+                                </div> <!-- rating-wrap.// -->
+                            </div>
+                            <div class="bottom-wrap">
+                                <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
+                                <a href="" class="btn btn-sm btn-primary float-right" style="margin-right: 5px;">Look</a>
+                                <div class="price-wrap h5">
+                                    <span class="price-new">{{$item->kaina}}</span>
+                                </div> <!-- price-wrap.// -->
+                            </div> <!-- bottom-wrap.// -->
+                        </div>
+                    </div>
+                @endforeach
+
+                {{--            <h2 class="sub-header">Section title</h2>--}}
             </div>
         </div>
-        {{--            <h2 class="sub-header">Section title</h2>--}}
 
     </div>
 </div>
