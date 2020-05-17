@@ -26,7 +26,6 @@ footer {
 
 .img-col{
     /*margin: auto 3%;*/
-    min-width: 50px;
     /*padding: 0 0;*/
     margin-right: 3px;
 }
@@ -127,36 +126,79 @@ footer {
     float: right;
 }
 
-
-
-.pro-img-list {
-    margin: 10px 0 0 -15px;
-    width: 100%;
-    display: inline-block;
-}
-
-.pro-img-list a {
-    float: left;
+.images{
     margin-right: 10px;
     margin-bottom: 10px;
-}
-.pro-img-details {
-    margin-left: -15px;
+    /*box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);*/
 }
 
-.pro-img-details img {
-    width: 100%;
-}
-.image_list li {
+@media only screen and (max-width: 1199px){
+    .image_list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 15px;
 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 1px #e8e8e8;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 15px;
+    }
+}
+#info1{
+    color: #38c172;
+}
+
+
+@media only screen and (max-width: 1199px){
+    .product_description {
+        padding-left: 30px;
+    }
+}
+.product_category {
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+}
+.product_name {
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 11px;
+}
+.product_text {
+    margin-top: 27px;
+}
+.order_info {
+    margin-top: 53px;
+}
+.flex-row {
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+}
+
+.d-flex {
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+@media only screen and (max-width: 1199px) {
+    .product_price {
+        margin-top: 60px;
+    }
+}
+    .product_price {
+        display: inline-block;
+        font-size: 24px;
+        font-weight: 500;
+        margin-top: 75px;
+        clear: left;
+    }
+.cart_button {
+    display: inline-block;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 48px;
+    color: #FFFFFF;
+    padding-left: 35px;
+    padding-right: 35px;
+    outline: none;
     cursor: pointer;
-    padding: 15px;
 }
 
 /* Hide for mobile, show later */

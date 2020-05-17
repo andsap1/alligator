@@ -3,43 +3,28 @@
 @section('turinys')
 
         <h1>{{$item->pavadinimas}}</h1>
-{{--        @foreach($allphotos as $photo)--}}
-{{--        <div class="col-lg-1 order1 open-item">--}}
-{{--            <ul class="image_list">--}}
-{{--            <li ><img class="img-responsive " src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}"></li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--        @endforeach--}}
-        <div class="pro-img-details">
-            <img src="http://thevectorlab.net/flatlab/img/product-list/pro-thumb-big.jpg" alt="">
+        <div class="col-lg-2 image_list images">
+            @foreach($allphotos as $photo)
+            <ul class=" list-unstyled components ">
+            <li ><img class="img-responsive small" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}"></li>
+            </ul>
+            @endforeach
         </div>
-        <div class="pro-img-list">
-            <a href="#">
-                <img src="http://thevectorlab.net/flatlab/img/product-list/pro-thumb-1.jpg" alt="">
-            </a>
-            <a href="#">
-                <img src="http://thevectorlab.net/flatlab/img/product-list/pro-thumb-2.jpg" alt="">
-            </a>
-            <a href="#">
-                <img src="http://thevectorlab.net/flatlab/img/product-list/pro-thumb-3.jpg" alt="">
-            </a>
-            <a href="#">
-                <img src="http://thevectorlab.net/flatlab/img/product-list/pro-thumb-1.jpg" alt="">
-            </a>
+
+        <div class="col-lg-5 images">
+            <div ><img class="img-responsive " src="{{asset('images/item1.jpg')}}"  alt="paveiksliukas {{$photo->pavadinimas}}"></div>
         </div>
-{{--        <div class="col-lg-5 open-item">--}}
-{{--            <div ><img class="img-responsive " src="{{asset('images/item1.jpg')}}"  alt="paveiksliukas {{$photo->pavadinimas}}"></div>--}}
-{{--        </div>--}}
+
 {{--        src="{{asset('images/item1.jpg')}}" alt=""--}}
         <!-- Description -->
-        <div class="col-lg-5 ">
+        <div class="col-lg-4">
             <div class="product_description">
-                <div class="product_category">{{$categoryname->pavadinimas}}</div>
+                <div class="product_category">Kategorija: {{$categoryname->pavadinimas}}</div>
                 <div class="product_name">{{$item->pavadinimas}}</div>
                 {{-- <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
                 <div class="product_text"><p>{{$item->aprasymas}}</p></div>
-                <div class="product_text"><p>Spalva: {{$item->ilgis}}</p></div>
-
+                <div class="product_measure"><p><span id="info1">Ilgis:</span> {{$item->ilgis}}</p></div>
+               <p><span id="info1">Ilgis:</span> {{$item->diametras}}</p></div>
                 <div class="order_info d-flex flex-row">
                     <form method="POST" action="">
 {{--                        {{ Route('insertPreke') }}--}}
@@ -70,6 +55,7 @@
                 </div>
             </div>
         </div>
+</div>
 
 {{--    @foreach($items as $item)--}}
 {{--        <div class="col-md-4">--}}
