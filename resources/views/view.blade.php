@@ -91,6 +91,7 @@
             div#sideNot {
                 display:contents;
                 position: absolute;
+            
             }
             span#icon
             {
@@ -227,22 +228,21 @@
 
 
     <nav id="sidebar">
-        <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
+      {{--  <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
                 aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation">
             <span><h3>↑ ☰</h3></span>
 
-        </button>
+        </button>--}}
 
         <div class="bg-dark p-4">
-            <div  class="nav-item active" id="navbarSide">
                 <ul class="list-unstyled components">
                     <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
                     @foreach($allcategories as $category)
                         <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                     @endforeach
                 </ul>
-            </div>
         </div>
+
     </nav>
 
     <div id="content">
