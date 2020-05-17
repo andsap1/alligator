@@ -28,7 +28,7 @@
                            <img src="./images/{{$ph->pavadinimas}}.jpg"  alt="paveiksliukas {{$ph->pavadinimas}}" >
 {{--                        <p>{{$ph->pavadinimas}}</p>--}}
                        @break
-{{--                        @else <img style="min-height: 300px"   alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
+{{--                        @else <img style="height: 299px"   alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
 {{--                        @break--}}
                     @endif
 
