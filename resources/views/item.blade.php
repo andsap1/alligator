@@ -23,8 +23,14 @@
                 <div class="product_name">{{$item->pavadinimas}}</div>
                 {{-- <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
                 <div class="product_text"><p>{{$item->aprasymas}}</p></div>
-                <div class="product_measure"><p><span id="info1">Ilgis:</span> {{$item->ilgis}}</p></div>
-               <p><span id="info1">Ilgis:</span> {{$item->diametras}}</p></div>
+                <div class="product_measure ">
+                    <p><span id="info1">Lenght:</span> {{$item->ilgis}}</p>
+                    <p><span id="info1">Diameter:</span> {{$item->diametras}}</p>
+                    @if($item->galiuko_aukstis)
+                    <p><span id="info1">Tip height:</span> {{$item->galiuko_aukstis}}</p>
+                        @endif
+                </div>
+
                 <div class="order_info d-flex flex-row">
                     <form method="POST" action="">
 {{--                        {{ Route('insertPreke') }}--}}

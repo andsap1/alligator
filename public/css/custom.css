@@ -107,6 +107,7 @@ footer {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
+    padding: 2% 2%;
 }
 .item .info-wrap {
     overflow: hidden;
@@ -125,7 +126,11 @@ footer {
 .float-right {
     float: right;
 }
+.card-text{
 
+}
+
+/*CIA OPEN PREKE*/
 .images{
     margin-right: 10px;
     margin-bottom: 10px;
@@ -162,6 +167,9 @@ footer {
     margin-top: 11px;
 }
 .product_text {
+    margin-top: 27px;
+}
+.product_measure {
     margin-top: 27px;
 }
 .order_info {
@@ -277,6 +285,7 @@ footer {
 .row h1{
     margin-top: 0;
     margin-bottom: 5%;
+    padding-left: 15px;
 }
 /*.nav-sidebar {*/
 /*    height: 100vh;*/

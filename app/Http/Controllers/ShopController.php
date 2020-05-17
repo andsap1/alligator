@@ -6,6 +6,7 @@ use App\Kategorija;
 use App\Nuotrauka;
 use App\Preke;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ShopController extends Controller
 {
@@ -19,7 +20,16 @@ class ShopController extends Controller
         $allcategories=Kategorija::all();
         $items = Preke::all();
         $cate='null';
-        return view('shop1', compact('allcategories','items','cate'));
+       $photo= DB::table('prekes_nuotrauka')->first();
+//        foreach($items as $item)
+//        {
+//            $photo=Nuotrauka::where('fk_preke','=',$item->id_preke)->first();
+//        }
+            $photo=Nuotrauka::all();
+//dd($photo->pavadinimas);
+
+
+        return view('shop1', compact('allcategories','items','cate','photo'));
     }
 
     public function getCategory($category)
@@ -28,6 +38,11 @@ class ShopController extends Controller
             $items = Preke::where('fk_prekes_kategorija', '=', $category)->get();
             $prekiusk = Preke::where('fk_prekes_kategorija', '=', $category)->get();
             $cate=Kategorija::where('id_kateg','=',$category)->first();
+            foreach($items as $item)
+            {
+                $photo=Nuotrauka::where('fk_preke','=',$item->id_preke)->first();
+            }
+            $photo=Nuotrauka::all();
 
         } else {
             $items = Preke::all();
@@ -37,7 +52,7 @@ class ShopController extends Controller
 
         $allcategories = Kategorija::all();
 
-        return view('shop1', compact( 'allcategories','items','cate'));
+        return view('shop1', compact( 'allcategories','items','cate','photo'));
     }
 
     public function openPreke($id)
