@@ -30,11 +30,19 @@ footer {
     /*padding: 0 0;*/
     margin-right: 3px;
 }
-.img {
+.log {
     max-width: 200px;
     min-width: 50px;
     width: 100%;
     /*padding: 2% 2%;*/
+}
+@media only screen and (max-width: 1200px) {
+    .log {
+        max-width: 100px;
+        min-width: 50px;
+        width: 100%;
+        /*padding: 2% 2%;*/
+    }
 }
 
 .vertical-align {
@@ -47,9 +55,25 @@ footer {
     font-size: 32px;
     margin: 0;
 }
-@media only screen and (max-width: 500px) {
-    #name{
-        font-size: unset;
+@media only screen and (max-width: 1200px) {
+    #name{ font-size: 26px;}
+}
+@media only screen and (max-width: 576px) {
+    #name{ font-size: 20px;}
+}
+@media only screen and (max-width: 460px) {
+    #name{ display: none;}
+}
+
+.cart{
+    max-width: 70px;
+    width: 100%;
+
+}
+@media only screen and (max-width: 1200px) {
+    .cart {
+        max-width: 50px;
+        width: 100%;
     }
 }
 
@@ -64,10 +88,12 @@ footer {
 
 /*CIA KORTELES PREKIU*/
 .item{
-  //  border: 1px solid #e3342f;
+    /*border: 0px solid #e3342f;*/
     margin-bottom: 10%;
     border-radius: 10px;
-    border-style: groove;
+    /*border-style: groove;*/
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+
 }
 
 .item .img-wrap {
@@ -100,6 +126,39 @@ footer {
 .float-right {
     float: right;
 }
+
+
+
+.pro-img-list {
+    margin: 10px 0 0 -15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.pro-img-list a {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.pro-img-details {
+    margin-left: -15px;
+}
+
+.pro-img-details img {
+    width: 100%;
+}
+.image_list li {
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    cursor: pointer;
+    padding: 15px;
+}
+
 /* Hide for mobile, show later */
 /*.sidebar {*/
 /*   display: initial;*/

@@ -26,14 +26,19 @@
     <p>Important! VAT. (+21%) does not apply for countries outside EU</p>
 </div>
 
-<div class="jumbotron container-fluid">
+<div class="jumbotron ">
+    <div class="container-fluid">
     <div class="row vertical-align" >
-        <div class=" col-xs-2 col-md-2 img-col">
-            <img class="img" src="{{asset('images/log.png')}}" />
+        <div class=" col-sm-2 img-col">
+            <img class="log" src="{{asset('images/log.png')}}" />
         </div>
-        <div class="col-xs-10 col-md-10 ">
+        <div class="col-sm-8 ">
             <h1 id="name">Alligator PDR tools</h1>
         </div>
+        <div class="col-sm-2 img-col">
+            <img class="cart" src="{{asset('images/shopping-cart.png')}}" />
+        </div>
+    </div>
     </div>
 </div>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kategorija;
+use App\Nuotrauka;
 use App\Preke;
 use Illuminate\Http\Request;
 
@@ -44,7 +45,8 @@ class ShopController extends Controller
         $item = Preke::where('id_preke', '=', $id)->first();
         $categoryname= Kategorija::where('id_kateg', '=', $item->fk_prekes_kategorija)->first();
         $allcategories = Kategorija::all();
-        return view('item', compact('item','allcategories', 'categoryname'));
+        $allphotos=Nuotrauka::where('fk_preke','=',$id)->get();
+        return view('item', compact('item','allcategories', 'categoryname','allphotos'));
 
     }
 }
