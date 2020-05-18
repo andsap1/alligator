@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<nav class="navbar navbar-inverse">
+{{--<nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -81,27 +81,85 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav>--}}
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid" >
 
+        <div class="search-container" >
+            <form  class="formPaieska" action="/paieska.php"id ="paslepti" media="(min-width: 766px)">
+                <input class="formPaieskaVest" type="text" placeholder="Search..." name="search" id="paieska">
+                <button class="button" type="search">search</button>
+            </form>
+        </div >
+
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav"  id="meniu">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Product</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li> <div class="search-container" id="search" >
+                        <form class="formPaieska" action="/paieska.php" id="hide">
+                            <input class="formPaieskaVest" type="text" placeholder="Search..." name="search" id="paieska">
+                            <button class="button" type="search">search</button>
+                        </form>
+                    </div></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</nav>
+{{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
+<div class="container" id="sideNot"  media="(min-width: 766px)" style="margin-left: 40px;" >
+    <button class="nav nav-sidebar" id="button1" type="button"  data-toggle="collapse" data-target="#navbarSide"
+            aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation" style="margin-left: 40px;">
+        <span class="glyphicon glyphicon-menu-down"></span>
+
+    </button>
+
+    <div class="bg-dark p-4">
+        <div  class="nav-item active" id="navbarSide">
+            <ul class="list-unstyled components"  style="margin-left: 40px;">
+                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
+                @foreach($allcategories as $category)
+                    <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+</div>
+{{--  /**************************************************/--}}
  <div class="wrapper">
 
 
                 <nav id="sidebar">
-                    <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
+                    {{--<button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
                             aria-controls="navbarSide" aria-expanded="false" aria-label="Toggle navigation">
                         <span><h3>↑ ☰</h3></span>
 
-                    </button>
+                    </button>--}}
 
                     <div class="bg-dark p-4">
-                        <div  class="nav-item active" id="navbarSide">
+
                             <ul class="list-unstyled components">
                                 <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
                                 @foreach($allcategories as $category)
                                     <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                                 @endforeach
                             </ul>
-                    </div>
+
                 </div>
                 </nav>
 

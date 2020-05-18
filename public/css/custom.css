@@ -230,7 +230,89 @@ footer {
 
     }
 }*/
+/********************Meniu juostu*****/
+#meniu{
 
+    padding: auto;
+}
+#search{
+    padding-top: 10px;
+    padding-left: inherit;
+
+}
+
+@media (max-width: 766px) {
+    /*paslepia meniu kai sumazini ekrana*/
+    form#hide {
+        display: none;
+        visibility: hidden;
+    }
+    /*atidengti paieska*/
+    form#paslepti {
+        display: block;
+        padding: auto;
+        padding-top: 10px;
+        position: absolute;
+    }
+    /*atidengti sidebar*/
+    div#sideNot {
+        display:contents;
+        position: absolute;
+
+    }
+}
+/*paslepta paieska suskleidus*/
+#paslepti{
+    display: none;
+}
+/*paslepta sidebar  suskleidus*/
+#sideNot{
+    display: none;
+
+}
+#paieska
+{
+    background-color: #6C6F6F;
+    color: #86C232;
+}
+
+/**side bar paslepti*/
+@media (max-width: 766px) {
+    #sidebar {
+        display: block;
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+.formPaieska
+{
+
+    border-radius: 10px;
+}
+.formPaieskaVest
+{
+
+    border-radius: 5px;
+
+    color: #86C232;
+}
+.button
+{
+
+    border-radius: 5px;
+    height: 25px;
+}
+#button1
+{
+
+    border-radius: 5px;
+    height: 25px;
+}
+/*******************************/
 .wrapper {
     display: flex;
     align-items: stretch;
@@ -249,7 +331,7 @@ footer {
     border-right: 1px solid #38c172;
     padding: 20px;
 }
-@media (max-width: 768px) {
+@media (max-width: 766px) {
     #sidebar {
         margin-left: -250px;
     }
