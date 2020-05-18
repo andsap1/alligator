@@ -52,6 +52,10 @@ class ShopController extends Controller
         $categoryname= Kategorija::where('id_kateg', '=', $item->fk_prekes_kategorija)->first();
         $allcategories = Kategorija::all();
         $mainphoto=Nuotrauka::where('fk_preke','=',$id)->first();
+        if($mainphoto==null){
+            $mainphoto=new Nuotrauka();
+            $mainphoto->pavadinimas='no photo';
+        }
         $kiekft=Nuotrauka::where('fk_preke','=',$id)->count();
         $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
         return view('item', compact('item','allcategories', 'categoryname','allphotos','mainphoto'));

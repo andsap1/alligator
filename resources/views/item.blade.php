@@ -1,13 +1,19 @@
 @extends('layouts.app')
 
 @section('turinys')
-
+{{--    border: solid 1px #8f94a0;--}}
+    <a style="margin: 0 0 15px 15px;" href="http://localhost/alligator/public/">
+{{--           <img style="width: 30px" src="../images/cart.png">--}}
+           <svg class="bi bi-chevron-compact-left" width="1.5em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+               <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z" clip-rule="evenodd"/>
+           </svg>
+       </a>
         <h1>{{$item->pavadinimas}}</h1>
-        <div class="col-lg-2 image_list images">
+        <div class="col-lg-2 image_list">
             @foreach($allphotos as $photo)
-            <ul class=" list-unstyled components ">
-            <li ><img class="img-responsive" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}"></li>
-            </ul>
+            <div class=" list-unstyled components ">
+            <img class="img-responsive" style="" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}">
+            </div>
             @endforeach
         </div>
 

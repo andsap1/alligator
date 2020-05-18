@@ -21,7 +21,9 @@
 
     @foreach($items as $item)
         <div class="col-md-4">
+
             <div class="card item">
+                <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" >
                 <div class="img-wrap">
                 @foreach($photo as $ph)
                     @if ($item->id_preke == $ph->fk_preke)

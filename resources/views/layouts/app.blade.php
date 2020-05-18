@@ -37,8 +37,9 @@
         </div>
         <div class="col-sm-2 img-col">
             <a href="{{asset('cart')}}">
-            <img class="cart" src="{{asset('images/shopping-cart.png')}}"  />
+            <img class="cart" src="{{asset('images/cart.png')}}"  />
             </a>
+
         </div>
     </div>
     </div>
