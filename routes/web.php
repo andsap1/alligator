@@ -20,6 +20,12 @@ Route::get('/item/{id}', 'ShopController@openPreke');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/cart', 'CartController@index');
 
 Route::get('/view', 'ViewController@index');
+
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 0ac6c59619c9fd36ac1de0d21d99d82bf7219666

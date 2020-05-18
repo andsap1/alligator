@@ -96,7 +96,18 @@
             border-radius: 5px;
             height: 25px;
         }
+        /***minimizuoto side bar li elementas*/
 
+        #sideNot  li  {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+        #sideNot ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+        /********/
 
     </style>
 </head>

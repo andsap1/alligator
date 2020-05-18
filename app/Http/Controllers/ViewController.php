@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Kategorija;
-use App\Nuotrauka;
 use App\Preke;
 
 class ViewController extends Controller

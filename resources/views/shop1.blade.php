@@ -25,8 +25,7 @@
                 <div class="img-wrap">
                 @foreach($photo as $ph)
                     @if ($item->id_preke == $ph->fk_preke)
-                           <img src="./images/{{$ph->pavadinimas}}.jpg"  alt="paveiksliukas {{$ph->pavadinimas}}" >
-{{--                        <p>{{$ph->pavadinimas}}</p>--}}
+                           <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >
                        @break
 {{--                        @else <img style="height: 299px"   alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
 {{--                        @break--}}
@@ -45,7 +44,7 @@
                 <div class="info-wrap">
                     @if($item->galiuko_aukstis)
                             <div><span id="info1">Lenght:&nbsp</span>{{$item->ilgis}}cm &nbsp
-                                <span id="info1">Tip height:</span>{{$item->galiuko_aukstis}}cm</div>
+                                <span id="info1">Tip&nbspheight:&nbsp</span>{{$item->galiuko_aukstis}}cm</div>
                             <div><span id="info1">Diameter:&nbsp</span>{{$item->diametras}}mm</div>
 
                         @else
@@ -56,10 +55,10 @@
 
 
                 <div class="bottom-wrap">
-                    <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
-                    <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" class="btn btn-sm btn-primary float-right" style="margin-right: 5px;">Look</a>
-                    <div class="price-wrap h5">
-                        <span class="price-new">{{$item->kaina}}</span>
+
+                    <a href="" class="btn btn-primary float-right">Order Now</a>
+                    <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" class="btn btn-primary float-right" style="margin-right: 5px;">Look</a>
+                    <div class="price h4">{{$item->kaina}} Eur
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
             </div>

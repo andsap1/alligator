@@ -36,7 +36,9 @@
             <h1 id="name">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
-            <img class="cart" src="{{asset('images/shopping-cart.png')}}" />
+<a href="{{asset('cart')}}">
+            <img class="cart" src="{{asset('images/shopping-cart.png')}}"  />
+</a>
         </div>
     </div>
     </div>
@@ -103,7 +105,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav"  id="meniu">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/alligator/public/">Home</a></li>
                 <li><a href="#">About us</a></li>
                 <li><a href="#">Product</a></li>
             </ul>
