@@ -168,9 +168,7 @@
      <div id="content">
          <div class="container-fluid" >
              <div class="row">
-{{--                 <h1 >Shop tools</h1>--}}
                  @yield('turinys')
-
             </div>
         </div>
 {{--            <h2 class="sub-header">Section title</h2>--}}
