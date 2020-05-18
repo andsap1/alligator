@@ -91,7 +91,7 @@
             div#sideNot {
                 display:contents;
                 position: absolute;
-            
+
             }
             span#icon
             {
@@ -204,16 +204,16 @@
 
 </nav>
 {{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
-<div class="container" id="sideNot"  media="(min-width: 766px)" >
+<div class="container" id="sideNot"  media="(min-width: 766px)" style="margin-left: 40px;" >
     <button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
-            aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation">
+            aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation" style="margin-left: 40px;">
         <span><h3>↑ ☰</h3></span>
 
     </button>
 
     <div class="bg-dark p-4">
         <div  class="nav-item active" id="navbarSide">
-            <ul class="list-unstyled components">
+            <ul class="list-unstyled components"  style="margin-left: 40px;">
                 <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
                 @foreach($allcategories as $category)
                     <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
