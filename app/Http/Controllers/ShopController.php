@@ -21,10 +21,7 @@ class ShopController extends Controller
         $items = Preke::all();
         $cate='null';
        $photo= DB::table('prekes_nuotrauka')->first();
-//        foreach($items as $item)
-//        {
-//            $photo=Nuotrauka::where('fk_preke','=',$item->id_preke)->first();
-//        }
+
             $photo=Nuotrauka::all();
 //dd($photo->pavadinimas);
 
@@ -38,10 +35,7 @@ class ShopController extends Controller
             $items = Preke::where('fk_prekes_kategorija', '=', $category)->get();
             $prekiusk = Preke::where('fk_prekes_kategorija', '=', $category)->get();
             $cate=Kategorija::where('id_kateg','=',$category)->first();
-            foreach($items as $item)
-            {
-                $photo=Nuotrauka::where('fk_preke','=',$item->id_preke)->first();
-            }
+
             $photo=Nuotrauka::all();
 
         } else {
@@ -60,8 +54,10 @@ class ShopController extends Controller
         $item = Preke::where('id_preke', '=', $id)->first();
         $categoryname= Kategorija::where('id_kateg', '=', $item->fk_prekes_kategorija)->first();
         $allcategories = Kategorija::all();
-        $allphotos=Nuotrauka::where('fk_preke','=',$id)->get();
-        return view('item', compact('item','allcategories', 'categoryname','allphotos'));
+        $mainphoto=Nuotrauka::where('fk_preke','=',$id)->first();
+        $kiekft=Nuotrauka::where('fk_preke','=',$id)->count();
+        $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
+        return view('item', compact('item','allcategories', 'categoryname','allphotos','mainphoto'));
 
     }
 }

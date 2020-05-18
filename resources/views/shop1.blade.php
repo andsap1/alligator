@@ -34,8 +34,6 @@
 
                 @endforeach
                 </div>
-{{--
-{{--                <div ><p>{{$photo->pavadinimas}}</p> </div>--}}
                 <div class="info-wrap">
                     <h4 class="title">{{$item->pavadinimas}}</h4>
                     <div class="text"> <p>{{$item->aprasymas}}</p></div>
@@ -45,12 +43,17 @@
 {{--                    </div> <!-- rating-wrap.// -->--}}
                 </div>
                 <div class="info-wrap">
+                    @if($item->galiuko_aukstis)
+                            <div><span id="info1">Lenght:&nbsp</span>{{$item->ilgis}}cm &nbsp
+                                <span id="info1">Tip height:</span>{{$item->galiuko_aukstis}}cm</div>
+                            <div><span id="info1">Diameter:&nbsp</span>{{$item->diametras}}mm</div>
 
-                    <div class="rating-wrap">
-                        <div >{{$item->diametras}}</div>
-                        <div class="label-rating">{{$item->ilgis}} </div>
+                        @else
+                        <div><span id="info1">Lenght:&nbsp</span>{{$item->ilgis}}cm</div>
+                        <div><span id="info1">Diameter:&nbsp</span>{{$item->diametras}}mm</div>
+                    @endif
                     </div> <!-- rating-wrap.// -->
-                </div>
+
 
                 <div class="bottom-wrap">
                     <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>
