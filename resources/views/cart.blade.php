@@ -18,49 +18,52 @@
     <div class="container" id="cart_sonas">
         <div class="col-lg-10 offset-lg-1">
 
-        <table id="cart" class="table table-hover table-condensed">
-            <thead>
-            <tr>
-                <th style="width:50%">Product</th>
-                <th style="width:10%">Price</th>
-                <th style="width:8%">Quantity</th>
-                <th style="width:22%" class="text-center">Subtotal</th>
-                <th style="width:10%"></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td data-th="Product">
-                    <div class="row">
-                        <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-                        <div class="col-sm-4">
-                            <h4 class="nomargin">Product 1</h4>
-                            <p>Quis aute iure reprehenderit in voluptate </p>
+            <table id="cart" class="table table-hover table-condensed" >
+                <thead>
+                <tr style="border-bottom: 0px">
+                    <th style="width:50%;border-bottom: 10px;">Product</th>
+                    <th style="width:10%;border-bottom: 10px;">Price</th>
+                    <th style="width:8%;border-bottom: 10px;">Quantity</th>
+                    <th style="width:22%;border-bottom: 10px;"class="text-center">Subtotal</th>
+                    <th style="width:10%;border-bottom: 10px;"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-th="Product">
+                        <div class="row">
+                            <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+                            <div class="col-sm-4">
+                                <h4 class="nomargin">Product 1</h4>
+                                <p>Quis aute iure reprehenderit in voluptate </p>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td data-th="Price">$1.99</td>
-                <td data-th="Quantity">
-                    <input type="number" class="form-control text-center" value="1">
-                </td>
-                <td data-th="Subtotal" class="text-center">1.99</td>
-                <td class="actions" data-th="">
-                    <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
-                </td>
-            </tr>
-            </tbody>
-            <tfoot>
-            <tr class="visible-xs">
-                <td class="text-center"><strong>Total 1.99</strong></td>
-            </tr>
-            <tr>
-                <td colspan="2" class="hidden-xs"></td>
-                <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
-                <td><a href="#" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
-            </tr>
-            </tfoot>
-        </table>
+                    </td>
+                    <td data-th="Price">$1.99</td>
+                    <td data-th="Quantity">
+                        <input type="number" class="form-control text-center" value="1">
+                    </td>
+                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td class="actions" data-th="">
+                        <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr class="visible-xs">
+                    <td class="text-center"><strong>Total 1.99</strong></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="hidden-xs"></td>
+                    <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                    <td><a href="#" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
     </div>
-    </div>
+
+
+
 
 @endsection
