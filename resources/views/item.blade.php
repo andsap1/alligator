@@ -6,13 +6,13 @@
         <div class="col-lg-2 image_list images">
             @foreach($allphotos as $photo)
             <ul class=" list-unstyled components ">
-            <li ><img class="img-responsive small" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}"></li>
+            <li ><img class="img-responsive" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}"></li>
             </ul>
             @endforeach
         </div>
 
         <div class="col-lg-5 images">
-            <div ><img class="img-responsive " src="{{asset('images/item1.jpg')}}"  alt="paveiksliukas {{$photo->pavadinimas}}"></div>
+            <div ><img class="img-responsive " src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>
         </div>
 
 {{--        src="{{asset('images/item1.jpg')}}" alt=""--}}
