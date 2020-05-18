@@ -12,17 +12,14 @@ class ShopController extends Controller
 {
     public function indexHome(){
         $allcategories=Kategorija::all();
-        $items = Preke::all();
 
-        return view('home', compact('allcategories','items'));
+        return view('home', compact('allcategories'));
     }
     public function index(){
         $allcategories=Kategorija::all();
         $items = Preke::all();
         $cate='null';
-       $photo= DB::table('prekes_nuotrauka')->first();
-
-            $photo=Nuotrauka::all();
+        $photo=Nuotrauka::all();
 //dd($photo->pavadinimas);
 
 

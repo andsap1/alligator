@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'ShopController@indexHome');
-
+Route::get('/about', 'AboutController@index');
 Route::get('/shop1', 'ShopController@index')->name('shop1');
 Route::get('/shop1/{category}', 'ShopController@getCategory');
 Route::get('/item/{id}', 'ShopController@openPreke');

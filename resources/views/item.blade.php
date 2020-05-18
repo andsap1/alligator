@@ -19,7 +19,7 @@
         <!-- Description -->
         <div class="col-lg-4">
             <div class="product_description">
-                <div class="product_category">Kategorija: {{$categoryname->pavadinimas}}</div>
+                <div class="product_category">Category: {{$categoryname->pavadinimas}}</div>
                 <div class="product_name">{{$item->pavadinimas}}</div>
                 {{-- <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
                 <div class="product_text"><p>{{$item->aprasymas}}</p></div>
@@ -35,26 +35,22 @@
                     <form method="POST" action="">
 {{--                        {{ Route('insertPreke') }}--}}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <div class="clearfix" style="z-index: 1000;">
-                            <!-- Product Quantity -->
+                        <div class="kiekis" >
                             <div>
-                                <span for="kiekis">Produkto kiekis:</span>
+                                <span for="kiekis">Quantity:</span>
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
-                            <select name="preke">
-                                <option value="{{$item->id_preke}}">
-                                </option>
-                            </select>
+{{--                            <select name="preke">--}}
+{{--                                <option value="{{$item->id_preke}}">--}}
+{{--                                </option>--}}
+{{--                            </select>--}}
                         </div>
+                        <div>
+                        <div class="product_price">{{$item->kaina}} Eur
+                            <span id="cart-button"><button type="submit" class="btn btn-primary pull-right">Add to cart</button></span>
+                        </div>
+{{--                        <div class="cart_button">--}}
 
-                        <div class="product_price">{{$item->Kaina}} Eur</div>
-
-                        <div class="cart_button">
-
-                            <button type="submit" class="btn btn-primary">
-                                <span class="glyphicon glyphicon-refresh"></span>
-                                Pridėti į krepšelį
-                            </button>
                         </div>
 
                     </form>
