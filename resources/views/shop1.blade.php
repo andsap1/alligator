@@ -25,8 +25,7 @@
                 <div class="img-wrap">
                 @foreach($photo as $ph)
                     @if ($item->id_preke == $ph->fk_preke)
-                           <img src="./images/{{$ph->pavadinimas}}.jpg"  alt="paveiksliukas {{$ph->pavadinimas}}" >
-{{--                        <p>{{$ph->pavadinimas}}</p>--}}
+                           <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >
                        @break
 {{--                        @else <img style="height: 299px"   alt="paveiksliukas {{$ph->pavadinimas}}" >--}}
 {{--                        @break--}}
