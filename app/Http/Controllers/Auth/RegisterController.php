@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Kategorija;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -40,6 +41,12 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
+    public function showRegistrationForm()
+    {
+        $allcategories=Kategorija::all();
+        return view('auth/register',compact('allcategories'));
+    }
+
 
     /**
      * Get a validator for an incoming registration request.

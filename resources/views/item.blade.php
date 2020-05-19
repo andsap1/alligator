@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<link href="{{ asset('css/rating.css') }}" rel="stylesheet">
 
 @section('turinys')
 {{--    border: solid 1px #8f94a0;--}}
@@ -54,8 +55,7 @@
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
                             <span id="cart-button"><button type="submit" class="btn btn-primary pull-right">Add to cart</button></span>
-                        </div>
-{{--                        <div class="cart_button">--}}
+                        </div>\
 
                         </div>
 
@@ -63,6 +63,77 @@
                 </div>
             </div>
         </div>
+</div>
+<div style="margin-top: 50px; " align="center">
+    <p style="margin-bottom: 0px">Prekės įvertinimas:
+        @if($item->Ivertinimu_sk!=0){{round($item->ivertinimas/$item->Ivertinimu_sk, 2)}}
+        @else {{$item->Ivertinimu_sk}}
+        @endif
+    </p>
+    <form class="rating" method="POST" action="">
+{{--        {{ Route('insertPrekeVertinimas', $item->id_preke) }}--}}
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        <div  style="margin-left: 7px" class="input-group">
+            <label>
+                <input type="radio" name="stars" value="1"  />
+                <span class="icon">★</span>
+            </label>
+            <label>
+                <input type="radio" name="stars" value="2" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+            </label>
+            <label>
+                <input type="radio" name="stars" value="3" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+            </label>
+            <label>
+                <input type="radio" name="stars" value="4" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+            </label>
+            <label>
+                <input type="radio" name="stars" value="5" />
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+                <span class="icon">★</span>
+            </label>
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary" id="mygtukas">
+                <span class="glyphicon glyphicon-refresh"></span>
+                Ivertinti
+            </button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+</div>
+
+
+
+<div style="margin-top: 20px;" align="center">
+    <p style="margin-bottom: 0px">Pakomentuokite prekę:</p>
+    <form method="POST" action="" class="comment_form">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+        <input type="text" class="form-control" name="vart_vardas" value=""  placeholder="Vardas">
+        <textarea name="tekstas" type="text" class="form-control" required="required" placeholder="Rašyti komentarą"></textarea>
+        <br>
+        <button type="submit" class="btn btn-primary" id="mygtukas">
+            <span class="glyphicon glyphicon-refresh"></span>
+            Pateikti
+        </button>
+    </form>
+</div>
 </div>
 
 {{--    @foreach($items as $item)--}}

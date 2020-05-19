@@ -94,7 +94,7 @@
     <div class="bg-dark p-4">
         <div  class="nav-item active" id="navbarSide">
             <ul class="list-unstyled components"  style="margin-left: 40px;">
-                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
+                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">All products</a></li>
                 @foreach($allcategories as $category)
                     <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                 @endforeach
@@ -110,7 +110,7 @@
                     <div class="bg-dark p-4">
 
                             <ul class="list-unstyled components">
-                                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">Visos prekės</a></li>
+                                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">All products</a></li>
                                 @foreach($allcategories as $category)
                                     <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                                 @endforeach
