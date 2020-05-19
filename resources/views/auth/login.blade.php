@@ -1,16 +1,24 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+@section('turinys')
+{{--<div class="container">--}}
+{{--    <div class=" justify-content-center" style="text-align: center">--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-sm-10 col-sm-offset-1 hid">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-sm-6 col-sm-offset-3 text-center">--}}
+{{--                        5--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+        <div class="col-sm-10 col-sm-offset-1 hid">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">Login</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -68,6 +76,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+{{--    </div>--}}
+{{--</div>--}}
 @endsection
