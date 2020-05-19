@@ -3,6 +3,7 @@
 
     h1
     {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        margin-bottom: 10px;
     }
     #mygtukas
     {
@@ -34,14 +35,14 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="col-lg-10 offset-lg-1">
         <div  class="container-fluid" id="laisko_krastai">
-            <h1 >Contact us</h1>
-            <hr>
+            <h1 style="margin-bottom: 5px">Contact us</h1>
+            <hr >
             <br>
             <label  for="elpastas"><b>Email</b></label>
             <input  class="form-control" type="email" placeholder="Email" name="elpastas" required>
             <br>
             <label for="zinute"><b>Message</b></label>
-            <textarea  class="form-control" type="text" placeholder="Text" name="zinute" required></textarea>
+            <textarea  class="form-control" style="min-height: 150px" type="text" placeholder="Text" name="zinute" required></textarea>
             <button class="btn" id="mygtukas" type="submit"><a style="color: white" href="/">Send</a></button>
 
 
