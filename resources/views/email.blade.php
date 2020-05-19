@@ -5,8 +5,7 @@
     {font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         margin-bottom: 10px;
     }
-    #mygtukas
-    {
+    #mygtukas {
         background-color: #61892F;
         width: 15%;
         margin-top: 10px;
@@ -14,18 +13,8 @@
         text-decoration: none;
         display: block;
         font-size: 16px;
-
-        cursor: pointer;
-        margin-left: auto;
     }
 
-
-    @media (max-width: 1200px){
-        #laisko_krastai {
-            height: auto;
-            width: auto;
-        }
-    }
 </style>
 
 @section('turinys')
@@ -35,8 +24,11 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="col-lg-10 offset-lg-1">
         <div  class="container-fluid" id="laisko_krastai">
+
             <h1 style="margin-bottom: 5px">Contact us</h1>
             <hr >
+            <h1 id="antraste" >Contact us</h1>
+            <hr>
             <br>
             <label  for="elpastas"><b>Email</b></label>
             <input  class="form-control" type="email" placeholder="Email" name="elpastas" required>
