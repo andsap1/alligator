@@ -29,8 +29,7 @@ Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/email', 'EmailController@index')->name('email');
 Route::post('send','EmailController@send')->name('send');
 
-Route::get('/view', 'ViewController@index');
-Route::get('/cart', 'CartController@index');
+Route::get('/order', 'OrderController@index');
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');

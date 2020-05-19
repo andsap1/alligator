@@ -476,3 +476,41 @@ footer {
     padding: 20px;
 }
 
+/*****is order.blade****/
+#antraste
+{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#mygtukas {
+
+    background-color: #61892F;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.prekes_eilute
+{
+    margin-bottom: 10px;
+
+    cursor: pointer;
+    border-bottom: groove;
+    min-width: 229px;
+}
+.kaina{
+    float: right;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+/******kai mazini email langa********/
+@media (max-width: 1200px) {
+    #laisko_krastai {
+        height: auto;
+        width: auto;
+    }
+}
