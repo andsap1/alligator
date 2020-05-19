@@ -44,48 +44,7 @@
     </div>
     </div>
 </div>
-
-{{--<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Logo</a>
-
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li> <span style="position: relative;top: 10px">
-                        <img class="img" src="{{asset('images/icons8-important-mail-24.png')}} " style="width: 25px; height: 25px;"/>
-                   <a> info@betarent.lt</a>
-                 </span>
-
-                    <span style="position: relative;top: 10px" >
-                        <img class="img" src="{{asset('images/icons8-phone-24.png')}} " style="width: 25px; height: 25px;"/>
-                    <a> +370 600 00000</a> </span>
-                </li>
-                <li class="active"><a href="#">Home</a></li>
-
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Deals</a></li>
-                <li><a href="#">Stores</a></li>
-                <li><a href="#">Contact</a></li>
-              <li> <form class="form-inline my-2 my-lg-0" style="position: relative;top: 10px">
-                      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #474B4B;">
-                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>--}}
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse" style="background-color: #222629;">
     <div class="container-fluid" >
 
         <div class="search-container" >
@@ -140,6 +99,7 @@
                     <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                 @endforeach
             </ul>
+
         </div>
     </div>
 </div>
@@ -147,12 +107,6 @@
 
 
                 <nav id="sidebar">
-                    {{--<button class="nav nav-sidebar" type="button"  data-toggle="collapse" data-target="#navbarSide"
-                            aria-controls="navbarSide" aria-expanded="false" aria-label="Toggle navigation">
-                        <span><h3>↑ ☰</h3></span>
-
-                    </button>--}}
-
                     <div class="bg-dark p-4">
 
                             <ul class="list-unstyled components">

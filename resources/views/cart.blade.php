@@ -17,7 +17,6 @@
 
     <div class="container" id="cart_sonas">
         <div class="col-lg-10 offset-lg-1">
-
             <table id="cart" class="table table-hover table-condensed" >
                 <thead>
                 <tr style="border-bottom: 0px">
