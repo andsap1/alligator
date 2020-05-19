@@ -5,35 +5,45 @@
 
 
     <section class="text-center">
-        <div class="container">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="img-wrap">
-                    <a href="/alligator/public/shop1" class="text-body">
+                <div class="col-md-4">
+                    <div class="card item">
+                        <div class="info-wrap">
+                            <a href="/alligator/public/shop1" class="text-body">
                                 <i class="fa fa-tachometer fa-4x "></i></br>
-                                <h5>Visos prekės</h5>
-                        <img src="http://placehold.it/299x299" class="img-responsive img-radio">
+                                <h1>Visos prekės</h1>
+                    <div class="img-wrap">
+                        <img src="http://placehold.it/299x299">
                     </a>
                     </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="img-wrap">
-                    <a href="/alligator/public/shop1/1" class="text-body">
-                                <i class="fa fa-tachometer fa-4x "></i></br>
-                                <h5>Doors tools</h5>
-                        <img src="http://placehold.it/299x299" class="img-responsive img-radio">
-                    </a>
+                    </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="img-wrap">
-                    <a href="/alligator/public/shop1/2" class="text-body">
+                <div class="col-md-4">
+                    <div class="card item">
+                        <div class="info-wrap">
+                            <a href="/alligator/public/shop1/1" class="text-body">
                                 <i class="fa fa-tachometer fa-4x "></i></br>
-                                <h5>Whale tails</h5>
-                        <img src="http://placehold.it/299x299" class="img-responsive img-radio">
+                                <h1>Doors tools</h1>
+                    <div class="img-wrap">
+                        <img src="http://placehold.it/299x299">
                     </a>
                     </div>
+                    </div>
+                    </div>
                 </div>
-        </div>
+                <div class="col-md-4">
+                    <div class="card item">
+                        <div class="info-wrap">
+                            <a href="/alligator/public/shop1/2" class="text-body">
+                                <i class="fa fa-tachometer fa-4x "></i></br>
+                                <h1>Whale tails</h1>
+                    <div class="img-wrap">
+                        <img src="http://placehold.it/299x299">
+                    </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
     </section>
 
 @endsection
