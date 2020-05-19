@@ -39,23 +39,23 @@
                 </div>
 
                 <div class="order_info d-flex flex-row">
-                    <form method="POST" action="">
-{{--                        {{ Route('insertPreke') }}--}}
+                    <form method="POST" action="{{ Route('insertPreke') }}">
+{{--                        --}}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <div class="kiekis" >
+                        <div class="clearfix" >
                             <div>
                                 <span for="kiekis">Quantity:</span>
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
-{{--                            <select name="preke">--}}
-{{--                                <option value="{{$item->id_preke}}">--}}
-{{--                                </option>--}}
-{{--                            </select>--}}
+                            <select name="preke">
+                                <option value="{{$item->id_preke}}">
+                                </option>
+                            </select>
                         </div>
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
-                            <span id="cart-button"><button type="submit" class="btn btn-primary pull-right">Add to cart</button></span>
-                        </div>\
+                            <span id="cart-button"><button type="submit" class="btn btn-primary pull-right" id="green_btn">Add to cart</button></span>
+                        </div>
 
                         </div>
 
@@ -65,13 +65,12 @@
         </div>
 </div>
 <div style="margin-top: 50px; " align="center">
-    <p style="margin-bottom: 0px">Prekės įvertinimas:
+    <p style="margin-bottom: 0px">Rating:
         @if($item->Ivertinimu_sk!=0){{round($item->ivertinimas/$item->Ivertinimu_sk, 2)}}
         @else {{$item->Ivertinimu_sk}}
         @endif
     </p>
-    <form class="rating" method="POST" action="">
-{{--        {{ Route('insertPrekeVertinimas', $item->id_preke) }}--}}
+    <form class="rating" method="POST" action="{{ Route('insertPrekeVertinimas', $item->id_preke) }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div  style="margin-left: 7px" class="input-group">
             <label>
@@ -107,10 +106,7 @@
         </div>
 
         <div>
-            <button type="submit" class="btn btn-primary" id="mygtukas">
-                <span class="glyphicon glyphicon-refresh"></span>
-                Ivertinti
-            </button>
+            <button type="submit" class="btn btn-primary" id="green_btn">Rate</button>
         </div>
     </form>
     <br>
@@ -121,17 +117,14 @@
 
 
 <div style="margin-top: 20px;" align="center">
-    <p style="margin-bottom: 0px">Pakomentuokite prekę:</p>
-    <form method="POST" action="" class="comment_form">
+    <p style="margin-bottom: 0px">Comment:</p>
+    <form method="POST" action="{{ Route('insertKomentaras', $item->id_preke) }}" class="comment_form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <input type="text" class="form-control" name="vart_vardas" value=""  placeholder="Vardas">
-        <textarea name="tekstas" type="text" class="form-control" required="required" placeholder="Rašyti komentarą"></textarea>
+        <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Vardas">
+        <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Rašyti komentarą"></textarea>
         <br>
-        <button type="submit" class="btn btn-primary" id="mygtukas">
-            <span class="glyphicon glyphicon-refresh"></span>
-            Pateikti
-        </button>
+        <button type="submit" class="btn btn-primary" id="green_btn">Pateikti</button>
     </form>
 </div>
 </div>

@@ -506,11 +506,21 @@ hr{
     cursor: pointer;
     margin-left: auto;
 }
+#green_btn {
+
+    background-color: #61892F;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border: 0;
+}
 
 .prekes_eilute
 {
     margin-bottom: 10px;
-
     cursor: pointer;
     border-bottom: groove;
     min-width: 229px;

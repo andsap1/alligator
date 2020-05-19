@@ -3,10 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Kategorija;
+use App\Komentaras;
+use App\Krepselis;
 use App\Nuotrauka;
 use App\Preke;
+use App\PrekeKrepselis;
+use App\TarpinePrekes;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
 
 class ShopController extends Controller
 {
@@ -60,5 +67,113 @@ class ShopController extends Controller
         $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
         return view('item', compact('item','allcategories', 'categoryname','allphotos','mainphoto'));
 
+    }
+
+    public function insertPrekeKomentaras(Request $request, $id)
+    {
+        $validator = Validator::make(
+            [   'vart_vardas' =>$request->input('vart_vardas'),
+                'tekstas' =>$request->input('tekstas'),
+
+            ],
+            [   'vart_vardas' => 'required| max:30',
+                'tekstas' => 'required',
+            ]
+        );
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+        else
+        {
+            $komentaras = new Komentaras();
+            $komentaras->vart_vardas  = $request->input('vart_vardas');
+            $komentaras->tekstas  = $request->input('tekstas');
+            $komentaras->data  = Carbon::now();
+            $komentaras->fk_preke = $id;
+
+            $komentaras->save();
+        }
+        return Redirect::back()->with('success', 'Komentaras pridėtas');
+    }
+
+
+    public function insertPrekeVertinimas(Request $request, $ids)
+    {
+        $validator = Validator::make(
+            [   'stars' =>$request->input('stars'),
+            ],
+            [   'stars' => 'required',
+            ]
+        );
+        if ($validator->fails())
+        {
+            return Redirect::back()->withErrors($validator);
+        }
+        else {
+            $p= Preke::where('id_preke', '=', $ids)->first();
+            $iv=$p->ivertinimas;
+            $sk=$p->Ivertinimu_sk+1;
+            $data = Preke::where('id_preke', '=', $ids)->update([
+                'ivertinimas' => $request->input('stars')+$iv,
+                'Ivertinimu_sk' => $sk
+            ]);
+        }
+
+        return Redirect::back()->with('success', 'Ivertinta');
+    }
+
+
+
+    public function insertPrekeKrepselis(Request $request)
+    {
+        $validator = Validator::make(
+            ['kiekis' => $request->input('kiekis'),
+
+            ],
+            ['kiekis' => 'required|numeric'
+            ]
+        );
+        if ($request->session()->has('krepselis')) {
+
+            if ($validator->fails()) {
+                return Redirect::back()->withErrors($validator);
+            }
+
+            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
+            $data = Krepselis::where('id_krepselis', session('krepselis'))->first();
+            $nauja = (($kaina->kaina) * $request->input('kiekis')) + $data->kaina;
+
+            Krepselis::where('id_krepselis', session('krepselis'))->update(
+                [
+                    'kaina' => $nauja,
+                ]);
+            $tarpine = new PrekeKrepselis();
+            $tarpine->kiekis = $request->input('kiekis');
+            $tarpine->fk_preke = $request->input('preke');
+            $tarpine->fk_krepselis = session('krepselis');
+            $tarpine->save();
+//
+//
+            return Redirect::to('cart')->with('success', 'Pridėta');
+        } else {
+            if ($validator->fails()) {
+                return Redirect::back()->withErrors($validator);
+            }
+            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
+
+            $krepselis = new Krepselis();
+            $krepselis->kaina = ($kaina->kaina) * $request->input('kiekis');
+            $krepselis->save();
+
+            $tarpine = new PrekeKrepselis();
+            $tarpine->kiekis = $request->input('kiekis');
+            $tarpine->fk_preke = $request->input('preke');
+            $tarpine->fk_krepselis = $krepselis->id_krepselis;
+            $tarpine->save();
+            session(['krepselis' => $krepselis->id_krepselis]);
+
+            return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
+        }
     }
 }

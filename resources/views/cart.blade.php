@@ -29,14 +29,12 @@
                 </thead>
                 <tbody>
                 <tr>
-            {{--        @foreach($results as $result)--}}
+                    @foreach($result as $resul)
                     <td data-th="Product">
-
                         <div class="row">
-
                             <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
                             <div class="col-sm-4">
-                                <h4 class="nomargin">Product 1</h4>
+                                <h4 class="nomargin">{{$resul->kr_kaina}}</h4>
                                 <p>Quis aute iure reprehenderit in voluptate </p>
                             </div>
                         </div>
@@ -56,7 +54,7 @@
                     </td>
 
                 </tr>
-             {{--   @endforeach--}}
+                @endforeach
                 </tbody>
                 <tfoot>
                 <tr class="visible-xs">
