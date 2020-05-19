@@ -30,8 +30,11 @@
                 </thead>
                 <tbody>
                 <tr>
+            {{--        @foreach($results as $result)--}}
                     <td data-th="Product">
+
                         <div class="row">
+
                             <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
                             <div class="col-sm-4">
                                 <h4 class="nomargin">Product 1</h4>
@@ -43,11 +46,18 @@
                     <td data-th="Quantity">
                         <input type="number" class="form-control text-center" value="1">
                     </td>
+                 {{--   @foreach($suma as $sumele)
+                        <div class="order_total_title">Užsakymo kaina:</div>
+                        <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
+                        {{session(['kaina'=>$sumele->Final_Kaina])}}
+                    @endforeach--}}
                     <td data-th="Subtotal" class="text-center">1.99</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
                     </td>
+
                 </tr>
+             {{--   @endforeach--}}
                 </tbody>
                 <tfoot>
                 <tr class="visible-xs">
@@ -55,8 +65,12 @@
                 </tr>
                 <tr>
                     <td colspan="3" class="hidden-xs"></td>
-                    <td class="hidden-xs text-center"><strong>Total $1.99</strong></td>
+                   {{-- @foreach($suma as $kitasuma)--}}
+                    <td class="hidden-xs text-center"><strong>Total 1.99{{--{{ $kitasuma->Final_Kaina }} --}}Eur</strong>
+                        {{--{{session(['kaina'=>$kitasuma->Final_Kaina])}}--}}
+                    </td>
                     <td><a href="#" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
+                        {{--@endforeach--}}
                 </tr>
                 </tfoot>
             </table>

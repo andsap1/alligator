@@ -22,5 +22,17 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
+Route::get('/view', 'ViewController@index')->name('view');
+Route::get('/cart', 'CartController@index')->name('cart');
+
+Route::get('/email', 'EmailController@index')->name('email');
+Route::post('send','EmailController@send')->name('send');
+
 Route::get('/view', 'ViewController@index');
 Route::get('/cart', 'CartController@index');
+
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/naudotojai', 'AdminController@naudotojai')->name('naudotojai');
+
