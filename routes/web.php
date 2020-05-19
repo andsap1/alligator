@@ -24,3 +24,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/view', 'ViewController@index');
 Route::get('/cart', 'CartController@index');
+
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+Route::get('/naudotojai', 'AdminController@naudotojai')->name('naudotojai');
