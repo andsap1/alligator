@@ -14,14 +14,13 @@
 </style>
 @section('turinys')
 @if($cate!='null')
-       <h1>{{$cate->pavadinimas}}</h1>
+       <h1 id="antraste">{{$cate->pavadinimas}}</h1>
     @else
-    <h1 >Visos prekės</h1>
+    <h1 id="antraste">Visos prekės</h1>
 @endif
 
     @foreach($items as $item)
         <div class="col-md-4">
-
             <div class="card item">
                 <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" >
                 <div class="img-wrap">
