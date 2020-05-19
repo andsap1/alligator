@@ -6,9 +6,10 @@
             <div class="container-fuild">
                 <h1 id="antraste">Your order
                     <span class="kaina" style="color:black">
-          <i class="glyphicon glyphicon-shopping-cart"></i>
+                        <i class="glyphicon glyphicon-shopping-cart"></i>
         </span>
                 </h1>
+                <hr>
                 <div class="products">
                     {{--@foreach($visosprekes as $prekes)--}}
                     <div class="prekes_eilute">

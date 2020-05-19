@@ -15,8 +15,10 @@
 @section('turinys')
 @if($cate!='null')
        <h1 id="antraste">{{$cate->pavadinimas}}</h1>
+      <hr>
     @else
     <h1 id="antraste">Visos prekės</h1>
+    <hr>
 @endif
 
     @foreach($items as $item)
