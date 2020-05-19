@@ -10,5 +10,5 @@ class Krepselis extends Model
     protected $primaryKey= 'id_krepselis';
     public $timestamps = false;
 
-    protected $fillable = ['suma'];
+    protected $fillable = ['suma','fk_id_Uzsakymas'];
 }

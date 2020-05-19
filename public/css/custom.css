@@ -465,3 +465,14 @@ footer {
 .main .page-header {
     margin-top: 0;
 }
+/* Admin Sidebar navigation */
+#sidebaradmin {
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100vh;
+    margin-bottom: 20px;
+    box-shadow: 1px 0 0 0 rgba(0,0,0,.16);
+    /*border-right: 1px solid #636b6f;*/
+    padding: 20px;
+}
+
