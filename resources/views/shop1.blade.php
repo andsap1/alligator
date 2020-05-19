@@ -17,7 +17,7 @@
        <h1 id="antraste">{{$cate->pavadinimas}}</h1>
       <hr>
     @else
-    <h1 id="antraste">Visos prekės</h1>
+    <h1 id="antraste">All products</h1>
     <hr>
 @endif
 
