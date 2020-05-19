@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Naudotojas;
+use App\Preke;
+use App\Uzsakymas;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -15,8 +18,19 @@ class AdminController extends Controller
     {
         return view('admin');
     }
-    public function naudotojai()
+    public function users()
     {
-        return view('naudotojai');
+        $allNaud = Naudotojas::all();
+        return view('users', compact('allNaud'));
+    }
+    public function product()
+    {
+        $allPro = Preke::all();
+        return view('product', compact('allPro'));
+    }
+    public function orders()
+    {
+        $allUz = Uzsakymas::all();
+        return view('orders', compact('allUz'));
     }
 }

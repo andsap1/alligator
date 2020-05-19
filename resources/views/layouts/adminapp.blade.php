@@ -67,10 +67,10 @@
  </nav>
 <div class="wrapper">
 <nav id="sidebaradmin">
-    <a href="{{ action('AdminController@index')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-home"></span><h5>Pradinis</h5></div></a>
-    <a href="{{ action('AdminController@naudotojai')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-user"></span><h5>Naudotojai</h5></div></a>
-    <a href="#"><div style="text-align: center;"><span class="glyphicon glyphicon-list-alt"></span><h5>Prekės</h5></div></a>
-    <a href="#"><div style="text-align: center;"><span class="glyphicon glyphicon-th-list"></span><h5>Užsakymai</h5></div></a>
+    <a href="{{ action('AdminController@index')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-home"></span><h5>Home</h5></div></a>
+    <a href="{{ action('AdminController@users')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-user"></span><h5>Users</h5></div></a>
+    <a href="{{ action('AdminController@product')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-list-alt"></span><h5>Products</h5></div></a>
+    <a href="{{ action('AdminController@orders')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-th-list"></span><h5>Orders</h5></div></a>
 </nav>
 
 <div id="content">

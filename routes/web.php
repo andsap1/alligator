@@ -38,5 +38,6 @@ Route::get('/order', 'OrderController@index');
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/naudotojai', 'AdminController@naudotojai')->name('naudotojai');
-
+Route::get('/users', 'AdminController@users')->name('users');
+Route::get('/product', 'AdminController@product')->name('product');
+Route::get('/orders', 'AdminController@orders')->name('orders');
