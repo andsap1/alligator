@@ -72,7 +72,7 @@
                 <li> <div class="search-container" id="search" >
                         <form class="formPaieska" action="/paieska.php" id="hide">
                             <input class="formPaieskaVest" type="text" placeholder="Search..." name="search" id="paieska">
-                            <button class="button" type="search">search</button>
+                            <button class="button" style="height: 26px;" type="search">search</button>
                         </form>
                     </div></li>
                 @if (Auth::guest())
