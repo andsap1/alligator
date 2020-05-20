@@ -16,10 +16,10 @@ class CartController extends Controller
         $kr=session('krepselis');
 //        dd($kr);
         if(session()->has('krepselis')) {
-            $kr=session('krepselis');
-            $result=DB::table('krepselis')->where('id_krepselis','=',$kr)->leftJoin('preke_krepselis', 'id_krepselis','=','preke_krepselis.fk_krepselis')
+            $result=DB::table('krepselis')->leftJoin('preke_krepselis', 'id_krepselis','=','preke_krepselis.fk_krepselis')
                 ->leftJoin('preke','preke_krepselis.fk_preke','=','id_preke')
-                ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas',DB::raw('krepselis.kaina as kr_kaina'))->get();
+                ->leftJoin('prekes_nuotrauka','preke.id_preke', '=', 'prekes_nuotrauka.fk_preke')
+                ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas','prekes_nuotrauka.pavadinimas as foto',DB::raw('krepselis.kaina as kr_kaina'))->get();
 
 
 //            $results = DB::select('select preke.pavadinimas, preke.kaina,
