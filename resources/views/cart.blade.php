@@ -34,10 +34,11 @@
                         <div class="row">
                          {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
                             <div class="col-sm-4 hidden-xs">{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}
-{{--                                <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}"  alt="paveiksliukas {{$resul->foto}}" >--}}
+                               <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}" alt="paveiksliukas {{$resul->foto}}" >
                             </div>
                             <div class="col-sm-8">
-                                <h3 style="padding-left: 15px">{{$resul->pavadinimas}} </h3>
+
+                                <h4 style="padding-left: 15px">{{$resul->pavadinimas}} </h4>
 
                             </div>
                         </div>
@@ -66,9 +67,12 @@
                 <tr>
                     <td colspan="3" class="hidden-xs"></td>
                     @foreach($result as $resul)
+                        
+
                     <td class="hidden-xs text-center"><strong>T{{$resul->kr_kaina}} €</strong>
                         @break
-                        {{--{{session(['kaina'=>$kitasuma->Final_Kaina])}}--}}
+
+
                     </td> @endforeach
                     <td><a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
 
