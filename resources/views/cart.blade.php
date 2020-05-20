@@ -29,19 +29,20 @@
                 </thead>
                 <tbody>
                 <tr>
-            {{--        @foreach($results as $result)--}}
+                    @foreach($result as $resul)
                     <td data-th="Product">
-
                         <div class="row">
+                         {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
+                            <div class="col-sm-4 hidden-xs">{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}
+                                <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}"  alt="paveiksliukas {{$resul->foto}}" >
+                            </div>
+                            <div class="col-sm-8">
+                                <h3 style="padding-left: 15px"> {{$resul->pavadinimas}} </h3>
 
-                            <div class="col-sm-4 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
-                            <div class="col-sm-4">
-                                <h4 class="nomargin">Product 1</h4>
-                                <p>Quis aute iure reprehenderit in voluptate </p>
                             </div>
                         </div>
                     </td>
-                    <td data-th="Price">$1.99</td>
+                    <td data-th="Price">{{$resul->kaina}} €</td>
                     <td data-th="Quantity">
                         <input type="number" class="form-control text-center" value="1">
                     </td>
@@ -50,26 +51,24 @@
                         <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
                         {{session(['kaina'=>$sumele->Final_Kaina])}}
                     @endforeach--}}
-                    <td data-th="Subtotal" class="text-center">1.99</td>
+                    <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
                     </td>
 
                 </tr>
-             {{--   @endforeach--}}
+                @endforeach
                 </tbody>
                 <tfoot>
-                <tr class="visible-xs">
-                    <td class="text-center"><strong>Total 1.99</strong></td>
-                </tr>
-                <tr>
+
+                <tr >
                     <td colspan="3" class="hidden-xs"></td>
-                   {{-- @foreach($suma as $kitasuma)--}}
-                    <td class="hidden-xs text-center"><strong>Total 1.99{{--{{ $kitasuma->Final_Kaina }} --}}Eur</strong>
-                        {{--{{session(['kaina'=>$kitasuma->Final_Kaina])}}--}}
+                    @foreach($result as $resul)
+                    <td class="hidden-xs text-center"><strong>{{$resul->kr_kaina}} €</strong>
+                        {{--{{session(['kaina'=>$kitasuma->Final_Kaina])}}--}}@endforeach
                     </td>
-                    <td><a href="#" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
-                        {{--@endforeach--}}
+                    <td><a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
+
                 </tr>
                 </tfoot>
             </table>

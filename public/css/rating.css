@@ -64,3 +64,8 @@
     color: #000;
     text-shadow: 0 0 5px #09f;
 }
+
+.comment{
+    max-width: 600px;
+    margin-bottom: 10px;
+}
