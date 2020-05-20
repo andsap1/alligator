@@ -22,8 +22,10 @@ Route::post('/item/{ids}', 'ShopController@insertPrekeVertinimas')->name('insert
 Route::post('/komentaras/{id}', 'ShopController@insertPrekeKomentaras')->name('insertKomentaras');
 Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke');
 
+Route::get('/acc', 'AccController@index')->name('account');
+Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
 Auth::routes();
-
+Route::get('/signout', 'AccController@signout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 

@@ -53,6 +53,21 @@
 
 <div class="fixed-top galva">
     <p>Important! VAT. (+21%) does not apply for countries outside EU</p>
+        @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <p>{!! \Session::get('success') !!}</p>
+            </div>
+        @endif
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <p>jūsų įvedamuose duomenyse yra klaidu:</p>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+    @endif
 </div>
 
 <div class="jumbotron ">
@@ -62,7 +77,7 @@
             <img class="log" src="{{asset('images/log.png')}}" />
         </div>
         <div class="col-sm-8 ">
-            <h1 id="name">Alligator PDR tools</h1>
+            <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
             <a href="{{asset('cart')}}">
@@ -104,15 +119,15 @@
                         </form>
                     </div></li>
                 @if (Auth::guest())
-                    <li><a href="./login"><span class="glyphicon glyphicon-user"></span>Sign in</a></li>
+                    <li><a href="./login"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span> &nbsp{{ Auth::user()->name }} <span class="caret"></span> </a>
 
                         <div class="dropdown-menu" >
-{{--                           <a class="dropdown-item" href="{{ url('/logout') }}">Sign out</a>--}}
-                            <a class="dropdown-item" href="{{ action('ShopController@getCategory', Auth::user()->name)}}">Account</a>
+                            <a class="dropdown-item" href="{{ action('AccController@index')}}">Account</a>
+                            <a class="dropdown-item" href="{{ action('AccController@signout')}}">Sign out</a>
                         </div>
                     </li>
                 @endif

@@ -47,11 +47,11 @@
             justify-content: center;
             flex-direction: row;
         }
-        #name{
+        #nameAlligator{
             font-size: 32px;
         }
         @media only screen and (max-width: 500px) {
-           #name{
+           #nameAlligator{
                 font-size: unset;
             }
         }

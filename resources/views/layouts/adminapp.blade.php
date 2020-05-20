@@ -31,7 +31,7 @@
                 <img class="log" src="{{asset('images/log.png')}}" />
             </div>
             <div class="col-sm-8 ">
-                <h1 id="name">Alligator PDR tools</h1>
+                <h1 id="nameAlligator">Alligator PDR tools</h1>
             </div>
             <div class="col-sm-2 img-col">
                 <a href="{{asset('cart')}}">

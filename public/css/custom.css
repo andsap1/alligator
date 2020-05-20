@@ -82,18 +82,18 @@ footer {
     justify-content: center;
     flex-direction: row;
 }
-#name{
+#nameAlligator{
     font-size: 32px;
     margin: 0;
 }
 @media only screen and (max-width: 1200px) {
-    #name{ font-size: 26px;}
+    #nameAlligator{ font-size: 26px;}
 }
 @media only screen and (max-width: 576px) {
-    #name{ font-size: 20px;}
+    #nameAlligator{ font-size: 20px;}
 }
 @media only screen and (max-width: 460px) {
-    #name{ display: none;}
+    #nameAlligator{ display: none;}
 }
 
 .cart{
