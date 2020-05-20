@@ -34,7 +34,7 @@
                         <div class="row">
                          {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
                             <div class="col-sm-4 hidden-xs">{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}
-                                <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}"  alt="paveiksliukas {{$resul->foto}}" >
+{{--                                <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}"  alt="paveiksliukas {{$resul->foto}}" >--}}
                             </div>
                             <div class="col-sm-8">
                                 <h3 style="padding-left: 15px"> {{$resul->pavadinimas}} </h3>
