@@ -313,10 +313,6 @@ footer {
     }
 }*/
 /********************Meniu juostu*****/
-#meniu{
-
-    padding: auto;
-}
 #search{
     padding-top: 10px;
     padding-left: inherit;
@@ -326,6 +322,12 @@ footer {
     color: #fff;
     color: #86C232;
 }
+
+.activeMenu{
+
+    color: #86C232 !important;
+}
+
 @media (max-width: 766px) {
     /*paslepia meniu kai sumazini ekrana*/
     form#hide {
@@ -579,5 +581,9 @@ hr{
 
 
 
-.active { background-color: #808080; }
+.active {
+
+    text-decoration: underline;
+
+}
 #sidebar .active a{ color: #ff00b7; }
