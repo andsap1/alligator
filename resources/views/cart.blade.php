@@ -44,14 +44,16 @@
                     </td>
                     <td data-th="Price">{{$resul->kaina}} €</td>
                     <td data-th="Quantity">
-                        <input type="number" class="form-control text-center" value="1">
+                        <td data-th="Subtotal" class="text-center">{{$resul->kiekis}} €</td>
+{{--                        <input type="number" class="form-control text-center" value="1">--}}
                     </td>
+
                  {{--   @foreach($suma as $sumele)
                         <div class="order_total_title">Užsakymo kaina:</div>
                         <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
                         {{session(['kaina'=>$sumele->Final_Kaina])}}
                     @endforeach--}}
-                    <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>
+                    <td data-th="Subtotal" class="text-center">{{$resul->kiekis*$resul->kaina}} €</td>
                     <td class="actions" data-th="">
                         <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
                     </td>
