@@ -13,20 +13,13 @@ class CartController extends Controller
     public function index(){
         $allcategories=Kategorija::all();
         $item = Preke::all();
-/*        SELECT prekes_nuotrauka.pavadinimas
-FROM krepselis
-LEFT JOIN preke_krepselis
-ON krepselis.id_krepselis =preke_krepselis.fk_krepselis
-LEFT JOIN preke
-ON preke_krepselis.fk_preke=preke.id_preke
-LEFT JOIN prekes_nuotrauka
-ON preke.id_preke = prekes_nuotrauka.fk_preke*/
-
+        $kr=session('krepselis');
+//        dd($kr);
         if(session()->has('krepselis')) {
-$result=DB::table('krepselis')->leftJoin('preke_krepselis', 'id_krepselis','=','preke_krepselis.fk_krepselis')
-    ->leftJoin('preke','preke_krepselis.fk_preke','=','id_preke')
-    ->leftJoin('prekes_nuotrauka','preke.id_preke', '=', 'prekes_nuotrauka.fk_preke')
-    ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas','prekes_nuotrauka.pavadinimas as foto',DB::raw('krepselis.kaina as kr_kaina'))->get();
+            $result=DB::table('krepselis')->leftJoin('preke_krepselis', 'id_krepselis','=','preke_krepselis.fk_krepselis')
+                ->leftJoin('preke','preke_krepselis.fk_preke','=','id_preke')
+                ->leftJoin('prekes_nuotrauka','preke.id_preke', '=', 'prekes_nuotrauka.fk_preke')
+                ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas','prekes_nuotrauka.pavadinimas as foto',DB::raw('krepselis.kaina as kr_kaina'))->get();
 
 
 //            $results = DB::select('select preke.pavadinimas, preke.kaina,
