@@ -22,6 +22,38 @@
 </head>
 <body >
 
+<script>
+
+    $(function(){
+
+        var url = window.location.href;
+
+        $("#sidebar a").each(function(){
+
+            if(url== (this.href)) {
+                $(this).closest("a").addClass("active");
+            }
+
+        });
+
+    });
+    $(function(){
+
+        var url = window.location.href;
+
+        $("#navbarSide a").each(function(){
+
+            if(url== (this.href)) {
+                $(this).closest("a").addClass("active");
+            }
+
+        });
+
+    });
+
+</script>
+
+
 <div class="fixed-top galva">
     <p>Important! VAT. (+21%) does not apply for countries outside EU</p>
 </div>
@@ -116,11 +148,12 @@
     </button>
 
     <div class="bg-dark p-4">
-        <div  class="nav-item active" id="navbarSide">
+        <div  class="nav-item" id="navbarSide">
+
             <ul class="list-unstyled components"  style="margin-left: 40px;">
-                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">All products</a></li>
+                <li><a href="{{asset('shop1')}}">All products</a></li>
                 @foreach($allcategories as $category)
-                    <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+                    <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -133,9 +166,9 @@
                     <div class="bg-dark p-4">
 
                             <ul class="list-unstyled components">
-                                <li class="{{ Request::url() ==  'shop1' ? 'active' : ''  }}"><a href="{{asset('shop1')}}">All products</a></li>
+                                <li><a href="{{asset('shop1')}}">All products</a></li>
                                 @foreach($allcategories as $category)
-                                    <li class="{{ Request::url() == url('/shop1*') ? 'active' : '' }}"><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
+                                    <li><a href="{{ action('ShopController@getCategory', $category->id_kateg)}}">{{ $category->pavadinimas }}</a></li>
                                 @endforeach
                             </ul>
 
