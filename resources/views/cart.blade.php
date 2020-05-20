@@ -67,16 +67,11 @@
                 <tr>
                     <td colspan="3" class="hidden-xs"></td>
                     @foreach($result as $resul)
-
-
+                        
 
                     <td class="hidden-xs text-center"><strong>T{{$resul->kr_kaina}} €</strong>
                         @break
 
-
-
-
-                        {{--{{session(['kaina'=>$kitasuma->Final_Kaina])}}--}}
 
                     </td> @endforeach
                     <td><a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Order</a></td>
