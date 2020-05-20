@@ -25,32 +25,29 @@
 <script>
 
     $(function(){
-
         var url = window.location.href;
-
         $("#sidebar a").each(function(){
-
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
             }
-
         });
-
     });
     $(function(){
-
         var url = window.location.href;
-
         $("#navbarSide a").each(function(){
-
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
             }
-
         });
-
     });
-
+    $(function(){
+        var url = window.location.href;
+        $("#myNavbar a").each(function(){
+            if(url== (this.href)) {
+                $(this).closest("a").addClass("activeMenu");
+            }
+        });
+    });
 </script>
 
 
@@ -71,7 +68,6 @@
             <a href="{{asset('cart')}}">
             <img class="cart" src="{{asset('images/cart.png')}}"  />
             </a>
-
         </div>
     </div>
     </div>
@@ -95,8 +91,8 @@
 
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav"  id="meniu">
-                <li class="active"><a href="{{ action('ShopController@indexHome')}}">Home</a></li>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ action('ShopController@indexHome')}}/">Home</a></li>
                 <li><a href="{{ action('ShopController@index')}}">Products</a></li>
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>
