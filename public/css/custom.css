@@ -10,9 +10,6 @@ body {
 }
 a {
     color: #424242;
-    padding-right: 70%;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 a:hover{
     color: #86C232;
@@ -49,7 +46,7 @@ footer {
 }
 .jumbotron {
     margin-bottom: 0px;
-    padding: 3vh;
+    padding: 1vh;
 }
 
 @media only screen and (max-width: 600px) {
@@ -85,6 +82,7 @@ footer {
 #nameAlligator{
     font-size: 32px;
     margin: 0;
+    font-family: "Franklin Gothic Medium", fantasy;
 }
 @media only screen and (max-width: 1200px) {
     #nameAlligator{ font-size: 26px;}
@@ -133,9 +131,6 @@ footer {
     color: #474B4B;
     text-decoration: none;
     align-items: center;
-    align-items: center;
-
-
 }
 
 .item .img-wrap {

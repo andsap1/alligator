@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <style>
@@ -73,7 +74,8 @@
 <div class="jumbotron ">
     <div class="container-fluid">
     <div class="row vertical-align" >
-        <div class=" col-sm-2 img-col">
+        {{--class=" col-sm-2 img-col"--}}
+        <div >
             <img class="log" src="{{asset('images/log.png')}}" />
         </div>
         <div class="col-sm-8 ">
@@ -186,10 +188,13 @@
 
 
 <footer class="container-fluid text-center">
-    <p>Online Store Copyright</p>
-    <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign Up</button>
+    <p>Alligator-PDR Tools Copyright</p>
+    <form class="form-inline">Contact us
+        <div  style="text-align: center">
+            <span style="display: contents;" href="https://www.facebook.com/pg/aligatorpdr" class="fa fa-facebook"></span>
+            <span style="display: contents;" href="https://www.instagram.com/alligator_pdr_tools/" class="fa fa-instagram" ></span>
+        </div>
+
     </form>
 </footer>
 <script>	/*Menu-toggle*/

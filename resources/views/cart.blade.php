@@ -48,8 +48,8 @@
                         </div>
                     </td>
                     <td data-th="Price">{{$resul->kaina}} €</td>
-                    <td data-th="Quantity">
-                        <td data-th="Subtotal" class="text-center">{{$resul->kiekis}} €</td>
+                        <td data-th="Quantity" class="text-center">{{$resul->kiekis}}</td>
+                     {{--   <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>--}}
 {{--                        <input type="number" class="form-control text-center" value="1">--}}
                     </td>
 
@@ -74,7 +74,7 @@
                     @foreach($result as $resul)
 
 
-                    <td class="hidden-xs text-center"><strong>T{{$resul->kr_kaina}} €</strong>
+                    <td class="hidden-xs text-center"><strong>{{$resul->kr_kaina}} €</strong>
                         @break
 
 
