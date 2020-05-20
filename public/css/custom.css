@@ -10,9 +10,6 @@ body {
 }
 a {
     color: #424242;
-    padding-right: 70%;
-    padding-bottom: 10px;
-    padding-top: 10px;
 }
 a:hover{
     color: #86C232;
@@ -133,9 +130,6 @@ footer {
     color: #474B4B;
     text-decoration: none;
     align-items: center;
-    align-items: center;
-
-
 }
 
 .item .img-wrap {
