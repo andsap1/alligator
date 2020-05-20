@@ -10,6 +10,9 @@ body {
 }
 a {
     color: #424242;
+    padding-right: 70%;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 a:hover{
     color: #86C232;
@@ -17,6 +20,10 @@ a:hover{
 h1 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     padding-left: 30px;
+}
+h10 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-left: 25px;
 }
 footer {
     background-color: #f2f2f2;
@@ -108,6 +115,8 @@ footer {
     color: #474B4B;
     text-decoration: none;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+
+
 }
 
 .item .img-wrap {
@@ -130,6 +139,15 @@ footer {
     border-top: 1px solid #eee;
     /*height: 115px;*/
 
+}
+.item .info-wrap1 {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .item .info-wrap .title{
     text-align: center;
@@ -325,8 +343,12 @@ footer {
     display: block;
 }
 #sideNot ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #474B4B;
+    text-decoration: none;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    padding-right: 70%;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 /********/
 /*paslepta paieska suskleidus*/
@@ -390,8 +412,8 @@ footer {
 }
 /* Sidebar navigation */
 #sidebar {
-    min-width: 240px;
-    max-width: 240px;
+    min-width: 200px;
+    max-width: 200px;
     min-height: 100vh;
     margin-bottom: 20px;
     box-shadow: 1px 0 0 0 rgba(0,0,0,.16);
@@ -412,12 +434,12 @@ footer {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #000000;
+    background: #cbcbcb;
 }
 /*KAS CIA NZN*/
 #sidebar ul li.active > a, a[aria-expanded="true"] {
-    color: #fff;
+    color: #ff0101;
     background: #6d7fcc;
 }
 
@@ -444,17 +466,19 @@ footer {
 /*.nav-sidebar > li > a {*/
 /*    padding-right: 20px;*/
 /*    padding-left: 20px;*/
-/*}*/
-/*.nav-sidebar > .active > a,*/
-/*.nav-sidebar > .active > a:hover,*/
-/*.nav-sidebar > .active > a:focus {*/
-/*    color: #fff;*/
-/*    background-color: #428bca;*/
-/*}*/
+/*}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    color: #ba2525;
+    background-color: #428bca;
+}*/
+
 
 
 /*
 * Main content
+
 */
 
 .main {
@@ -531,3 +555,8 @@ hr{
 #login{
     margin-top: 20px;
 }
+
+
+
+.active { background-color: #808080; }
+#sidebar .active a{ color: #ff00b7; }
