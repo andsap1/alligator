@@ -67,9 +67,9 @@
                 <tr>
                     <td colspan="3" class="hidden-xs"></td>
                     @foreach($result as $resul)
-                        
 
-                    <td class="hidden-xs text-center"><strong>T{{$resul->kr_kaina}} €</strong>
+
+                    <td class="hidden-xs text-center"><strong>{{$resul->kr_kaina}} €</strong>
                         @break
 
 
