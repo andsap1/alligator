@@ -23,7 +23,8 @@ h1 {
 }
 h10 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    padding-left: 25px;
+    text-align: center;
+
 }
 footer {
     background-color: #f2f2f2;
@@ -114,7 +115,8 @@ footer {
 .item a:hover{
     color: #474B4B;
     text-decoration: none;
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
+    align-items: center;
+    align-items: center;
 
 
 }
@@ -140,15 +142,7 @@ footer {
     /*height: 115px;*/
 
 }
-.item .info-wrap1 {
-    overflow: hidden;
-    border-top: 1px solid #eee;
 
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
 .item .info-wrap .title{
     text-align: center;
     overflow: hidden;
@@ -412,8 +406,8 @@ footer {
 }
 /* Sidebar navigation */
 #sidebar {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 240px;
+    max-width: 240px;
     min-height: 100vh;
     margin-bottom: 20px;
     box-shadow: 1px 0 0 0 rgba(0,0,0,.16);
