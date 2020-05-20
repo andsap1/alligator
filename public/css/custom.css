@@ -14,6 +14,23 @@ a {
 a:hover{
     color: #86C232;
 }
+
+a:active{
+    color: red;
+}
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
 h1 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     padding-left: 30px;
