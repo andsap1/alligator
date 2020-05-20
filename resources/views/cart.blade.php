@@ -29,12 +29,16 @@
                 </thead>
                 <tbody>
                 <tr>
+                    <h4 style="padding-left: 15px">{{$kr}} </h4>
                     @foreach($result as $resul)
+{{--                        @foreach($mainphoto as $ph)--}}
                     <td data-th="Product">
                         <div class="row">
                          {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
                             <div class="col-sm-4 hidden-xs">{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}
-                               <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $resul->foto . '.jpg'}}" alt="paveiksliukas {{$resul->foto}}" >
+{{--                             @if($resul->fk_preke == $ph->fk_preke)--}}
+{{--                               <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}" alt="paveiksliukas " >--}}
+{{--                           @endif--}}
                             </div>
                             <div class="col-sm-8">
 
@@ -60,6 +64,7 @@
                     </td>
 
                 </tr>
+{{--                @endforeach--}}
                 @endforeach
                 </tbody>
                 <tfoot>
