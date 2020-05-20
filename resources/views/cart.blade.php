@@ -48,8 +48,8 @@
                         </div>
                     </td>
                     <td data-th="Price">{{$resul->kaina}} €</td>
-                    <td data-th="Quantity">
-                        <td data-th="Subtotal" class="text-center">{{$resul->kiekis}} €</td>
+                        <td data-th="Quantity" class="text-center">{{$resul->kiekis}}</td>
+                     {{--   <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>--}}
 {{--                        <input type="number" class="form-control text-center" value="1">--}}
                     </td>
 
