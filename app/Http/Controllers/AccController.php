@@ -52,9 +52,18 @@ class AccController extends Controller
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         } else {
-            $data = User::where('id', '=', $userId)->update([
-                'name'=>$request->input('name'),
-                   'email' =>$request->input('email')
+            if($request->input('password')!=null || $request->input('password2') !=null) {
+                $data = User::where('id', '=', $userId)->update([
+                    'name'=>$request->input('name'),
+                    'email' =>$request->input('email'),
+                    'password' => Hash::make($request->input('password'))
+                ]);
+                return Redirect::back()->with('success', 'Pakeista');
+            }
+            else{
+                $data = User::where('id', '=', $userId)->update([
+                    'name'=>$request->input('name'),
+                    'email' =>$request->input('email')
                 ]);
 //            $slapt = $request->input('password');
 //            $slapt1 = $request->input('password2');
@@ -65,8 +74,9 @@ class AccController extends Controller
 //            } else {
 //                return Redirect::back()->withErrors('slaptazodziai nesutampa');
 //            }
-            /*return redirect()->route('user.index')->withStatus(__('User successfully updated.'));*/
-            return Redirect::back()->with('success', 'Pakeista');
+                /*return redirect()->route('user.index')->withStatus(__('User successfully updated.'));*/
+                return Redirect::back()->with('success', 'Pakeista');
+            }
         }
     }
     public function signout(){
