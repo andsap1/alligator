@@ -43,3 +43,7 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/users', 'AdminController@users')->name('users');
 Route::get('/product', 'AdminController@product')->name('product');
 Route::get('/orders', 'AdminController@orders')->name('orders');
+Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser');
+Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
+Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('useredit');
+Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
