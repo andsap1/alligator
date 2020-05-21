@@ -1,28 +1,9 @@
 <section class="text-center">
-<<<<<<< HEAD
 
     <div class="col-md-4">
     <div class="card item">
             <a href="/alligator/public/shop1/1" class="text-body">
                 </br>
-=======
-    <div class="col-md-4">
-    <div class="card item">
-        <a href="/alligator/public/shop1" >
-{{--            <i class="fa fa-tachometer fa-4x "></i></br>--}}
-            <br>
-            <h10>Visos prekės</h10>
-            <div class="img-wrap">
-                <img src="http://placehold.it/299x299">
-            </div>
-        </a>
-    </div>
-    </div>
-    <div class="col-md-4">
-    <div class="card item">
-            <a href="/alligator/public/shop1/1" >
-                <br>
->>>>>>> 5c34cff69406ec3b233eeeebfd73cf32f4530982
                 <h10>Doors tools</h10>
             <div class="img-wrap">
                 <img src="{{ asset('/images/item1.jpg')}}">
@@ -32,11 +13,8 @@
     </div>
     <div class="col-md-4">
     <div class="card item">
-<<<<<<< HEAD
         <a href="/alligator/public/shop1/2" class="text-body">
             </br>
-=======
->>>>>>> 5c34cff69406ec3b233eeeebfd73cf32f4530982
             <h10>Whale tails</h10>
             <div class="img-wrap">
                 <img src="{{ asset('/images/28 (1).jpg')}}">
