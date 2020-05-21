@@ -583,8 +583,7 @@ hr{
 
 }
 #sidebar .active a{ color: #ff00b7; }
-<<<<<<< HEAD
-            /* elementu numeracijai*/
+/* elementu numeracijai*/
         body {
             counter-reset: elementas;
         }
@@ -594,16 +593,3 @@ hr{
     counter-increment: elementas;
     content: counter(elementas) ".   ";
 }
-
-=======
-/* elementu numeracijai*/
-body {
-    counter-reset: elementas;
-}
-
-#countas::before {
-    font-size: 15pt;
-    counter-increment: elementas;
-    content: counter(elementas) ".   ";
-}
->>>>>>> 5c34cff69406ec3b233eeeebfd73cf32f4530982

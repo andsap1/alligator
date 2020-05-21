@@ -47,13 +47,12 @@
                                 <span for="kiekis">Quantity:</span>
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
-<<<<<<< HEAD
-                            <select name="preke" hidden>
-                                <option value="{{$item->id_preke}}">
+
+                            {{--                      <select name="preke" hidden>
+                                                      <option value="{{$item->id_preke}}">
                                 </option>
-                            </select>
-=======
->>>>>>> 5c34cff69406ec3b233eeeebfd73cf32f4530982
+                          </select>--}}
+
                         </div>
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
