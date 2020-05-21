@@ -30,19 +30,14 @@
         $("#sidebar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
+                $("#products").addClass("activeMenu");
             }
         });
-    });
-    $(function(){
-        var url = window.location.href;
         $("#navbarSide a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
             }
         });
-    });
-    $(function(){
-        var url = window.location.href;
         $("#myNavbar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("activeMenu");
@@ -61,7 +56,7 @@
         @endif
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <p>There is a problem with data:</p>
+                <p>jūsų įvedamuose duomenyse yra klaidu:</p>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -82,15 +77,9 @@
             <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
-            @if (Auth::guest())
-                <a href="login">
-                    <img class="cart" src="{{asset('images/cart.png')}}"  />
-                </a>
-            @else
-                <a href="{{asset('cart')}}">
-                    <img class="cart" src="{{asset('images/cart.png')}}"  />
-                </a>
-            @endif
+            <a href="{{asset('cart')}}">
+            <img class="cart" src="{{asset('images/cart.png')}}"  />
+            </a>
         </div>
     </div>
     </div>
@@ -116,7 +105,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="{{ action('ShopController@indexHome')}}/">Home</a></li>
-                <li><a href="{{ action('ShopController@index')}}">Products</a></li>
+                <li><a id="products" href="{{ action('ShopController@index')}}">Products</a></li>
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -127,10 +116,10 @@
                         </form>
                     </div></li>
                 @if (Auth::guest())
-                    <li><a href="{{asset('login')}}"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
+                    <li><a href="./login"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-foggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span> &nbsp{{ Auth::user()->name }} <span class="caret"></span> </a>
 
                         <div class="dropdown-menu" >

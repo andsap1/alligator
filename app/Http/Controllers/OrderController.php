@@ -4,10 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Kategorija;
-use App\Nuotrauka;
 use App\Preke;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {
@@ -15,6 +13,7 @@ class OrderController extends Controller
         $allcategories=Kategorija::all();
         $items = Preke::all();
         $cate='null';
+
         $kr=session('krepselis');
 //        dd($kr);
         if(session()->has('krepselis')) {
@@ -81,5 +80,9 @@ class OrderController extends Controller
 //            return Redirect::to('/automobiliai')->with('success', 'Automobilis pridėtas');
 //      //  }
     //}
+
+      //  return view('order', compact('allcategories','items','cate'));
+   // }
+
 
 }

@@ -321,6 +321,7 @@ footer {
 .activeMenu{
 
     color: #86C232 !important;
+    font-weight: bold;
 }
 
 @media (max-width: 766px) {
@@ -580,16 +581,12 @@ hr{
 .active {
 
     text-decoration: underline;
+    font-weight: bold;
 
 }
 #sidebar .active a{ color: #ff00b7; }
 /* elementu numeracijai*/
-body {
-    counter-reset: elementas;
-}
+        body {
+            counter-reset: elementas;
+        }
 
-#countas::before {
-    font-size: 15pt;
-    counter-increment: elementas;
-    content: counter(elementas) ".   ";
-}

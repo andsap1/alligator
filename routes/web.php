@@ -32,7 +32,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/view', 'ViewController@index')->name('view');
 Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
 Route::get('/email', 'EmailController@index')->name('email');
 Route::post('send','EmailController@send')->name('send');
@@ -44,3 +43,7 @@ Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/users', 'AdminController@users')->name('users');
 Route::get('/product', 'AdminController@product')->name('product');
 Route::get('/orders', 'AdminController@orders')->name('orders');
+Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser');
+Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
+Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('useredit');
+Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
