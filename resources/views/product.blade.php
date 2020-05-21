@@ -14,6 +14,9 @@
                     <th style="width:10%;border-bottom: 10px;">Length</th>
                     <th style="width:10%;border-bottom: 10px;">Diameter</th>
                     <th style="width:10%;border-bottom: 10px;">Category</th>
+                </tr>
+                </thead>
+                <tbody>
             @foreach($allPro as $asPro)
                 <tr>
                     <td>{{ $asPro->id_preke }}</td>
@@ -32,8 +35,8 @@
                             </svg></button></td>
                 </tr>
             @endforeach
-                </tr>
-                </thead>
+            </tbody>
+
             </table>
         </div>
     </div>

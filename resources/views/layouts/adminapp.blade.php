@@ -67,12 +67,12 @@
 
          </div>
         <ul class="nav navbar-nav">
-            <li><a>Admin</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbspAdmin</a></li>
         </ul>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
 
-                   <li> <a href="{{ action('AccController@signout')}}">Sing out </a></li>
+                   <li> <a href="{{ action('AccController@signout')}}">Sign out </a></li>
             </ul>
      </div>
     </div>

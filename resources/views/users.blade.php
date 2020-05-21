@@ -2,18 +2,19 @@
 
 @section('turinys')
 
-    <div class="main-body-content w-100 ets-pt">
-        <div class="table-responsive bg-light">
-            <table class="table">
+    <div class="container" id="cart_sonas">
+        <div class="col-lg-10 offset-lg-1">
+            <table id="cart" class="table table-hover table-condensed" >
+                <thead>
                 <tr>
                     <th style="width:15%;border-bottom: 10px;">ID</th>
                     <th style="width:20%;border-bottom: 10px;">Name</th>
                     <th style="width:30%;border-bottom: 10px;">Email</th>
-
                     <th style="width:5%"></th>
                     <th style="width:5%"></th>
                 </tr>
-
+                </thead>
+                <tbody>
                 @foreach($allNaud as $asNaud)
                     <tr>
                     <td>{{ $asNaud->id }}</td>
@@ -27,10 +28,8 @@
                                 <path fill-rule="evenodd" d="M2 0a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V2a2 2 0 00-2-2H2zm9.854 4.854a.5.5 0 00-.708-.708L8 7.293 4.854 4.146a.5.5 0 10-.708.708L7.293 8l-3.147 3.146a.5.5 0 00.708.708L8 8.707l3.146 3.147a.5.5 0 00.708-.708L8.707 8l3.147-3.146z" clip-rule="evenodd"/>
                                 </svg></button></a></td>
                     </tr>
-                    {{--<a class="btn custom-btn2" onclick="return confirm('Ar tikrai norite istrinti si autoriu?')" href="{{route('deleteAutoriai', $asAut->id)}}" >
-                        <span>Pašalinti</span>
-                    </a>--}}
                 @endforeach
+                </tbody>
             </table>
         </div>
     </div>
