@@ -2,7 +2,9 @@
 
 @section('turinys')
     <div>
-        <div class="col-lg-10 offset-lg-1">
+        <div class="col-lg-10 offset-lg-1" style="margin-left: 100px;">
+            <table id="cart" class="table table-hover table-condensed" >
+            <div class="form-group col-sm-7">
             <div class="container-fuild">
                 <h1 id="antraste">Your order
                     <span class="kaina" style="color:black">
@@ -11,27 +13,26 @@
                 </h1>
                 <hr>
                 <div class="products">
-                    {{--@foreach($visosprekes as $prekes)--}}
+                    @foreach($result as $res)
                     <div class="prekes_eilute">
-                        <span class="kaina">$200</span>
-                        <p class="item-name">Product 1</p>
-                        <p class="item-description">Lorem ipsum dolor sit amet</p>
+                        <span class="kaina" style="font-size: 12pt">{{$res->kiekis*$res->kaina}} €</span>
+                        <h4 class="item-name" id="countas" {{--style="text-decoration: underline;"--}}>{{$res->pavadinimas}}</h4>
+
                     </div>
-                    {{--      @endforeach--}}
-                    <div class="prekes_eilute">
-                        <span class="kaina">$120</span>
-                        <p class="item-name">Product 2</p>
-                        <p class="item-description">Lorem ipsum dolor sit amet</p>
-                    </div>
-                    {{--@foreach($suma as $kainusuma)--}}
-                    <div class="total">Total<span class="kaina">$320</span></div>
-                    {{--      @endforeach--}}
+                          @endforeach
+
+                    @foreach($result as $kaina)
+                    <h2 class="total" style="text-align: end">Total &nbsp;<span class="kaina">{{$kaina->kr_kaina}} €</span></h2>
+                        @break
+                         @endforeach
                 </div>
                 <hr>
 
-            </div>
+            </div></div>
             <div class="container-fuild">
-            <h3 class="title">Info details</h3>
+                <div class="form-group col-sm-7">
+            <h3 id="antraste">Info details</h3>
+                </div>
             <div class="row">
                 <div class="form-group col-sm-7">
                     <label for="adresas">Adress</label>
@@ -68,8 +69,12 @@
                     <button type="submit"class="btn" id="mygtukas" >Order</button>
                 </div>
             </div>
+            </div>
+            </table>
         </div>
         </div>
+
+
     </div>
 
     @endsection

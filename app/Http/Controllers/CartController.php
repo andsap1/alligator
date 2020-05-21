@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Kategorija;
 use App\Nuotrauka;
 use App\Preke;
+use App\PrekeKrepselis;
+use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class CartController extends Controller
 {
@@ -17,13 +20,16 @@ class CartController extends Controller
         $kr=session('krepselis');
 //        dd($kr);
         if(session()->has('krepselis')) {
-            $result=DB::table('krepselis')->where('krepselis.id_krepselis','=',$kr)->leftJoin('preke_krepselis', 'id_krepselis','=','preke_krepselis.fk_krepselis')
+            $result=DB::table('krepselis')->where('krepselis.id_krepselis','=',$kr)->leftJoin('preke_krepselis',
+                'id_krepselis','=','preke_krepselis.fk_krepselis')
                 ->leftJoin('preke','preke_krepselis.fk_preke','=','id_preke')
                 ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas',DB::raw('krepselis.kaina as kr_kaina'))->get();
-//          foreach($result as $rs){
-//              $mainphoto=Nuotrauka::where('fk_preke','=',$rs->fk_preke)->get();
-////              dd($mainphoto);
-//          }
+          foreach($result as $rs){
+            $mainphoto=Nuotrauka::where('fk_preke','=',$rs->fk_preke)->get();
+//              $rs=Nuotrauka::where('fk_preke','=','fk_preke')->first();
+//              dd($mainphoto);
+//              dd($rs);
+          }
 //
 //            dd($mainphoto);
 //            dd($result);
@@ -44,8 +50,14 @@ class CartController extends Controller
 //        }else {
 //            return redirect(route('main'));
         }
-
         return view('cart', compact('allcategories','result', 'kr','mainphoto'));
     }
 
+        public function deletePreke($id)
+            {
+
+       PrekeKrepselis::where('id_Tarpine','=',$id)->delete();
+       return Redirect::to('/cart')->with('success', 'Item deleted');
+
+        }
 }

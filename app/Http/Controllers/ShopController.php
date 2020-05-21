@@ -22,6 +22,7 @@ class ShopController extends Controller
 
         return view('home', compact('allcategories'));
     }
+
     public function index(){
         $allcategories=Kategorija::all();
         $items = Preke::all();

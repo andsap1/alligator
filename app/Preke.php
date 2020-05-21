@@ -17,4 +17,5 @@ class Preke extends Model
 //    {
 //        return $this->belongsTo('App\Kategorija', 'fk_id_Prekes_kategorija');
 //    }
+
 }
