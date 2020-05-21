@@ -20,21 +20,10 @@
     <style>
 
     </style>
-
 </head>
 
 <body>
-<script>
 
-    $(function(){
-        var url = window.location.href;
-        $("#sidebaradmin a").each(function(){
-            if(url== (this.href)) {
-                $(this).closest("a").addClass("active");
-            }
-        });
-    });
-</script>
 <div class="jumbotron ">
     <div class="container-fluid">
         <div class="row vertical-align" >
@@ -66,16 +55,14 @@
              </button>
 
          </div>
-        <ul class="nav navbar-nav">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbspAdmin</a></li>
-        </ul>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
+         <div class="collapse navbar-collapse" id="myNavbar">
 
-                   <li> <a href="{{ action('AccController@signout')}}">Sing out </a></li>
-            </ul>
+             <ul class="nav navbar-nav navbar-right">
+                 <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+             </ul>
+         </div>
+
      </div>
-    </div>
 
  </nav>
 <div class="wrapper">
@@ -102,7 +89,7 @@
     <p>Online Store Copyright</p>
     <form class="form-inline">Get deals:
         <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign In</button>
+        <button type="button" class="btn btn-danger">Sign Up</button>
     </form>
 </footer>
 <script>	/*Menu-toggle*/
