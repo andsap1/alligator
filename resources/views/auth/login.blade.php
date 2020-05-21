@@ -63,9 +63,9 @@
                         </div>
 
                         <div class="form-group row">
-
                             <div class="col-lg-8 col-md-6 offset-lg-8 offset-md-4" style="text-align: end">
                                 <div class="form-check">
+                                    <a href="{{asset('register')}}">Don't have account?</a>
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
