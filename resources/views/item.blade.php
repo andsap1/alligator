@@ -121,10 +121,10 @@
     <form method="POST" action="{{ Route('insertKomentaras', $item->id_preke) }}" class="comment_form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Vardas">
-        <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Rašyti komentarą"></textarea>
+        <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Name">
+        <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Write comment"></textarea>
         <br>
-        <button type="submit" class="btn btn-primary" id="green_btn">Pateikti</button>
+        <button type="submit" class="btn btn-primary" id="green_btn">Publish</button>
     </form>
 </div>
 </div>

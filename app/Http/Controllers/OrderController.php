@@ -26,8 +26,8 @@ class OrderController extends Controller
         }
         return view('order', compact('allcategories','result', 'kr'));
     }
-    public function insertOrd(Request $request){
-        $userId = Auth::id();
+    // public function insertOrd(Request $request){
+       // $userId = Auth::id();
       /*  $suma = DB::select( DB::raw("SELECT krepselis.Kaina as Final_Kaina, krepselis.id_Krepselis as
        IDD FROM (SELECT MAX(id_Krepselis) as lll FROM krepselis) a LEFT JOIN pasirinktos_prekes
       on a.lll=pasirinktos_prekes.fk_krepselio_id LEFT JOIN preke on pasirinktos_prekes.fk_prekes_id = preke.id_Preke
@@ -79,7 +79,7 @@ class OrderController extends Controller
 //                $allAuto->save();
 //            }
 //            return Redirect::to('/automobiliai')->with('success', 'Automobilis pridėtas');
-//        }
-    }
+//      //  }
+    //}
 
 }
