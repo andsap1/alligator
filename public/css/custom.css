@@ -321,6 +321,7 @@ footer {
 .activeMenu{
 
     color: #86C232 !important;
+    font-weight: bold;
 }
 
 @media (max-width: 766px) {
@@ -580,6 +581,7 @@ hr{
 .active {
 
     text-decoration: underline;
+    font-weight: bold;
 
 }
 #sidebar .active a{ color: #ff00b7; }
