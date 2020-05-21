@@ -82,15 +82,15 @@
             <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
-{{--            @if (Auth::guest())--}}
-{{--                <a href="login">--}}
-{{--                    <img class="cart" src="{{asset('images/cart.png')}}"  />--}}
-{{--                </a>--}}
-{{--            @else--}}
+            @if (Auth::guest())
+                <a href="login">
+                    <img class="cart" src="{{asset('images/cart.png')}}"  />
+                </a>
+            @else
                 <a href="{{asset('cart')}}">
                     <img class="cart" src="{{asset('images/cart.png')}}"  />
                 </a>
-{{--            @endif--}}
+            @endif
         </div>
     </div>
     </div>
