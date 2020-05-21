@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Kategorija;
 use App\Preke;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class OrderController extends Controller
 {

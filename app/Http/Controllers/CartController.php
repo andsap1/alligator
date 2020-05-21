@@ -8,6 +8,9 @@ use App\Nuotrauka;
 use App\Preke;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use App\PrekeKrepselis;
+use Illuminate\Database\QueryException;
 
 class CartController extends Controller
 {
@@ -46,6 +49,13 @@ class CartController extends Controller
         }
 
         return view('cart', compact('allcategories','result', 'kr','mainphoto'));
+    }
+    public function deletePreke($id)
+    {
+
+        PrekeKrepselis::where('id_Tarpine','=',$id)->delete();
+        return Redirect::to('/cart')->with('success', 'Item deleted');
+
     }
 
 }

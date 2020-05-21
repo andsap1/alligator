@@ -30,14 +30,19 @@
         $("#sidebar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
-                $("#products").addClass("activeMenu");
             }
         });
+    });
+    $(function(){
+        var url = window.location.href;
         $("#navbarSide a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
             }
         });
+    });
+    $(function(){
+        var url = window.location.href;
         $("#myNavbar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("activeMenu");
@@ -105,7 +110,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="{{ action('ShopController@indexHome')}}/">Home</a></li>
-                <li><a id="products" href="{{ action('ShopController@index')}}">Products</a></li>
+                <li><a href="{{ action('ShopController@index')}}">Products</a></li>
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">

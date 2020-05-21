@@ -67,7 +67,7 @@
 
          </div>
         <ul class="nav navbar-nav">
-            <li><a>Admin</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbspAdmin</a></li>
         </ul>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">

@@ -48,7 +48,7 @@
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
 
-                            <select name="preke">
+                            <select name="preke" style="visibility: hidden">
                                 <option value="{{$item->id_preke}}">
                                 </option>
                             </select>
