@@ -48,10 +48,7 @@
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
 
-                            <select name="preke">
-                                <option value="{{$item->id_preke}}">
-                                </option>
-                            </select>
+                           
                         </div>
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
