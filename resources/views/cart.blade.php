@@ -31,39 +31,40 @@
                 <tr>
                     <h4 style="padding-left: 15px">{{$kr}} </h4>
                     @foreach($result as $resul)
-
+{{--                        @foreach($mainphoto as $ph)--}}
                     <td data-th="Product">
                         <div class="row">
                          {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
-                          {{--  @foreach($mainphoto as $ph)
-                            <div class="col-sm-4 hidden-xs">--}}{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}{{--
-                            @if($resul->fk_preke == $ph->fk_preke)
---}}{{--                             <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}" alt="paveiksliukas {{$ph->pavadinimas}}" >--}}{{--
-                          @endif  @break
+                            <div class="col-sm-4 hidden-xs">{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}
+{{--                             @if($resul->fk_preke == $ph->fk_preke)--}}
+{{--                               <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}" alt="paveiksliukas " >--}}
+{{--                           @endif--}}
                             </div>
-
-                                @endforeach--}}
                             <div class="col-sm-8">
 
-                                <h4 style="padding-left: 15px" id="countas"> &nbsp {{$resul->pavadinimas}} </h4>
+                                <h4 style="padding-left: 15px">{{$resul->pavadinimas}} </h4>
 
                             </div>
                         </div>
                     </td>
                     <td data-th="Price">{{$resul->kaina}} €</td>
                         <td data-th="Quantity" class="text-center">{{$resul->kiekis}}</td>
+                     {{--   <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>--}}
+{{--                        <input type="number" class="form-control text-center" value="1">--}}
+                    </td>
 
-
-
-                    <td data-th="Subtotal" class="text-center" >{{$resul->kiekis*$resul->kaina}} €</td>
-                    <td> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
-                        href="{{route('deletePreke', $resul->id_Tarpine)}}" >
+                 {{--   @foreach($suma as $sumele)
+                        <div class="order_total_title">Užsakymo kaina:</div>
+                        <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
+                        {{session(['kaina'=>$sumele->Final_Kaina])}}
+                    @endforeach--}}
+                    <td data-th="Subtotal" class="text-center">{{$resul->kiekis*$resul->kaina}} €</td>
+                    <td class="actions" data-th="">
                         <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
-                        </a>
                     </td>
 
                 </tr>
-
+{{--                @endforeach--}}
                 @endforeach
                 </tbody>
                 <tfoot>
