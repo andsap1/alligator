@@ -561,7 +561,6 @@ hr{
     float: right;
     font-weight: 600;
     font-size: 0.9em;
-
 }
 /******kai mazini email langa********/
 @media (max-width: 1200px) {
@@ -583,6 +582,7 @@ hr{
 
 }
 #sidebar .active a{ color: #ff00b7; }
+<<<<<<< HEAD
 /* elementu numeracijai*/
         body {
             counter-reset: elementas;
@@ -593,3 +593,5 @@ hr{
     counter-increment: elementas;
     content: counter(elementas) ".   ";
 }
+=======
+>>>>>>> parent of af3908b... pokyciai
