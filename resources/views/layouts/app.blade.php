@@ -61,7 +61,7 @@
         @endif
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <p>jūsų įvedamuose duomenyse yra klaidu:</p>
+                <p>There is a problem with data:</p>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -82,9 +82,15 @@
             <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
-            <a href="{{asset('cart')}}">
-            <img class="cart" src="{{asset('images/cart.png')}}"  />
-            </a>
+            @if (Auth::guest())
+                <a href="login">
+                    <img class="cart" src="{{asset('images/cart.png')}}"  />
+                </a>
+            @else
+                <a href="{{asset('cart')}}">
+                    <img class="cart" src="{{asset('images/cart.png')}}"  />
+                </a>
+            @endif
         </div>
     </div>
     </div>
