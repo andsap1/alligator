@@ -49,9 +49,7 @@ footer {
     padding: 1vh;
 }
 
-@media only screen and (max-width: 600px) {
-    .galva {background: red;}
-}
+
 
 .img-col{
     /*margin: auto 3%;*/
@@ -561,6 +559,7 @@ hr{
     float: right;
     font-weight: 600;
     font-size: 0.9em;
+
 }
 /******kai mazini email langa********/
 @media (max-width: 1200px) {
@@ -582,3 +581,15 @@ hr{
 
 }
 #sidebar .active a{ color: #ff00b7; }
+/* elementu numeracijai*/
+
+
+body {
+    counter-reset: elementas;
+}
+
+#countas::before {
+    font-size: 15pt;
+    counter-increment: elementas;
+    content: counter(elementas) ".   ";
+}

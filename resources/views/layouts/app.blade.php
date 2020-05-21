@@ -61,7 +61,7 @@
         @endif
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <p>There is a problem with data:</p>
+                <p>jūsų įvedamuose duomenyse yra klaidu:</p>
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -82,15 +82,9 @@
             <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
-            @if (Auth::guest())
-                <a href="login">
-                    <img class="cart" src="{{asset('images/cart.png')}}"  />
-                </a>
-            @else
-                <a href="{{asset('cart')}}">
-                    <img class="cart" src="{{asset('images/cart.png')}}"  />
-                </a>
-            @endif
+            <a href="{{asset('cart')}}">
+            <img class="cart" src="{{asset('images/cart.png')}}"  />
+            </a>
         </div>
     </div>
     </div>
@@ -127,10 +121,10 @@
                         </form>
                     </div></li>
                 @if (Auth::guest())
-                    <li><a href="{{asset('login')}}"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
+                    <li><a href="./login"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a href="#" class="dropdown-foggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span> &nbsp{{ Auth::user()->name }} <span class="caret"></span> </a>
 
                         <div class="dropdown-menu" >
@@ -197,8 +191,9 @@
     <p>Alligator-PDR Tools Copyright</p>
     <form class="form-inline">Contact us
         <div  style="text-align: center">
-            <span style="display: contents;" href="https://www.facebook.com/pg/aligatorpdr" class="fa fa-facebook"></span>
-            <span style="display: contents;" href="https://www.instagram.com/alligator_pdr_tools/" class="fa fa-instagram" ></span>
+            <a style="display: contents;" class="fa fa-envelope" href ="{{asset('email')}}"></a>
+            <a style="display: contents;" class="fa fa-facebook" href ="https://www.facebook.com/pg/aligatorpdr"></a>
+            <a style="display: contents;"  class="fa fa-instagram" href ="https://www.instagram.com/alligator_pdr_tools/"></a>
         </div>
 
     </form>

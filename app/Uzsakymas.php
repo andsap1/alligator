@@ -12,5 +12,7 @@ class Uzsakymas extends Model
 
     protected $fillable = ['Busena','Data','fk_id_Klientas',
         'fk_id_krepselis', 'fk_id_apmokejimas'];
+   /* protected $fillable = ['adresas','vardas','pavarde',
+        'data','fk_id_krepselis', 'fk_id_apmokejimas'];*/
 
 }
