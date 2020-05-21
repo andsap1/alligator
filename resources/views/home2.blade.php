@@ -2,8 +2,8 @@
 
     <div class="col-md-4">
     <div class="card item">
-            <a href="/alligator/public/shop1/1" >
-                <br>
+            <a href="/alligator/public/shop1/1" class="text-body">
+                </br>
                 <h10>Doors tools</h10>
             <div class="img-wrap">
                 <img src="{{ asset('/images/item1.jpg')}}">
@@ -14,7 +14,7 @@
     <div class="col-md-4">
     <div class="card item">
         <a href="/alligator/public/shop1/2" class="text-body">
-            </br>
+        </br>
             <h10>Whale tails</h10>
             <div class="img-wrap">
                 <img src="{{ asset('/images/28 (1).jpg')}}">
