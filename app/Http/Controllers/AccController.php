@@ -36,37 +36,40 @@ class AccController extends Controller
         $validator = Validator::make(
             [
                 'name' => $request->input('name'),
-                'email' => $request->input('email')
-//                'password' => $request->input('password'),
-//                'password2' => $request->input('password_confirmation')
+                'email' => $request->input('email'),
+                'password' => $request->input('password'),
+                'password2' => $request->input('password_confirmation')
 
             ],
             [
                 'name' => 'required',
-                'email' => 'required|max:30'
-//                'password' => 'max:8',
-//                'password2' => 'max:8'
+                'email' => 'required|max:30',
+                'password' => 'max:8',
+                'password2' => 'max:8'
             ]
         );
 
         if ($validator->fails()) {
             return Redirect::back()->withErrors($validator);
         } else {
-            $data = User::where('id', '=', $userId)->update([
-                'name'=>$request->input('name'),
-                   'email' =>$request->input('email')
+            if($request->input('password')!=null && $request->input('password_confirmation') !=null) {
+                $data = User::where('id', '=', $userId)->update([
+                    'name'=>$request->input('name'),
+                    'email' =>$request->input('email'),
+                    'password' => Hash::make($request->input('password'))
                 ]);
-//            $slapt = $request->input('password');
-//            $slapt1 = $request->input('password2');
-//            if ($slapt == $slapt1) {
-//                $data = User::where('user', '=', $userId)->update([
-//                    'password' => Hash::make($request->input('password'))
-//                ]);
-//            } else {
-//                return Redirect::back()->withErrors('slaptazodziai nesutampa');
-//            }
-            /*return redirect()->route('user.index')->withStatus(__('User successfully updated.'));*/
-            return Redirect::back()->with('success', 'Pakeista');
+                return Redirect::back()->with('success', 'Pakeista');
+            }
+            else{
+                $data = User::where('id', '=', $userId)->update([
+                    'name'=>$request->input('name'),
+                    'email' =>$request->input('email')
+                ]);
+
+                return Redirect::back()->with('success', 'Pakeista');
+            }
+
+
         }
     }
     public function signout(){

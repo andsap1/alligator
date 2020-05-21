@@ -30,14 +30,19 @@
         $("#sidebar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
-                $("#products").addClass("activeMenu");
             }
         });
+    });
+    $(function(){
+        var url = window.location.href;
         $("#navbarSide a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("active");
             }
         });
+    });
+    $(function(){
+        var url = window.location.href;
         $("#myNavbar a").each(function(){
             if(url== (this.href)) {
                 $(this).closest("a").addClass("activeMenu");
@@ -105,7 +110,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="{{ action('ShopController@indexHome')}}/">Home</a></li>
-                <li><a id="products" href="{{ action('ShopController@index')}}">Products</a></li>
+                <li><a href="{{ action('ShopController@index')}}">Products</a></li>
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -186,8 +191,9 @@
     <p>Alligator-PDR Tools Copyright</p>
     <form class="form-inline">Contact us
         <div  style="text-align: center">
-            <span style="display: contents;" href="https://www.facebook.com/pg/aligatorpdr" class="fa fa-facebook"></span>
-            <span style="display: contents;" href="https://www.instagram.com/alligator_pdr_tools/" class="fa fa-instagram" ></span>
+            <a style="display: contents;" class="fa fa-envelope" href ="{{asset('email')}}"></a>
+            <a style="display: contents;" class="fa fa-facebook" href ="https://www.facebook.com/pg/aligatorpdr"></a>
+            <a style="display: contents;"  class="fa fa-instagram" href ="https://www.instagram.com/alligator_pdr_tools/"></a>
         </div>
 
     </form>
