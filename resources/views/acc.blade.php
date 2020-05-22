@@ -9,7 +9,8 @@
                     <form class="form" method="POST" action="{{ Route('confirmEditAcc',  Auth::user()->id)}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                          <div  class="container-fluid" id="laisko_krastai">
-
+                             <h4>User details</h4>
+                             <hr>
                              <div class="form-group row">
                                  <label for="email" class="col-lg-2 control-label">Your email:</label>
                                  <div class="col-lg-6">
@@ -22,30 +23,23 @@
                                      <input id="name" class="form-control" type="text" name="name" value="{{$user->name}}" required>
                                  </div>
                              </div>
-
-<<<<<<< HEAD
+                             <br>
+                             <h4>Change password</h4>
+                             <hr>
+                             <div class="form-group row">
+                                 <label for="password" class="col-lg-2 control-label">New password</label>
+                                 <div class="col-lg-6">
+                                     <input id="password" type="password" class="form-control" name="password"  min="8">
+                                 </div>
+                             </div>
+                             <div class="form-group row">
+                                 <label for="password-confirm" class="col-lg-2 control-label">Confirm Password</label>
                                  <div class="col-lg-6">
                                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" min="8" >
                                  </div>
 
                              </div>
-=======
-{{--                             <div class="form-group row">--}}
-{{--                                 <label for="password" class="col-lg-2 control-label">New password</label>--}}
-{{--                                 <div class="col-lg-6">--}}
-{{--                                     <input id="password" type="password" class="form-control" name="password"  min="8">--}}
-{{--                                 </div>--}}
-{{--                             </div>--}}
-{{--                             <div class="form-group row">--}}
-{{--                                 <label for="password-confirm" class="col-lg-2 control-label">Confirm Password</label>--}}
 
-{{--                                 <div class="col-lg-6">--}}
-{{--                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" min="8" >--}}
-{{--                                 </div>--}}
-{{--                             </div>--}}
->>>>>>> d9387f8d24cc3c9b353767e39efca2a71540232d
-{{--                        <label  for="elpastas"><b>Your email</b></label>--}}
-{{--                        <input  class="form-control" type="email" placeholder="Email" name="elpastas" value="{{$user->email}}" required>--}}
                         <br>
                              <div class="col-lg-8 ">
 
