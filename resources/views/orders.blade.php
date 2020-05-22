@@ -14,6 +14,9 @@
                     <th style="width:15%;border-bottom: 10px;">Client</th>
                     <th style="width:15%;border-bottom: 10px;">Cart ID</th>
                     <th style="width:15%;border-bottom: 10px;">Payment ID</th>
+                </tr>
+                </thead>
+                <tbody>
                 @foreach($allUz as $asUZ)
                     <tr>
                         <td>{{ $asUZ->id_Uzsakymas }}</td>
@@ -28,8 +31,7 @@
                                 </svg></button></td>
                     </tr>
                     @endforeach
-                    </tr>
-                </thead>
+                    </tbody>
             </table>
         </div>
     </div>

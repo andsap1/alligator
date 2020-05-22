@@ -9,7 +9,7 @@
                <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z" clip-rule="evenodd"/>
            </svg>
        </a>
-        <h1>{{$item->pavadinimas}}</h1>
+        <h1></h1>
         <div class="col-lg-2 image_list">
             @foreach($allphotos as $photo)
             <div class=" list-unstyled components ">
@@ -31,15 +31,16 @@
                 {{-- <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>--}}
                 <div class="product_text"><p>{{$item->aprasymas}}</p></div>
                 <div class="product_measure ">
-                    <p><span id="info1">Lenght:</span> {{$item->ilgis}}</p>
-                    <p><span id="info1">Diameter:</span> {{$item->diametras}}</p>
+                    <p><span id="info1">Lenght:</span> {{$item->ilgis}}cm</p>
+                    <p><span id="info1">Diameter:</span> {{$item->diametras}}mm</p>
                     @if($item->galiuko_aukstis)
-                    <p><span id="info1">Tip height:</span> {{$item->galiuko_aukstis}}</p>
+                    <p><span id="info1">Tip height:</span> {{$item->galiuko_aukstis}}cm</p>
                         @endif
                 </div>
 
                 <div class="order_info d-flex flex-row">
                     <form method="POST" action="{{ Route('insertPreke') }}">
+{{--                        --}}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="clearfix" >
                             <div>
@@ -47,10 +48,7 @@
                                 <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
                             </div>
 
-                            <select name="preke" style="visibility: hidden">
-                                <option value="{{$item->id_preke}}">
-                                </option>
-                            </select>
+                           
                         </div>
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
@@ -121,11 +119,35 @@
     <form method="POST" action="{{ Route('insertKomentaras', $item->id_preke) }}" class="comment_form">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-        <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Name">
-        <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Write comment"></textarea>
+        <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Vardas">
+        <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Rašyti komentarą"></textarea>
         <br>
-        <button type="submit" class="btn btn-primary" id="green_btn">Publish</button>
+        <button type="submit" class="btn btn-primary" id="green_btn">Pateikti</button>
     </form>
 </div>
 </div>
+
+{{--    @foreach($items as $item)--}}
+{{--        <div class="col-md-4">--}}
+
+{{--            <div class="card item">--}}
+{{--                <div class="img-wrap"><img src="{{asset('images/log.png')}}"> </div>--}}
+{{--                <div class="info-wrap">--}}
+{{--                    <h4 class="title">{{$item->pavadinimas}}</h4>--}}
+{{--                    <p class="desc">{{$item->aprasymas}}</p>--}}
+{{--                    <div class="rating-wrap">--}}
+{{--                        <div class="label-rating">{{$item->diametras}}</div>--}}
+{{--                        <div class="label-rating">{{$item->ilgis}} </div>--}}
+{{--                    </div> <!-- rating-wrap.// -->--}}
+{{--                </div>--}}
+{{--                <div class="bottom-wrap">--}}
+{{--                    <a href="" class="btn btn-sm btn-primary float-right">Order Now</a>--}}
+{{--                    <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" class="btn btn-sm btn-primary float-right" style="margin-right: 5px;">Look</a>--}}
+{{--                    <div class="price-wrap h5">--}}
+{{--                        <span class="price-new">{{$item->kaina}}</span>--}}
+{{--                    </div> <!-- price-wrap.// -->--}}
+{{--                </div> <!-- bottom-wrap.// -->--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    @endforeach--}}
 @endsection

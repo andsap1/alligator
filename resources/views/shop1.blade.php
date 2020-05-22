@@ -59,9 +59,14 @@
 
                 <div class="bottom-wrap">
 
-                   
+<<<<<<< HEAD
+
                     <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" class="btn btn-primary float-right" id="green_btn" style="margin-right: 10px;">
-                        Look</a>
+                        View</a>
+=======
+                    <a href="" class="btn btn-primary float-right">Order Now</a>
+                    <a href="{{ action('ShopController@openPreke', $item->id_preke)}}" class="btn btn-primary float-right" style="margin-right: 5px;">Look</a>
+>>>>>>> d9387f8d24cc3c9b353767e39efca2a71540232d
                     <div class="price h4">{{$item->kaina}} Eur
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
