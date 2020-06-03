@@ -6,8 +6,10 @@ use App\Http\Controllers\Controller;
 use App\Kategorija;
 use App\Nuotrauka;
 use App\Preke;
+use App\PrekeKrepselis;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class CartController extends Controller
 {
@@ -45,7 +47,13 @@ class CartController extends Controller
 //            return redirect(route('main'));
         }
 
-        return view('cart', compact('allcategories','result', 'kr','mainphoto'));
+        return view('cart', compact('allcategories','result', 'kr'));
+    }
+    public function deletePreke($id)
+    {
+        PrekeKrepselis::where('id_Tarpine','=',$id)->delete();
+        return Redirect::back()->with('success', 'Item deleted');
+
     }
 
 }

@@ -42,14 +42,18 @@
                     <form method="POST" action="{{ Route('insertPreke') }}">
 {{--                        --}}
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <div class="clearfix" >
-                            <div>
-                                <span for="kiekis">Quantity:</span>
-                                <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
+                           <div class="clearfix" >
+                                <div>
+                                    <span for="kiekis">Quantity:</span>
+                                    <input type="number" id="kiekis" name="kiekis" min="1" max="10" value="1">
+                                </div>
+
+                                <select name="preke" style="visibility: hidden">
+                                    <option value="{{$item->id_preke}}">
+                                    </option>
+                                </select>
                             </div>
 
-                           
-                        </div>
                         <div>
                         <div class="product_price">{{$item->kaina}} Eur
                             <span id="cart-button"><button type="submit" class="btn btn-primary pull-right" id="green_btn">Add to cart</button></span>
