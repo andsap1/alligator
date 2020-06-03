@@ -74,7 +74,7 @@ class OrderController extends Controller
             $allInfo->fk_id_User = $id;
             $allInfo->save();
         }
-        return Redirect::to('home')->with('success', 'Order accepted');
+        return Redirect::to('shop1')->with('success', 'Order accepted');
     }
 
 
