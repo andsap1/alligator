@@ -38,7 +38,7 @@ Route::get('/email', 'EmailController@index')->name('email');
 Route::post('send','EmailController@send')->name('send');
 
 Route::get('/order', 'OrderController@index');
-Route::post('/orderIn','OrderController@insertOrder')->name('orderInsert');
+Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');

@@ -10,6 +10,11 @@ use App\Uzsakymas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Database\QueryException;
+
+
 
 
 class OrderController extends Controller
@@ -21,6 +26,7 @@ class OrderController extends Controller
 
         $kr=session('krepselis');
 //        dd($kr);
+
         if(session()->has('krepselis')) {
             $result = DB::table('krepselis')->where('krepselis.id_krepselis', '=', $kr)->leftJoin('preke_krepselis', 'id_krepselis', '=', 'preke_krepselis.fk_krepselis')
                 ->leftJoin('preke', 'preke_krepselis.fk_preke', '=', 'id_preke')
@@ -36,7 +42,8 @@ class OrderController extends Controller
     {
         $kr=session('krepselis');
         $id = auth()->user()->id;
-        // print_r($id);
+       // dd($kr);
+      //  dd($id);
 
         $validator = Validator::make(
             [   'adresas' =>$request->input('adresas'),
@@ -64,16 +71,11 @@ class OrderController extends Controller
             $allInfo->busena  = "pateiktas";
             $allInfo->data = date('Y-m-d');
             $allInfo->fk_id_krepselis = $kr;
-            $allInfo->fk_id_User= $id;
-
+            $allInfo->fk_id_User = $id;
             $allInfo->save();
         }
         return Redirect::to('home')->with('success', 'Order accepted');
     }
-
-
-
-
 
 
 }

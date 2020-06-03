@@ -34,24 +34,24 @@
                         <h3 id="antraste">Info details</h3>
                     </div>
                     <div class="row">
-                        <form class="form-horizontal" role="form" method="POST" action="{{Route('orderInsert') }}">
-
+                        <form class="form-horizontal" method="post" action="{{Route('orderInsert')}}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group col-sm-7">
                                 <label for="adresas">Adress</label>
-                                <input id="adresas" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
+                                <input id="adresas" type="text" class="form-control" placeholder="Address"  value="">
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="vardas">First name</label>
-                                <input id="vardas" type="text" class="form-control" placeholder="First name" aria-label="First name" aria-describedby="basic-addon1">
+                                <input id="vardas" type="text" class="form-control" placeholder="First name"value="">
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="pavarde">Last name</label>
-                                <input id="pavarde" type="text" class="form-control" placeholder="Last name" aria-label="Last name" aria-describedby="basic-addon1">
+                                <input id="pavarde" type="text" class="form-control" placeholder="Last name" value="">
                             </div>
 
                             <div class="form-group col-sm-7">
                                 <label for="data">Date</label>
-                                <input type="date" value="<?php echo date('Y-m-d'); ?>" readonly="readonly" class="form-control" aria-label="Date " aria-describedby="basic-addon1"/>
+                                <input type="date" value="<?php echo date('Y-m-d'); ?>" readonly="readonly" class="form-control"/>
                             </div>
 
                             <div class="form-group col-sm-7">
