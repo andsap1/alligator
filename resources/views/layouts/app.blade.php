@@ -116,7 +116,7 @@
                         </form>
                     </div></li>
                 @if (Auth::guest())
-                    <li><a href="./login"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
+                    <li><a href="{{asset('login')}}"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-foggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
