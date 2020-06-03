@@ -34,7 +34,7 @@
                         <h3 id="antraste">Info details</h3>
                     </div>
                     <div class="row">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('order') }}">
+                        <form class="form-horizontal" role="form" method="POST" action="{{Route('orderInsert') }}">
 
                             <div class="form-group col-sm-7">
                                 <label for="adresas">Adress</label>
@@ -58,9 +58,7 @@
 
                                 <button type="submit"class="btn" id="mygtukas" >Order</button>
                             </div>
-                            <input id="busena" style="visibility: hidden" type="text" class="form-control" value="pateiktas">
-                            <input id="fk_id_krepselis" style="visibility:hidden;" type="text" class="form-control" value="{{$kr}}">
-                            <input id="fk_id_User"style="visibility: hidden" type="text" class="form-control" value="{{$id}}">
+
                         </form>
                     </div>
 
