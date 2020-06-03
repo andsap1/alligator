@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Kategorija;
+use App\Krepselis;
 use App\Preke;
+use App\PrekeKrepselis;
 use App\User;
 use App\Uzsakymas;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -64,15 +67,22 @@ class OrderController extends Controller
         }
         else
         {
+            //date('Y-m-d')
             $allInfo = new Uzsakymas();
             $allInfo->adresas  = $request->input('adresas');
             $allInfo->vardas  = $request->input('vardas');
             $allInfo->pavarde  = $request->input('pavarde');
             $allInfo->busena  = 'pateiktas';
-            $allInfo->data = date('Y-m-d');
+            $allInfo->data = Carbon::now('Europe/Vilnius');
             $allInfo->fk_id_krepselis = $kr;
             $allInfo->fk_id_User = $id;
             $allInfo->save();
+
+            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
+            $krepselis = new Krepselis();
+            $krepselis->kaina = '10';//($kaina->kaina) * $request->input('kiekis');
+            $krepselis->save();
+            session(['krepselis' => $krepselis->id_krepselis]);
         }
         return Redirect::to('shop1')->with('success', 'Order accepted');
     }

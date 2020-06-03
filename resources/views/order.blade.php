@@ -51,7 +51,9 @@
 
                             <div class="form-group col-sm-7">
                                 <label for="data">Date</label>
-                                <input type="date" value="<?php echo date('Y-m-d'); ?>" readonly="readonly" class="form-control"/>
+                                <input type="date" value="<?php
+                                $date = new DateTime("now", new DateTimeZone('Europe/Vilnius') );
+                                echo $date->format('Y-m-d');?>" readonly="readonly" class="form-control"/>
                             </div>
 
                             <div class="form-group col-sm-7">
