@@ -38,15 +38,15 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group col-sm-7">
                                 <label for="adresas">Adress</label>
-                                <input id="adresas" type="text" class="form-control" placeholder="Address"  value="">
+                                <input name="adresas" type="text" class="form-control" placeholder="Address"  >
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="vardas">First name</label>
-                                <input id="vardas" type="text" class="form-control" placeholder="First name"value="">
+                                <input name="vardas" type="text" class="form-control" placeholder="First name">
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="pavarde">Last name</label>
-                                <input id="pavarde" type="text" class="form-control" placeholder="Last name" value="">
+                                <input name="pavarde" type="text" class="form-control" placeholder="Last name" >
                             </div>
 
                             <div class="form-group col-sm-7">

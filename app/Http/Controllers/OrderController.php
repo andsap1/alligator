@@ -68,7 +68,7 @@ class OrderController extends Controller
             $allInfo->adresas  = $request->input('adresas');
             $allInfo->vardas  = $request->input('vardas');
             $allInfo->pavarde  = $request->input('pavarde');
-            $allInfo->busena  = "pateiktas";
+            $allInfo->busena  = 'pateiktas';
             $allInfo->data = date('Y-m-d');
             $allInfo->fk_id_krepselis = $kr;
             $allInfo->fk_id_User = $id;
