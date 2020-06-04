@@ -78,11 +78,13 @@ class OrderController extends Controller
             $allInfo->fk_id_User = $id;
             $allInfo->save();
 
-            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
-            $krepselis = new Krepselis();
-            $krepselis->kaina = '10';//($kaina->kaina) * $request->input('kiekis');
-            $krepselis->save();
-            session(['krepselis' => $krepselis->id_krepselis]);
+//            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
+//            $krepselis = new Krepselis();
+//            $krepselis->kaina = '10';//($kaina->kaina) * $request->input('kiekis');
+//            $krepselis->save();
+            session()->forget('krepselis');
+
+//            session(['krepselis' => $krepselis->id_krepselis]);
         }
         return Redirect::to('shop1')->with('success', 'Order accepted');
     }
