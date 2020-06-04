@@ -16,14 +16,10 @@
 @if($cate!='null')
        <h1 id="antraste">{{$cate->pavadinimas}}</h1>
       <hr>
-    @else
-    <h1 id="antraste">All products</h1>
-    <hr>
-@endif
-<div>
-<form method="POST" action="{{Route('sort')}}" >
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <span class="input-field">
+       <div>
+           <form method="POST" action="{{Route('sort', $cate->id_kateg)}}" >
+               <input type="hidden" name="_token" value="{{ csrf_token() }}">
+               <span class="input-field">
         <label>Order by </label>
         <select name="orderBy" id="dropdown"  class="form-control" style="width: fit-content; display:inherit">
             <option value="">newest</option>
@@ -34,8 +30,45 @@
     </span>
 
 
-</form>
-</div>
+           </form>
+       </div>
+
+    @else
+    <h1 id="antraste">All products</h1>
+    <hr>
+    <div>
+        <form method="POST" action="{{Route('sort1')}}" >
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <span class="input-field">
+        <label>Order by </label>
+        <select name="orderBy" id="dropdown"  class="form-control" style="width: fit-content; display:inherit">
+            <option value="">newest</option>
+            <option value="asc" >price low</option>
+            <option value="desc">price high</option>
+        </select>
+<button type="submit" class="btn" id="mygtukas" style="display: inherit; margin-top: 0px;">Order</button>
+    </span>
+
+
+        </form>
+    </div>
+@endif
+{{--<div>--}}
+{{--<form method="POST" action="{{Route('sort')}}" >--}}
+{{--    <input type="hidden" name="_token" value="{{ csrf_token() }}">--}}
+{{--    <span class="input-field">--}}
+{{--        <label>Order by </label>--}}
+{{--        <select name="orderBy" id="dropdown"  class="form-control" style="width: fit-content; display:inherit">--}}
+{{--            <option value="">newest</option>--}}
+{{--            <option value="asc" >price low</option>--}}
+{{--            <option value="desc">price high</option>--}}
+{{--        </select>--}}
+{{--<button type="submit" class="btn" id="mygtukas" style="display: inherit; margin-top: 0px;">Order</button>--}}
+{{--    </span>--}}
+
+
+{{--</form>--}}
+{{--</div>--}}
 <script>
 var selectedItem = sessionStorage.getItem("SelectedItem");
 $('#dropdown').val(selectedItem);

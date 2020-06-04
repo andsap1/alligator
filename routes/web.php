@@ -34,13 +34,16 @@ Route::get('/signout', 'AccController@signout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-
 Route::get('/view', 'ViewController@index')->name('view');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
 Route::get('/order', 'OrderController@index');
 Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
+
+
+
+
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');
@@ -53,5 +56,6 @@ Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('usered
 Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
 
 //shopo rikiavimas
-Route::post('/shop1', 'ShopController@sort')->name('sort');
+Route::post('/shop1', 'ShopController@sort1')->name('sort1');
+Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
 //Route::post('/shop1/{category}','ShopController@sort');

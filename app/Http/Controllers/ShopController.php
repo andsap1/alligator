@@ -177,7 +177,31 @@ class ShopController extends Controller
             return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
         }
     }
-    public function sort(Request $request)
+    public function sort(Request $request, $category)
+    {
+        //$orderBy = request('orderBy');
+        // $items = Preke::all()->sortBy('kaina','asc');
+        //$items = Preke::('kaina', 'asc')->get();
+        $allcategories=Kategorija::all();
+        $cate=Kategorija::where('id_kateg','=',$category)->first();
+        //$items = Preke::all();
+//        $cate='null';
+        $photo=Nuotrauka::all();
+        switch( $_POST['orderBy'] ) {
+            case '':
+                $items = DB::table('preke')->orderBy('ikelimo_data','desc')->get();
+                break;
+            case 'asc':
+                $items = DB::table('preke')->orderBy('kaina','asc')->get();
+                break;
+            case 'desc':
+                $items = DB::table('preke')->orderBy('kaina','desc')->get();
+                break;
+        }
+        return view('shop1', compact('allcategories','items','cate','photo'));
+        //return redirect()->back()->with(compact('items','allcategories','cate','photo'));
+    }
+    public function sort1(Request $request)
     {
         //$orderBy = request('orderBy');
         // $items = Preke::all()->sortBy('kaina','asc');
