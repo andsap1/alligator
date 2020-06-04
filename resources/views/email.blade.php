@@ -22,11 +22,14 @@
         <div  class="container-fluid" id="laisko_krastai">
             <hr>
             <br>
-            <label  for="elpastas"><b>Your email</b></label>
-            <input  class="form-control" type="email" placeholder="Email" name="elpastas" required>
+            <label  for="emaill"><b>Your email</b></label>
+            <input  class="form-control" type="email" placeholder="Email" name="emaill" required>
             <br>
-            <label for="zinute"><b>Message</b></label>
-            <textarea  class="form-control" style="min-height: 150px" type="text" placeholder="Text" name="zinute" required></textarea>
+            <label  for="sbj"><b>Your email</b></label>
+            <input  class="form-control" type="text" placeholder="Subject" name="sbj" required>
+            <br>
+            <label for="message"><b>Message</b></label>
+            <textarea  class="form-control" style="min-height: 150px" type="text" placeholder="Text" name="message" required></textarea>
             <button class="btn" id="mygtukas" type="submit"><a style="color: white" href="/">Send</a></button>
 
         </div>

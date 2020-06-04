@@ -10,32 +10,30 @@ use Illuminate\Support\Facades\Mail;
 
 class EmailController extends Controller
 {
-    public function index()
-    {
 
-        $allcategories = Kategorija::all();
+    public function index(){
+        $allcategories=Kategorija::all();
 
         return view('email', compact('allcategories'));
     }
 
- public function send(Request $request)
-    {
-        $data = array(
-            'messagebody' => $request->input('zinute'),
-            'email' => $request->input('elpastas')
-        );
-        Mail::send('email', $data,
 
-            function ($message) use ($data) {
-                $message->from($data['email']);
-                $message->to('tobis1599@gmail.com', 'To FakeName')->subject('alligator testas');
-                $message->subject('Ar veikia?');
+    public function send(Request $request){
+        $data=array(
+            'messagebody'=>$request->input('message'),
+            'sbj'=>$request->input('sbj'),
+            'email'=>$request->input('emaill')
+        );
+        Mail::send('mail',$data,
+
+            /* Mail::send(['text'=>$request->input('tekstas')],['name'=>'Vardas'], */
+            function ($message) use($data){
+                $message->from($data['email'], $data['email']);
+                $message->to('plaktaplyta98@gmail.com');
+                $message->subject($data['sbj']);
 
             });
-
-        $allcategories=Kategorija::all();
-
-       return view('email', compact('allcategories'));
-
+        $allcategories = Kategorija::all();
+        return view('/home', compact('allcategories'));
     }
 }

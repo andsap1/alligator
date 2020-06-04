@@ -24,6 +24,11 @@ Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke')
 
 Route::get('/acc', 'AccController@index')->name('account');
 Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
+
+Route::get('email', 'EmailController@index')->name('email');
+Route::post('/','EmailController@send')->name('send');
+
+
 Auth::routes();
 Route::get('/signout', 'AccController@signout');
 Route::get('/home', 'HomeController@index')->name('home');
@@ -33,9 +38,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/view', 'ViewController@index')->name('view');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
-
-Route::get('/email', 'EmailController@index')->name('email');
-Route::post('send','EmailController@send')->name('send');
 
 Route::get('/order', 'OrderController@index');
 Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
