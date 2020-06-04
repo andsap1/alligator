@@ -54,3 +54,4 @@ Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name
 
 //shopo rikiavimas
 Route::post('/shop1', 'ShopController@sort')->name('sort');
+//Route::post('/shop1/{category}','ShopController@sort');

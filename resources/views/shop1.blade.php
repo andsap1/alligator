@@ -20,20 +20,22 @@
     <h1 id="antraste">All products</h1>
     <hr>
 @endif
-<form method="POST" action="{{Route('sort')}}" target="blank">
+<div>
+<form method="POST" action="{{Route('sort')}}" >
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <div class="input-field">
+    <span class="input-field">
         <label>Order by </label>
-        <select name="orderBy" id="dropdown">
+        <select name="orderBy" id="dropdown"  class="form-control" style="width: fit-content; display:inherit">
             <option value="">newest</option>
             <option value="asc" >price low</option>
             <option value="desc">price high</option>
         </select>
+<button type="submit" class="btn" id="mygtukas" style="display: inherit; margin-top: 0px;">Order</button>
+    </span>
 
-    </div>
 
-    <button type="submit" class="btn-flat">Order</button>
 </form>
+</div>
 <script>
 var selectedItem = sessionStorage.getItem("SelectedItem");
 $('#dropdown').val(selectedItem);
@@ -43,16 +45,7 @@ $('#dropdown').change(function() {
     sessionStorage.setItem("SelectedItem", dropVal);
 });
 </script>
-{{--<script>
-    document.getElementById("sel").onchange = function() {
-        localStorage.setItem('selectedtem', document.getElementById("sel").value);
-    }
 
-    if (localStorage.getItem('item')) {
-        document.getElementById("selectedtem").options[localStorage.getItem('selectedtem')].selected = true;
-    }
-
-</script>--}}
     @foreach($items as $item)
         <div class="col-md-4">
             <div class="card item">
