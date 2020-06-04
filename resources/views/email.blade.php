@@ -25,7 +25,7 @@
             <label  for="emaill"><b>Your email</b></label>
             <input  class="form-control" type="email" placeholder="Email" name="emaill" required>
             <br>
-            <label  for="sbj"><b>Your email</b></label>
+            <label  for="sbj"><b>Subject</b></label>
             <input  class="form-control" type="text" placeholder="Subject" name="sbj" required>
             <br>
             <label for="message"><b>Message</b></label>
