@@ -51,3 +51,6 @@ Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser')
 Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
 Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('useredit');
 Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
+
+//shopo rikiavimas
+Route::post('/shop1', 'ShopController@sort')->name('sort');

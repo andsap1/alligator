@@ -32,6 +32,31 @@ class ShopController extends Controller
 
         return view('shop1', compact('allcategories','items','cate','photo'));
     }
+    public function sort(Request $request)
+    {
+        //$orderBy = request('orderBy');
+       // $items = Preke::all()->sortBy('kaina','asc');
+        //$items = Preke::('kaina', 'asc')->get();
+        $allcategories=Kategorija::all();
+        //$items = Preke::all();
+        $cate='null';
+        $photo=Nuotrauka::all();
+        switch( $_POST['orderBy'] ) {
+            case '':
+                $items = DB::table('preke')->get();
+                break;
+            case 'asc':
+                $items = DB::table('preke')->orderBy('kaina','asc')->get();
+                break;
+            case 'desc':
+                $items = DB::table('preke')->orderBy('kaina','desc')->get();
+                break;
+
+
+        }
+       return view('shop1', compact('allcategories','items','cate','photo'));
+  //  return redirect()->back()->with(compact('items','allcategories','cate','photo'));
+    }
 
     public function getCategory($category)
     {

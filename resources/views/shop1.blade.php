@@ -20,7 +20,31 @@
     <h1 id="antraste">All products</h1>
     <hr>
 @endif
+<form method="POST" action="{{Route('sort')}}" target="blank">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <div class="input-field">
+        <label>Order by </label>
+        <select name="orderBy" >
+            <option value="">newest</option>
+            <option value="asc" >price low</option>
+            <option value="desc">price high</option>
+        </select>
 
+    </div>
+
+    <button type="submit" class="btn-flat">Order</button>
+</form>
+
+{{--<script>
+    document.getElementById("sel").onchange = function() {
+        localStorage.setItem('selectedtem', document.getElementById("sel").value);
+    }
+
+    if (localStorage.getItem('item')) {
+        document.getElementById("selectedtem").options[localStorage.getItem('selectedtem')].selected = true;
+    }
+
+</script>--}}
     @foreach($items as $item)
         <div class="col-md-4">
             <div class="card item">
@@ -65,6 +89,7 @@
                     </div> <!-- price-wrap.// -->
                 </div> <!-- bottom-wrap.// -->
             </div>
+
         </div>
     @endforeach
 @endsection
