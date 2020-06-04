@@ -24,7 +24,7 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="input-field">
         <label>Order by </label>
-        <select name="orderBy" >
+        <select name="orderBy" id="dropdown">
             <option value="">newest</option>
             <option value="asc" >price low</option>
             <option value="desc">price high</option>
@@ -34,7 +34,15 @@
 
     <button type="submit" class="btn-flat">Order</button>
 </form>
+<script>
+var selectedItem = sessionStorage.getItem("SelectedItem");
+$('#dropdown').val(selectedItem);
 
+$('#dropdown').change(function() {
+    var dropVal = $(this).val();
+    sessionStorage.setItem("SelectedItem", dropVal);
+});
+</script>
 {{--<script>
     document.getElementById("sel").onchange = function() {
         localStorage.setItem('selectedtem', document.getElementById("sel").value);
