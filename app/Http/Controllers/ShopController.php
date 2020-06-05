@@ -24,7 +24,9 @@ class ShopController extends Controller
     }
     public function index(){
         $allcategories=Kategorija::all();
-        $items = Preke::all();
+        $items = Preke::all()->sortByDesc('ikelimo_data');
+        //$items = Preke::paginate(4);//->sortByDesc('ikelimo_data');
+       // $items=Preke::paginate(4);
         $cate='null';
         $photo=Nuotrauka::all();
 //dd($photo->pavadinimas);
@@ -33,10 +35,11 @@ class ShopController extends Controller
         return view('shop1', compact('allcategories','items','cate','photo'));
     }
 
+
     public function getCategory($category)
     {
         if ($category) {
-            $items = Preke::where('fk_prekes_kategorija', '=', $category)->get();
+            $items = Preke::where('fk_prekes_kategorija', '=', $category)->get()->sortByDesc('ikelimo_data');
             $prekiusk = Preke::where('fk_prekes_kategorija', '=', $category)->get();
             $cate=Kategorija::where('id_kateg','=',$category)->first();
 
@@ -175,5 +178,71 @@ class ShopController extends Controller
 
             return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
         }
+    }
+    public function sort(Request $request, $category)
+    {
+
+        $allcategories=Kategorija::all();
+        $cate=Kategorija::where('id_kateg','=',$category)->first();
+
+        $photo=Nuotrauka::all();
+        if ($category) {
+        switch( $_POST['orderBy'] ) {
+           case '':
+
+
+               $items = Preke::where('fk_prekes_kategorija', '=', $category)->get()->sortByDesc('ikelimo_data');
+
+
+
+                break;
+            case 'asc':
+              //  $items = DB::table('preke')->orderBy('kaina','asc')->get();
+                $items = Preke::where('fk_prekes_kategorija', '=', $category)->get()->sortBy('kaina');
+
+
+                $photo=Nuotrauka::all();
+                break;
+            case 'desc':
+                $items = Preke::where('fk_prekes_kategorija', '=', $category)->get()->sortByDesc('kaina');
+              //  $items = DB::table('preke')->orderBy('kaina','desc')->get();
+                break;
+        }
+            $prekiusk = Preke::where('fk_prekes_kategorija', '=', $category)->get();
+            $cate=Kategorija::where('id_kateg','=',$category)->first();
+
+            $photo=Nuotrauka::all();
+        }
+        else
+        {
+            $cate="null";
+        }
+
+$allcategories = Kategorija::all();
+        return view('shop1', compact('allcategories','items','cate','photo'));
+        //return redirect()->back()->with(compact('items','allcategories','cate','photo'));
+    }
+    public function sort1(Request $request)
+    {
+        //$orderBy = request('orderBy');
+        // $items = Preke::all()->sortBy('kaina','asc');
+        //$items = Preke::('kaina', 'asc')->get();
+        $allcategories=Kategorija::all();
+        //$items = Preke::all();
+        $cate='null';
+        $photo=Nuotrauka::all();
+        switch( $_POST['orderBy'] ) {
+            case '':
+                $items = DB::table('preke')->orderBy('ikelimo_data','desc')->get();
+                break;
+            case 'asc':
+                $items = DB::table('preke')->orderBy('kaina','asc')->get();
+                break;
+            case 'desc':
+                $items = DB::table('preke')->orderBy('kaina','desc')->get();
+                break;
+        }
+        return view('shop1', compact('allcategories','items','cate','photo'));
+        //return redirect()->back()->with(compact('items','allcategories','cate','photo'));
     }
 }

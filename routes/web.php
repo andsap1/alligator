@@ -24,20 +24,26 @@ Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke')
 
 Route::get('/acc', 'AccController@index')->name('account');
 Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
+
+Route::get('email', 'EmailController@index')->name('email');
+Route::post('/','EmailController@send')->name('send');
+
+
 Auth::routes();
 Route::get('/signout', 'AccController@signout');
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 
 Route::get('/view', 'ViewController@index')->name('view');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
-Route::get('/email', 'EmailController@index')->name('email');
-Route::post('send','EmailController@send')->name('send');
-
 Route::get('/order', 'OrderController@index');
+Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
+
+
+
+
 
 
 Route::get('/admin', 'AdminController@index')->name('admin');
@@ -48,3 +54,8 @@ Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser')
 Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
 Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('useredit');
 Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
+
+//shopo rikiavimas
+Route::post('/shop1', 'ShopController@sort1')->name('sort1');
+Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
+//Route::post('/shop1/{category}','ShopController@sort');

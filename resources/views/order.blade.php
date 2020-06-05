@@ -34,33 +34,33 @@
                         <h3 id="antraste">Info details</h3>
                     </div>
                     <div class="row">
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('order') }}">
-
+                        <form class="form-horizontal" method="post" action="{{Route('orderInsert')}}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group col-sm-7">
                                 <label for="adresas">Adress</label>
-                                <input id="adresas" type="text" class="form-control" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
+                                <input name="adresas" type="text" class="form-control" placeholder="Address"  >
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="vardas">First name</label>
-                                <input id="vardas" type="text" class="form-control" placeholder="First name" aria-label="First name" aria-describedby="basic-addon1">
+                                <input name="vardas" type="text" class="form-control" placeholder="First name">
                             </div>
                             <div class="form-group col-sm-7">
                                 <label for="pavarde">Last name</label>
-                                <input id="pavarde" type="text" class="form-control" placeholder="Last name" aria-label="Last name" aria-describedby="basic-addon1">
+                                <input name="pavarde" type="text" class="form-control" placeholder="Last name" >
                             </div>
 
                             <div class="form-group col-sm-7">
                                 <label for="data">Date</label>
-                                <input type="date" value="<?php echo date('Y-m-d'); ?>" readonly="readonly" class="form-control" aria-label="Date " aria-describedby="basic-addon1"/>
+                                <input type="date" value="<?php
+                                $date = new DateTime("now", new DateTimeZone('Europe/Vilnius') );
+                                echo $date->format('Y-m-d');?>" readonly="readonly" class="form-control"/>
                             </div>
 
                             <div class="form-group col-sm-7">
 
                                 <button type="submit"class="btn" id="mygtukas" >Order</button>
                             </div>
-                            <input id="busena" style="visibility: hidden" type="text" class="form-control" value="pateiktas">
-                            <input id="fk_id_krepselis" style="visibility:hidden;" type="text" class="form-control" value="{{$kr}}">
-                            <input id="fk_id_User"style="visibility: hidden" type="text" class="form-control" value="{{$id}}">
+
                         </form>
                     </div>
 

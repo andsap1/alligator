@@ -150,8 +150,6 @@
     </div>
 </div>
  <div class="wrapper">
-
-
                 <nav id="sidebar">
                     <div class="bg-dark p-4">
 
@@ -181,8 +179,9 @@
     <p>Alligator-PDR Tools Copyright</p>
     <form class="form-inline">Contact us
         <div  style="text-align: center">
-            <span style="display: contents;" href="https://www.facebook.com/pg/aligatorpdr" class="fa fa-facebook"></span>
-            <span style="display: contents;" href="https://www.instagram.com/alligator_pdr_tools/" class="fa fa-instagram" ></span>
+            <a style="display: contents;" class="fa fa-envelope" href ="{{asset('email')}}"></a>
+            <a style="display: contents;" class="fa fa-facebook" href ="https://www.facebook.com/pg/aligatorpdr"></a>
+            <a style="display: contents;"  class="fa fa-instagram" href ="https://www.instagram.com/alligator_pdr_tools/"></a>
         </div>
 
     </form>
