@@ -59,3 +59,5 @@ Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name
 Route::post('/shop1', 'ShopController@sort1')->name('sort1');
 Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
 //Route::post('/shop1/{category}','ShopController@sort');
+
+Route::get('/pay','PayController@index')->name('pay');
