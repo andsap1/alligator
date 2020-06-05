@@ -29,12 +29,10 @@ class ShopController extends Controller
        // $items=Preke::paginate(4);
         $cate='null';
         $photo=Nuotrauka::all();
-//dd($photo->pavadinimas);
 
 
         return view('shop1', compact('allcategories','items','cate','photo'));
     }
-
 
     public function getCategory($category)
     {
@@ -100,7 +98,6 @@ class ShopController extends Controller
         return Redirect::back()->with('success', 'Komentaras pridėtas');
     }
 
-
     public function insertPrekeVertinimas(Request $request, $ids)
     {
         $validator = Validator::make(
@@ -125,8 +122,6 @@ class ShopController extends Controller
 
         return Redirect::back()->with('success', 'Ivertinta');
     }
-
-
 
     public function insertPrekeKrepselis(Request $request)
     {
@@ -153,6 +148,7 @@ class ShopController extends Controller
                 ]);
             $vs=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->get();
             $skaicius=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->count();
+
             $index=-1;
             for($i=0; $i<$skaicius; $i++)
                 if($vs[$i]->fk_preke == $request->input('preke')) {
@@ -160,67 +156,17 @@ class ShopController extends Controller
                     break;
                 }
 
-
             if ($index == - 1){
-//                $_SESSION ['cart'] [] = $item;
                      $tarpine = new PrekeKrepselis();
                     $tarpine->kiekis = $request->input('kiekis');
                     $tarpine->fk_preke = $request->input('preke');
                     $tarpine->fk_krepselis = session('krepselis');
                     $tarpine->save();}
             else {
-//                $cart [$index]->quantity ++;
-//                $_SESSION ['cart'] = $cart;
                 PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
                             'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
             }
-//        }
-//            for($i=0; $i<$skaicius; $i++)
-//            {
-//
-//                if($vs[$i]->fk_preke == $request->input('preke'))
-//                    {
-//                        PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
-//                            'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
-//                       break;
-//                    }
-//                else {
-//                    $i++;
-////
-////                    $tarpine = new PrekeKrepselis();
-////                    $tarpine->kiekis = $request->input('kiekis');
-////                    $tarpine->fk_preke = $request->input('preke');
-////                    $tarpine->fk_krepselis = session('krepselis');
-////                    $tarpine->save();
 
-//                }
-//            }
-
-
-//            foreach ($visostarpines as $vs){
-//                if($vs->fk_preke == $request->input('preke'))
-//                    {
-//                        PrekeKrepselis::where('id_Tarpine', $vs->id_Tarpine)->update([
-//                            'kiekis' => $request->input('kiekis')+$vs->kiekis,]);
-//                       break;
-//                    }
-//                else {
-//                    $tarpine = new PrekeKrepselis();
-//                    $tarpine->kiekis = $request->input('kiekis');
-//                    $tarpine->fk_preke = $request->input('preke');
-//                    $tarpine->fk_krepselis = session('krepselis');
-//                    $tarpine->save();
-//
-//                }
-//            }
-
-//            $tarpine = new PrekeKrepselis();
-//            $tarpine->kiekis = $request->input('kiekis');
-//            $tarpine->fk_preke = $request->input('preke');
-//            $tarpine->fk_krepselis = session('krepselis');
-//            $tarpine->save();
-//
-//
             return Redirect::to('cart')->with('success', 'Pridėta');
         }
 
@@ -247,6 +193,7 @@ class ShopController extends Controller
             return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
         }
     }
+
     public function sort(Request $request, $category)
     {
 

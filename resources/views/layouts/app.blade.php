@@ -75,6 +75,7 @@
             <h1 id="nameAlligator">Alligator PDR tools</h1>
         </div>
         <div class="col-sm-2 img-col">
+            <div class="cart-item">
             <a href="{{asset('cart')}}">
             <img class="cart" src="{{asset('images/cart.png')}}"  />
             </a>
@@ -85,6 +86,7 @@
                         0
                     @endif
                 </span></div>
+            </div>
         </div>
 
         </div>

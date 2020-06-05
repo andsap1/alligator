@@ -66,13 +66,13 @@
 
                             <div class="col-lg-8 col-md-6 offset-lg-8 offset-md-4" style="text-align: end">
                                 <div class="form-check">
-                                    <a href="{{asset('register')}}">Don't have account?</a>
+                                    <a href="{{asset('register')}}">Don't have account? Register here! <br> </a>
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+{{--                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
                                     <label class="form-check-label" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>

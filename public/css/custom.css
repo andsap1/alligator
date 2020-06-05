@@ -604,3 +604,16 @@ hr{
     z-index: 1;
 }
 
+
+.cart_count {
+    position: absolute;
+    margin-top: -25px;
+    width: 23px;
+    height: 23px;
+    background: #6c6f6f;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 2px;
+    color: black;
+}
+
