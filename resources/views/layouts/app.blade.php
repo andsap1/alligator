@@ -56,12 +56,10 @@
         @endif
         @if (count($errors) > 0)
             <div class="alert alert-danger">
-                <p>jūsų įvedamuose duomenyse yra klaidu:</p>
-                <ul>
+                <p>There is an error in the data you are entering:</p>
                     @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                        <p>{{ $error }}</p>
                     @endforeach
-                </ul>
             </div>
     @endif
 </div>
@@ -118,12 +116,9 @@
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li> <div class="search-container" id="search" >
-                        <form class="formPaieska" action="/paieska.php" id="hide">
-                            <input class="formPaieskaVest" type="text" placeholder="Search..." name="search" id="paieska">
-                            <button class="button" style="height: 26px;" type="search">search</button>
-                        </form>
-                    </div></li>
+
+                @include('paieska')
+
                 @if (Auth::guest())
                     <li><a href="{{asset('login')}}"><span class="glyphicon glyphicon-user"></span>&nbspSign in</a></li>
                 @else

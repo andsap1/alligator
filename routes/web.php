@@ -41,8 +41,8 @@ Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 Route::get('/order', 'OrderController@index');
 Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
 
-
-
+//paieska
+Route::get('/paieska', 'HomeController@search')->name('search');
 
 
 
