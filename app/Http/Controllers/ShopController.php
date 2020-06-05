@@ -153,26 +153,48 @@ class ShopController extends Controller
                 ]);
             $vs=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->get();
             $skaicius=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->count();
+            $index=-1;
             for($i=0; $i<$skaicius; $i++)
-            {
-
-                if($vs[$i]->fk_preke == $request->input('preke'))
-                    {
-                        PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
-                            'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
-                       break;
-                    }
-                else {
-                    $i++;
-//
-//                    $tarpine = new PrekeKrepselis();
-//                    $tarpine->kiekis = $request->input('kiekis');
-//                    $tarpine->fk_preke = $request->input('preke');
-//                    $tarpine->fk_krepselis = session('krepselis');
-//                    $tarpine->save();
-
+                if($vs[$i]->fk_preke == $request->input('preke')) {
+                    $index = $i;
+                    break;
                 }
+
+
+            if ($index == - 1){
+//                $_SESSION ['cart'] [] = $item;
+                     $tarpine = new PrekeKrepselis();
+                    $tarpine->kiekis = $request->input('kiekis');
+                    $tarpine->fk_preke = $request->input('preke');
+                    $tarpine->fk_krepselis = session('krepselis');
+                    $tarpine->save();}
+            else {
+//                $cart [$index]->quantity ++;
+//                $_SESSION ['cart'] = $cart;
+                PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
+                            'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
             }
+//        }
+//            for($i=0; $i<$skaicius; $i++)
+//            {
+//
+//                if($vs[$i]->fk_preke == $request->input('preke'))
+//                    {
+//                        PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
+//                            'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
+//                       break;
+//                    }
+//                else {
+//                    $i++;
+////
+////                    $tarpine = new PrekeKrepselis();
+////                    $tarpine->kiekis = $request->input('kiekis');
+////                    $tarpine->fk_preke = $request->input('preke');
+////                    $tarpine->fk_krepselis = session('krepselis');
+////                    $tarpine->save();
+
+//                }
+//            }
 
 
 //            foreach ($visostarpines as $vs){
