@@ -23,6 +23,25 @@ class CartController extends Controller
                 ->leftJoin('preke','preke_krepselis.fk_preke','=','id_preke')
                 ->select('preke_krepselis.*','preke.kaina','preke.pavadinimas','preke.aprasymas',DB::raw('krepselis.kaina as kr_kaina'))->get();
 
+            $kiekis = DB::table('preke_krepselis')->where('preke_krepselis.fk_krepselis','=',$kr)->get();
+           $kiekelis=0;
+            foreach ($kiekis as $kk){
+                $kiekelis=$kiekelis+$kk->kiekis;
+            }
+            session(['kiekis'=>$kiekelis]);
+
+//            dd($kiekelis);
+
+//          for ($i=0; $i<$kiekis; $i++){
+//              session(['kiekis'=>$kiekis]);
+//          }
+//            foreach ($kiekis as $kk){
+//                session(['kiekis'=>$kk->kiekiss]);
+//            }
+
+//            (DB::raw("SELECT COUNT(a.Final_Kaina) as kiekiss From (SELECT preke.Pavadinimas, preke.Aprasymas, preke.Kaina, pasirinktos_prekes.kiekis, preke.Spalva, krepselis.Kaina as Final_Kaina FROM (SELECT MAX(id_Krepselis) as lll FROM krepselis) a LEFT JOIN pasirinktos_prekes on a.lll=pasirinktos_prekes.fk_krepselio_id LEFT JOIN preke on pasirinktos_prekes.fk_prekes_id = preke.id_Preke LEFT JOIN krepselis on a.lll=krepselis.id_Krepselis) a"));
+
+
 //            $suma = DB::select(DB::raw("SELECT krepselis.Kaina as Final_Kaina, krepselis.id_Krepselis as
 //IDD FROM (SELECT MAX(id_Krepselis) as lll FROM krepselis) a LEFT JOIN pasirinktos_prekes on a.lll=pasirinktos_prekes.fk_krepselio_id
 //LEFT JOIN preke on pasirinktos_prekes.fk_prekes_id = preke.id_Preke LEFT JOIN krepselis on a.lll=krepselis.id_Krepselis LIMIT 1"));

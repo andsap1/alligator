@@ -149,15 +149,58 @@ class ShopController extends Controller
                 [
                     'kaina' => $nauja,
                 ]);
-            $tarpine = new PrekeKrepselis();
-            $tarpine->kiekis = $request->input('kiekis');
-            $tarpine->fk_preke = $request->input('preke');
-            $tarpine->fk_krepselis = session('krepselis');
-            $tarpine->save();
+            $vs=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->get();
+            $skaicius=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->count();
+            for($i=0; $i<$skaicius; $i++)
+            {
+
+                if($vs[$i]->fk_preke == $request->input('preke'))
+                    {
+                        PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
+                            'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
+                       break;
+                    }
+                else {
+                    $i++;
+//
+//                    $tarpine = new PrekeKrepselis();
+//                    $tarpine->kiekis = $request->input('kiekis');
+//                    $tarpine->fk_preke = $request->input('preke');
+//                    $tarpine->fk_krepselis = session('krepselis');
+//                    $tarpine->save();
+
+                }
+            }
+
+
+//            foreach ($visostarpines as $vs){
+//                if($vs->fk_preke == $request->input('preke'))
+//                    {
+//                        PrekeKrepselis::where('id_Tarpine', $vs->id_Tarpine)->update([
+//                            'kiekis' => $request->input('kiekis')+$vs->kiekis,]);
+//                       break;
+//                    }
+//                else {
+//                    $tarpine = new PrekeKrepselis();
+//                    $tarpine->kiekis = $request->input('kiekis');
+//                    $tarpine->fk_preke = $request->input('preke');
+//                    $tarpine->fk_krepselis = session('krepselis');
+//                    $tarpine->save();
+//
+//                }
+//            }
+
+//            $tarpine = new PrekeKrepselis();
+//            $tarpine->kiekis = $request->input('kiekis');
+//            $tarpine->fk_preke = $request->input('preke');
+//            $tarpine->fk_krepselis = session('krepselis');
+//            $tarpine->save();
 //
 //
             return Redirect::to('cart')->with('success', 'Pridėta');
-        } else {
+        }
+
+        else {
             if ($validator->fails()) {
                 return Redirect::back()->withErrors($validator);
             }
@@ -173,6 +216,9 @@ class ShopController extends Controller
             $tarpine->fk_krepselis = $krepselis->id_krepselis;
             $tarpine->save();
             session(['krepselis' => $krepselis->id_krepselis]);
+
+
+
 
             return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
         }

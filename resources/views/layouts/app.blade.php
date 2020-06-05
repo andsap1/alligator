@@ -80,6 +80,15 @@
             <a href="{{asset('cart')}}">
             <img class="cart" src="{{asset('images/cart.png')}}"  />
             </a>
+            <div class="cart_count"><span>
+                    @if(session()->has('kiekis'))
+                        {{session('kiekis')}}
+                    @else
+                        0
+                    @endif
+                </span></div>
+        </div>
+
         </div>
     </div>
     </div>
