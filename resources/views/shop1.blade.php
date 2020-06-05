@@ -147,6 +147,7 @@ sessionStorage.removeItem("SelectedItem");
 
         </div>
 
-{{--        {{ $items->links() }}--}}
     @endforeach
+
+
 @endsection
