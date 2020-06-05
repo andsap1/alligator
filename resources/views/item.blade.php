@@ -2,6 +2,11 @@
 <link href="{{ asset('css/rating.css') }}" rel="stylesheet">
 
 @section('turinys')
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/xzoom/dist/xzoom.css" media="all" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/xzoom/dist/xzoom.min.js"></script>
+
+
 {{--    border: solid 1px #8f94a0;--}}
     <a style="margin: 0 0 15px 15px;" href="{{asset("")}}">
 {{--           <img style="width: 30px" src="../images/cart.png">--}}
@@ -13,13 +18,16 @@
         <div class="col-lg-2 image_list">
             @foreach($allphotos as $photo)
             <div class=" list-unstyled components ">
-            <img class="img-responsive" style="" src="../images/{{$photo->pavadinimas}}.jpg"  alt="paveiksliukas {{$photo->pavadinimas}}">
+
+           <img class="img-responsive" id="zoom"style="" src="../images/{{$photo->pavadinimas}}.jpg" alt="paveiksliukas {{$photo->pavadinimas}}">
+
             </div>
             @endforeach
         </div>
 
         <div class="col-lg-5 images">
-            <div ><img class="img-responsive " src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>
+            <div ><img class="img-responsive" src="../images/{{$mainphoto->pavadinimas}}.jpg"} alt="paveiksliukas {{$mainphoto->pavadinimas}}"></div>
+
         </div>
 
 {{--        src="{{asset('images/item1.jpg')}}" alt=""--}}

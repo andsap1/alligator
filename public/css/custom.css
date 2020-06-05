@@ -590,3 +590,17 @@ hr{
             counter-reset: elementas;
         }
 
+/*nuotrauku didinimas*/
+
+ #zoom {
+
+     transition: transform .2s;
+     margin: 0 auto;
+ }
+
+#zoom:hover{
+    transform: scale(2.5);
+    position: relative;
+    z-index: 1;
+}
+
