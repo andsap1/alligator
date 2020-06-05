@@ -9,13 +9,12 @@
                     <h10>{{ $category->pavadinimas }}</h10>
                     </br>
                     </br>
-                    {{--<div class="img-wrap">
-                        <img src="{{ asset('/images/item1.jpg')}}">
-                    </div>--}}
+                    <div class="img-wrap">
+                        <img src="{{ asset('/images') . '/' . $category->nuotraukospav . '.jpg'}}">
+                    </div>
                 </a>
             </div>
         </div>
     @endforeach
-
 
 </section>
