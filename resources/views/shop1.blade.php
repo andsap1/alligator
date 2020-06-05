@@ -21,7 +21,7 @@
            <form method="POST" action="{{Route('sort', $cate->id_kateg)}}" >
                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                <span class="input-field">
-        <label>Order by </label>
+        <label style="padding-left: 15px">Order by </label>
         <select name="orderBy" id="orderBy"  class="form-control" style="width: fit-content; display:inherit">
             <option value="">newest</option>
             <option value="asc">price low</option>
@@ -40,7 +40,7 @@
         <form method="POST" action="{{Route('sort1')}}" >
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <span class="input-field">
-        <label>Order by </label>
+        <label style="padding-left: 15px">Order by </label>
         <select name="orderBy" id="orderBy"  class="form-control" style="width: fit-content; display:inherit">
             <option value="">newest</option>
             <option value="asc">price low</option>
@@ -71,20 +71,6 @@
 {{--</div>--}}
 <div id="result"></div>
 <script>
-@if($cate != null)
-
-
-        var selectedItem = sessionStorage.getItem("SelectedItem");
-        $('#orderBy').val(selectedItem);
-sessionStorage.removeItem("SelectedItem");
-        $('#orderBy').change(function () {
-
-            var idetVal = $(this).val();
-            sessionStorage.setItem("SelectedItem", idetVal);
-
-        });
-
-    @else
         var selectedItem = sessionStorage.getItem("SelectedItem");
         $('#orderBy').val(selectedItem);
 sessionStorage.removeItem("SelectedItem");
@@ -93,7 +79,6 @@ sessionStorage.removeItem("SelectedItem");
             sessionStorage.setItem("SelectedItem", idetVal);
 
 });
-    @endif
 
 </script>
 
