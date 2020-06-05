@@ -72,7 +72,7 @@
 <div id="result"></div>
 <script>
 @if($cate != null)
-   
+
 
         var selectedItem = sessionStorage.getItem("SelectedItem");
         $('#orderBy').val(selectedItem);
