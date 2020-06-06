@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', 'ShopController@indexHome');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/about', 'AboutController@index');
 Route::get('/shop1', 'ShopController@index')->name('shop1');
 Route::get('/shop1/{category}', 'ShopController@getCategory');
@@ -21,25 +22,26 @@ Route::get('/item/{id}', 'ShopController@openPreke');
 Route::post('/item/{ids}', 'ShopController@insertPrekeVertinimas')->name('insertPrekeVertinimas');
 Route::post('/komentaras/{id}', 'ShopController@insertPrekeKomentaras')->name('insertKomentaras');
 Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke');
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
-Route::get('/acc', 'AccController@index')->name('account');
-Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/acc', 'AccController@index')->name('account');
+    Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
+    Route::get('/order', 'OrderController@index');
+    Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
+    Route::get('/signout', 'AccController@signout');
+});
 
 Route::get('email', 'EmailController@index')->name('email');
 Route::post('/','EmailController@send')->name('send');
 
 
 Auth::routes();
-Route::get('/signout', 'AccController@signout');
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-//Route::get('/view', 'ViewController@index')->name('view');
-Route::get('/cart', 'CartController@index')->name('cart');
-Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
-Route::get('/order', 'OrderController@index');
-Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
 
 //paieska
 Route::get('/paieska', 'HomeController@search')->name('search');
@@ -49,11 +51,10 @@ Route::get('/paieska', 'HomeController@search')->name('search');
 ////ADMINAS
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-Route::get('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-//Route::get('/admin', 'AdminController@index')->name('admin')->middleware('auth:admin');
-Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
 
+Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/admin/signout', 'AdminController@signout')->name('admin.signout');
     Route::get('/users', 'AdminController@users')->name('users');
     Route::get('/product', 'AdminController@product')->name('product');
     Route::get('/orders', 'AdminController@orders')->name('orders');

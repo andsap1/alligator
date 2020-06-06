@@ -6,8 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+
 
 class AdminLoginController extends Controller
 {
@@ -30,13 +32,5 @@ class AdminLoginController extends Controller
         return redirect()->back()->withInput($request->only('email', 'remember'));
 
     }
-    public function logout()
-    {
-//        Auth::guard('admin')->logout();
-//        return redirect()
-//            ->route('admin.login')
-//            ->with('status','Admin has been logged out!');
-        Auth::guard('admin')->logout();
-        return Redirect::to('admin.login')->with('success', 'Atsijungta');
-    }
+
 }

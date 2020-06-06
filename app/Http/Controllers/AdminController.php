@@ -94,4 +94,9 @@ class AdminController extends Controller
             User::where('id','=',$id)->delete();
             return Redirect::to('/users')->with('puiku');
     }
+    public function signout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('admin/login');
+    }
 }

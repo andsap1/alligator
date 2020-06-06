@@ -71,8 +71,7 @@
         </ul>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-
-                   <li> <a href="{{ action('Auth\AdminLoginController@logout')}}">Sign out </a></li>
+                   <li> <a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
             </ul>
      </div>
     </div>
