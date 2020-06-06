@@ -25,6 +25,15 @@ Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke')
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
+//shopo rikiavimas
+Route::post('/shop1', 'ShopController@sort1')->name('sort1');
+Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
+//Route::post('/shop1/{category}','ShopController@sort');
+
+Route::get('/pay','PayController@index')->name('pay');
+
+
+//TIK PRISIJUNGES USER
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/acc', 'AccController@index')->name('account');
@@ -36,16 +45,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::get('email', 'EmailController@index')->name('email');
 Route::post('/','EmailController@send')->name('send');
-
-
-Auth::routes();
-
-
-
-
 //paieska
 Route::get('/paieska', 'HomeController@search')->name('search');
 
+Auth::routes();
 
 
 ////ADMINAS
@@ -64,12 +67,7 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
 });
 
-//shopo rikiavimas
-Route::post('/shop1', 'ShopController@sort1')->name('sort1');
-Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
-//Route::post('/shop1/{category}','ShopController@sort');
 
-Route::get('/pay','PayController@index')->name('pay');
 
 
 
