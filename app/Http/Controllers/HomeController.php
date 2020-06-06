@@ -28,6 +28,7 @@ class HomeController extends Controller
         $allcategories = Kategorija::all();
         return view('home',compact('allcategories'));
     }
+
     public function search(Request $request)
     {
         $request->validate(['search' => 'required|min:2|max:100']);

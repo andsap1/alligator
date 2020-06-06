@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Kategorija;
 use App\Preke;
 use App\User;
 use App\Uzsakymas;
@@ -18,9 +19,18 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+//    public function admin()
+//    {
+//        return view('adminLog');
+//    }
     public function index()
     {
-        return view('admin');
+        $allcategories=Kategorija::all();
+        return view('admin',compact('allcategories'));
     }
     public function users()
     {

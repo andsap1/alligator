@@ -127,7 +127,6 @@ class ShopController extends Controller
     {
         $validator = Validator::make(
             ['kiekis' => $request->input('kiekis'),
-
             ],
             ['kiekis' => 'required|numeric'
             ]
@@ -138,13 +137,13 @@ class ShopController extends Controller
                 return Redirect::back()->withErrors($validator);
             }
 
-            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
-            $data = Krepselis::where('id_krepselis', session('krepselis'))->first();
-            $nauja = (($kaina->kaina) * $request->input('kiekis')) + $data->kaina;
+            $preke = Preke::where('id_preke', $request->input('preke'))->first();
+            $krepsys = Krepselis::where('id_krepselis', session('krepselis'))->first();
+            $naujakaina = (($preke->kaina) * $request->input('kiekis')) + $krepsys->kaina;
 
             Krepselis::where('id_krepselis', session('krepselis'))->update(
                 [
-                    'kaina' => $nauja,
+                    'kaina' => $naujakaina,
                 ]);
             $vs=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->get();
             $skaicius=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->count();
@@ -166,8 +165,15 @@ class ShopController extends Controller
                 PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
                             'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
             }
+            $kr=session('krepselis');
+            $visosp = DB::table('preke_krepselis')->where('preke_krepselis.fk_krepselis','=',$kr)->get();
+            $kiekelis=0;
+            foreach ($visosp as $kk){
+                $kiekelis=$kiekelis+$kk->kiekis;
+            }
+            session(['kiekis'=>$kiekelis]);
 
-            return Redirect::to('cart')->with('success', 'Pridėta');
+            return Redirect::back()->with('success', 'Item(s) added to cart');
         }
 
         else {
@@ -188,11 +194,19 @@ class ShopController extends Controller
             session(['krepselis' => $krepselis->id_krepselis]);
 
 
+            $kr=session('krepselis');
+            $visosp = DB::table('preke_krepselis')->where('preke_krepselis.fk_krepselis','=',$kr)->get();
+            $kiekelis=0;
+            foreach ($visosp as $kk){
+                $kiekelis=$kiekelis+$kk->kiekis;
+            }
+            session(['kiekis'=>$kiekelis]);
 
-
-            return Redirect::to('/cart')->with('success', 'Nebuvo krepselio(prideta)');
+            return Redirect::back()->with('success', 'Item(s) added to cart');
         }
     }
+
+
 
     public function sort(Request $request, $category)
     {

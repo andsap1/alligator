@@ -34,7 +34,7 @@ Route::get('/signout', 'AccController@signout');
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::get('/view', 'ViewController@index')->name('view');
+//Route::get('/view', 'ViewController@index')->name('view');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 
@@ -46,14 +46,22 @@ Route::get('/paieska', 'HomeController@search')->name('search');
 
 
 
-Route::get('/admin', 'AdminController@index')->name('admin');
-Route::get('/users', 'AdminController@users')->name('users');
-Route::get('/product', 'AdminController@product')->name('product');
-Route::get('/orders', 'AdminController@orders')->name('orders');
-Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser');
-Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
-Route::get('/manageUser/useredit/{id}','AdminController@editUser')->name('useredit');
-Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
+////ADMINAS
+Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::get('/admin/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+//Route::get('/admin', 'AdminController@index')->name('admin')->middleware('auth:admin');
+Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
+
+    Route::get('/admin', 'AdminController@index')->name('admin');
+    Route::get('/users', 'AdminController@users')->name('users');
+    Route::get('/product', 'AdminController@product')->name('product');
+    Route::get('/orders', 'AdminController@orders')->name('orders');
+    Route::get('/manageUser/{id}', 'AdminController@deleteUser')->name('deleteUser');
+    Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
+    Route::get('/manageUser/useredit/{id}', 'AdminController@editUser')->name('useredit');
+    Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
+});
 
 //shopo rikiavimas
 Route::post('/shop1', 'ShopController@sort1')->name('sort1');
@@ -61,3 +69,6 @@ Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
 //Route::post('/shop1/{category}','ShopController@sort');
 
 Route::get('/pay','PayController@index')->name('pay');
+
+
+
