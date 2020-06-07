@@ -131,11 +131,12 @@
         </div>
     </div>
 </nav>
+
 {{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
 <div class="container" id="sideNot"  media="(min-width: 766px)" style="margin-left: 40px;" >
     <button class="nav nav-sidebar" id="button1" type="button"  data-toggle="collapse" data-target="#navbarSide"
             aria-controls="navbarSide" aria-expanded="true" aria-label="Toggle navigation" style="margin-left: 40px;">
-        <span class="glyphicon glyphicon-menu-down"></span>
+        <span class="kateg"> Category </span> <span class="glyphicon glyphicon-menu-down"></span>
 
     </button>
 
