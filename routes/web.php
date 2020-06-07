@@ -46,7 +46,8 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('email', 'EmailController@index')->name('email');
 Route::post('/','EmailController@send')->name('send');
 //paieska
-Route::get('/paieska', 'HomeController@search')->name('search');
+Route::get('/paieska', 'SearchController@search')->name('search');
+
 
 Auth::routes();
 
@@ -65,6 +66,22 @@ Route::group(['as'=>'adminRoutes.','middleware' => 'auth:admin'], function () {
     Route::post('/manageUser', 'AdminController@insertUser')->name('manageUser');
     Route::get('/manageUser/useredit/{id}', 'AdminController@editUser')->name('useredit');
     Route::post('confirmEditedUser/{id}', 'AdminController@confirmEditedUser')->name('confirmEditedUser');
+    Route::get('/manageProduct/{id}', 'AdminController@deleteProduct')->name('deleteProduct');
+    Route::post('/manageProduct', 'AdminController@insertProduct')->name('manageProduct');
+    Route::get('/manageProduct', 'AdminController@addProduct')->name('addProduct');
+    Route::get('/manageProduct/productedit/{id}','AdminController@editProduct')->name('productedit');
+    Route::post('confirmEditedProduct/{id}', 'AdminController@confirmEditedProduct')->name('confirmEditedProduct');
+    Route::get('/manageOrder/{id}', 'AdminController@deleteOrders')->name('deleteOrder');
+    Route::post('/manageOrder', 'AdminController@insertOrders')->name('manageOrders');
+    Route::get('/manageOrder/orderedit/{id}','AdminController@editOrders')->name('orderedit');
+    Route::post('confirmEditedOrder/{id}', 'AdminController@confirmEditedOrders')->name('confirmEditedOrders');
+    Route::get('/manageCategory/{id}', 'AdminController@deleteCategory')->name('deleteCategory');
+    Route::post('/manageCategory', 'AdminController@insertCategory')->name('manageCategory');
+    Route::get('/manageCategory', 'AdminController@addCategory')->name('addCategory');
+    //adminpaieska
+    Route::get('/productsearch', 'SearchController@searchproduct')->name('searchproduct');
+    Route::get('/ordersearch', 'SearchController@searchorders')->name('searchorder');
+
 });
 
 
