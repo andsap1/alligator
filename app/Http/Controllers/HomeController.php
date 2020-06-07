@@ -28,16 +28,4 @@ class HomeController extends Controller
         $allcategories = Kategorija::all();
         return view('home',compact('allcategories'));
     }
-
-    public function search(Request $request)
-    {
-        $request->validate(['search' => 'required|min:2|max:100']);
-        $allcategories = Kategorija::all();
-        $search = $request->input('search');
-        $search = preg_replace("#[^0-9a-z]#i","",$search);
-        $preke = Preke::where('pavadinimas', 'LIKE', '%'.$search.'%')
-                        ->orWhere('aprasymas', 'LIKE', '%'.$search.'%')
-                        ->paginate(5);
-        return view('searchrez',compact('allcategories'))->with('preke', $preke);
-    }
 }
