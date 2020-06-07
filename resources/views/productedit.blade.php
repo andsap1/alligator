@@ -2,10 +2,11 @@
 @section('turinys')
     <div class="container-fluid">
         <div class="row justify-content-center">
+
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" id="antraste">Product edit</div>
-
+                    <hr>
                     <div class="card-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('confirmEditedProduct', $selectedProduct->id_preke) }}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

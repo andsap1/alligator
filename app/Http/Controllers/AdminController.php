@@ -224,6 +224,7 @@ class AdminController extends Controller
             $allPro->ikelimo_data = $request->input('ikelimo_data');
             $allPro->ilgis = $request->input('ilgis');
             $allPro->diametras = $request->input('diametras');
+            $allPro->galiuko_aukstis = $request->input('galiuko_aukstis');
 
             $allPro->save();
 

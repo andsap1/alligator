@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" id="antraste">User edit</div>
-
+                    <hr>
                     <div class="card-body">
     <form class="form-horizontal" role="form" method="POST" action="{{ url('confirmEditedUser', $selectedUser->id) }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">

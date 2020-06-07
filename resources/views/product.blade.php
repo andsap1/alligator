@@ -19,6 +19,7 @@
                     <th style="width:10%;border-bottom: 10px;">Price</th>
                     <th style="width:10%;border-bottom: 10px;">Length</th>
                     <th style="width:10%;border-bottom: 10px;">Diameter</th>
+                    <th style="width:10%;border-bottom: 10px;">Tip</th>
                     <th style="width:10%;border-bottom: 10px;">Category</th>
                 </tr>
                 </thead>
@@ -31,6 +32,7 @@
                     <td>{{ $asPro->kaina }}</td>
                     <td>{{ $asPro->ilgis }}</td>
                     <td>{{ $asPro->diametras }}</td>
+                    <td>{{ $asPro->galiuko_aukstis }}</td>
                     @foreach($allcategory as $cat)
                     @if($cat->id_kateg === $asPro->fk_prekes_kategorija)
                     <td>{{ $cat->pavadinimas }}</td>

@@ -57,6 +57,12 @@
                                 <input type="text" class="form-control" name="diametras" value="{{ old('diametras') }}">
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-md-3 col-form-label text-md-right" style="margin-left: 30px">Tip height</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" name="galiuko_aukstis" value="{{ old('galiuko_aukstis') }}">
+                            </div>
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-10 offset-md-4" style="margin-left: -35px">

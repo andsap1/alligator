@@ -3,7 +3,7 @@
 @section('turinys')
 
 
-    <h1 id="antraste" >Admin log in</h1>
+    <h1 id="antraste2" >Admin log in</h1>
 <div class="col-lg-10 col-md-10 offset-lg-2 offset-md-2 ">
     <div class="container-fluid">
         <hr>
