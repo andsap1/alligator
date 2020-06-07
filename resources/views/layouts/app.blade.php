@@ -45,7 +45,7 @@
 </script>
 
 
-<div class="fixed-top galva">
+<div class="fixed-top galva" style="border-bottom-color: #6C6F6F">
     <p>Important! VAT. (+21%) does not apply for countries outside EU</p>
         @if (\Session::has('success'))
             <div class="alert alert-success">
