@@ -3,10 +3,6 @@ html, body{
     height: 100%;
 }
 body {
-    /*color: #8A8985; !* teksto spalva *!*/
-    /*font-size: 13px; !* teksto dydis *!*/
-    /*background-color: #474B4B ; !*cdcdc0; #e3e3e3;*!*/
-    /*margin: 0;*/
 }
 a {
     color: #424242;
@@ -56,6 +52,7 @@ footer {
 @media only screen and (max-width: 600px) {
     .galva {background: #efefef;}
 }
+
 .search{
     height: 26px;
     background: transparent;
@@ -78,8 +75,11 @@ footer {
         max-width: 100px;
         min-width: 50px;
         width: 100%;
-        /*padding: 2% 2%;*/
     }
+
+
+
+
 }
 
 .vertical-align {
@@ -131,8 +131,12 @@ footer {
         padding-top: 0;
     }
 }
-
-
+@media (max-width: 1200px) {
+    #cart_sonas {
+        height: auto;
+        width: auto;
+    }
+}
 
 .galva{
     border-bottom: 1px solid #38c172;

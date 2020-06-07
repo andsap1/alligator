@@ -81,8 +81,6 @@ class CartController extends Controller
         }
 
 
-
-
     }
 
     public function deletePreke($id)

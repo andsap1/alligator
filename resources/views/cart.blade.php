@@ -4,25 +4,17 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<style>
-    @media (max-width: 1200px) {
-        #cart_sonas {
-            height: auto;
-            width: auto;
-        }
-    }
-</style>
-@section('turinys')
 
+@section('turinys')
 
     <div class="container" id="cart_sonas">
         <div class="col-lg-10 offset-lg-1">
             <table id="cart" class="table table-hover table-condensed" >
                 <thead>
                 <tr style="border-bottom: 0px">
-                    <th style="width:50%;border-bottom: 10px;">Product</th>
+                    <th style="width:45%;border-bottom: 10px;">Product</th>
                     <th style="width:10%;border-bottom: 10px;">Price</th>
-                    <th style="width:8%;border-bottom: 10px;">Quantity</th>
+                    <th style="width:15%;border-bottom: 10px;">Quantity</th>
                     <th style="width:22%;border-bottom: 10px;"class="text-center">Subtotal</th>
                     <th style="width:10%;border-bottom: 10px;"></th>
                 </tr>
@@ -31,14 +23,14 @@
                 <tr>
                     @foreach($result as $resul)
                         <td data-th="Product">
-                            <div class="row">
+{{--                            <div class="row">--}}
                                 <div class="col-sm-8">
                                     <h4 style="padding-left: 15px" id="countas"> &nbsp {{$resul->pavadinimas}} </h4>
                                 </div>
-                            </div>
+{{--                            </div>--}}
                         </td>
                         <td data-th="Price" id="lyg">{{$resul->kaina}} €</td>
-                        <td data-th="Quantity" id="lyg" class="text-center">
+                        <td data-th="Quantity" id="lyg" >
 
                             <form method="POST" action="{{ Route('updatePreke',$resul->id_Tarpine) }}" >
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
