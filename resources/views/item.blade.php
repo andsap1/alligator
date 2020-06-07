@@ -8,7 +8,7 @@
 
 
 {{--    border: solid 1px #8f94a0;--}}
-    <a style="margin: 0 0 15px 15px;" href="{{asset("")}}">
+    <a style="margin: 0 0 15px 15px;" href="{{URL::previous()}}">
 {{--           <img style="width: 30px" src="../images/cart.png">--}}
            <svg class="bi bi-chevron-compact-left" width="1.5em" height="2em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                <path fill-rule="evenodd" d="M9.224 1.553a.5.5 0 01.223.67L6.56 8l2.888 5.776a.5.5 0 11-.894.448l-3-6a.5.5 0 010-.448l3-6a.5.5 0 01.67-.223z" clip-rule="evenodd"/>
@@ -62,12 +62,10 @@
                                 </select>
                             </div>
 
-                        <div>
                         <div class="product_price">{{$item->kaina}} Eur
                             <span id="cart-button"><button type="submit" class="btn btn-primary pull-right" id="green_btn">Add to cart</button></span>
                         </div>
 
-                        </div>
 
                     </form>
                 </div>

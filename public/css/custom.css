@@ -272,16 +272,16 @@ footer {
     display: -ms-flexbox!important;
     display: flex!important;
 }
-@media only screen and (max-width: 1199px) {
-    .product_price {
-        margin-top: 60px;
-    }
-}
+/*@media only screen and (max-width: 1199px) {*/
+/*    .product_price {*/
+/*        margin-top: 60px;*/
+/*    }*/
+/*}*/
     .product_price {
         display: inline-block;
         font-size: 24px;
         font-weight: 500;
-        margin-top: 60px;
+        margin-top: 20px;
         clear: left;
     }
 #cart-button {
