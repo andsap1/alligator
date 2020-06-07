@@ -99,12 +99,31 @@ footer {
     width: 100%;
 
 }
+.cart_count {
+    position: absolute;
+    margin-top: -25px;
+    width: 23px;
+    height: 23px;
+    background: #6c6f6f;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 2.5px;
+    color: black;
+}
 @media only screen and (max-width: 1200px) {
     .cart {
         max-width: 50px;
         width: 100%;
     }
+    .cart_count {
+        margin-top: -15px;
+        width: 18px;
+        height: 18px;
+        padding-top: 0;
+    }
 }
+
+
 
 .galva{
     border-bottom: 1px solid #38c172;
@@ -611,22 +630,8 @@ hr{
     z-index: 1;
 }
 
-
-.cart_count {
-    position: absolute;
-    margin-top: -25px;
-    width: 23px;
-    height: 23px;
-    background: #6c6f6f;
-    border-radius: 50%;
-    text-align: center;
-    padding-top: 2px;
-    color: black;
-}
 #register{
     color: #86C232;
-    /*height: 22px;*/
-    /*font-size: 14px;*/
 }
 
 .nopad{
