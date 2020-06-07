@@ -39,7 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/acc', 'AccController@index')->name('account');
     Route::post('/confirmEditAcc/{userId}', 'AccController@confirmEditAcc')->name('confirmEditAcc');
     Route::get('/order', 'OrderController@index');
-    Route::post('/ord','OrderController@insertOrder')->name('orderInsert');
+    Route::post('/order','OrderController@insertOrder')->name('orderInsert');
     Route::get('/signout', 'AccController@signout');
 });
 
