@@ -1,18 +1,18 @@
 @extends('layouts.app')
-<style>
-    .text{
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        line-height: 16px;
-        max-height: 32px;
-
-        /* The number of lines to be displayed */
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-</style>
 @section('turinys')
+    <style>
+        .text{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            line-height: 16px;
+            max-height: 32px;
+
+            /* The number of lines to be displayed */
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    </style>
 @if($cate!='null')
 
        <h1 id="antraste">{{$cate->pavadinimas}}</h1>
@@ -29,7 +29,8 @@
         </select>
 <button type="submit" class="btn" id="mygtukas" style="display: inherit; margin-top: 0px;">Order</button>
     </span>
-
+<br>
+               <br>
            </form>
 
 
@@ -48,7 +49,8 @@
         </select>
 <button type="submit" class="btn" id="green_btn" style="display: inherit; margin-top: 0px;">Order</button>
     </span>
-
+<br>
+            <br>
 
         </form>
 
@@ -81,7 +83,9 @@ sessionStorage.removeItem("SelectedItem");
 });
 
 </script>
-
+    @if(count($items) === 0)
+        <p>There is no products with this category yet.</p>
+    @else
     @foreach($items as $item)
         <div>
         <div class="col-md-4">
@@ -133,6 +137,6 @@ sessionStorage.removeItem("SelectedItem");
         </div>
 
     @endforeach
-
+    @endif
 
 @endsection
