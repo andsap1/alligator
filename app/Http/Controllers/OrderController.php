@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Database\QueryException;
 
-
-
-
 class OrderController extends Controller
 {
     public function index(){
@@ -33,7 +30,6 @@ class OrderController extends Controller
             $result = DB::table('krepselis')->where('krepselis.id_krepselis', '=', $kr)->leftJoin('preke_krepselis', 'id_krepselis', '=', 'preke_krepselis.fk_krepselis')
                 ->leftJoin('preke', 'preke_krepselis.fk_preke', '=', 'id_preke')
                 ->select('preke_krepselis.*', 'preke.kaina', 'preke.pavadinimas', 'preke.aprasymas', DB::raw('krepselis.kaina as kr_kaina'))->get();
-
         }
         return view('order', compact('allcategories','result', 'kr'));
     }
@@ -43,9 +39,6 @@ class OrderController extends Controller
     {
         $kr=session('krepselis');
         $id = auth()->user()->id;
-       // dd($kr);
-      //  dd($id);
-
         $validator = Validator::make(
             [   'adresas' =>$request->input('adresas'),
                 'vardas'=>$request->input('vardas'),
@@ -75,10 +68,6 @@ class OrderController extends Controller
             $allInfo->fk_id_User = $id;
             $allInfo->save();
 
-//            $kaina = Preke::where('id_preke', $request->input('preke'))->first();
-//            $krepselis = new Krepselis();
-//            $krepselis->kaina = '10';//($kaina->kaina) * $request->input('kiekis');
-//            $krepselis->save();
             session()->forget('krepselis');
             session(['kiekis'=>0]);
 

@@ -1,20 +1,7 @@
 @extends('layouts.app')
-<style>
 
-    #mygtukas {
-        background-color: #61892F;
-        width: 15%;
-        margin-top: 10px;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 16px;
-    }
-
-</style>
 
 @section('turinys')
-{{--<div>--}}
     <h1 id="antraste" >Contact us</h1>
     <form class="form" method="POST" action="{{ Route('send') }}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -35,5 +22,4 @@
         </div>
         </div>
     </form>
-{{--</div>--}}
     @endsection

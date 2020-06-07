@@ -25,13 +25,13 @@ Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke')
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
 Route::post('/cart/{id}/update', 'CartController@updatePreke')->name('updatePreke');
-
 //shopo rikiavimas
 Route::post('/shop1', 'ShopController@sort1')->name('sort1');
 Route::post('/shop1/{cate}', 'ShopController@sort')->name('sort');
-//Route::post('/shop1/{category}','ShopController@sort');
-
-Route::get('/pay','PayController@index')->name('pay');
+Route::get('email', 'EmailController@index')->name('email');
+Route::post('/','EmailController@send')->name('send');
+//paieska
+Route::get('/paieska', 'SearchController@search')->name('search');
 
 
 //TIK PRISIJUNGES USER
@@ -42,16 +42,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/order', 'OrderController@index');
     Route::post('/order','OrderController@insertOrder')->name('orderInsert');
     Route::get('/signout', 'AccController@signout');
+    Route::get('/pay','PayController@index')->name('pay');
 });
 
-Route::get('email', 'EmailController@index')->name('email');
-Route::post('/','EmailController@send')->name('send');
-//paieska
-Route::get('/paieska', 'SearchController@search')->name('search');
-
-
 Auth::routes();
-
 
 ////ADMINAS
 Route::get('/admin/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
