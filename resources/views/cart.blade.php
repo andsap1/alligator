@@ -50,16 +50,15 @@
                             </div>
                         </td>
                         <td data-th="Price">{{$resul->kaina}} €</td>
-                        <td data-th="Quantity" class="text-center">{{$resul->kiekis}}</td>
-                        {{--   <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>--}}
-                        {{--                        <input type="number" class="form-control text-center" value="1">--}}
-                        {{--                    </td>--}}
+                        <td data-th="Quantity" class="text-center">
 
-                        {{--   @foreach($suma as $sumele)
-                               <div class="order_total_title">Užsakymo kaina:</div>
-                               <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
-                               {{session(['kaina'=>$sumele->Final_Kaina])}}
-                               @endforeach--}}
+                            <form method="POST" action="{{ Route('updatePreke',$resul->id_Tarpine) }}">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="submit" name="minus" value="-" class="minus">
+                                <label >{{$resul->kiekis}} </label>
+                                <input type="submit" name="plus" value="+" class="plus">
+                            </form>
+                        </td>
                         <td data-th="Subtotal" class="text-center" >{{$resul->kiekis*$resul->kaina}} €</td>
                         <td> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
                                 href="{{route('deletePreke', $resul->id_Tarpine)}}" >

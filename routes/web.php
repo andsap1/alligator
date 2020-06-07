@@ -24,6 +24,7 @@ Route::post('/komentaras/{id}', 'ShopController@insertPrekeKomentaras')->name('i
 Route::post('/item', 'ShopController@insertPrekeKrepselis')->name('insertPreke');
 Route::get('/cart', 'CartController@index')->name('cart');
 Route::get('/cart/{id}', 'CartController@deletePreke')->name('deletePreke');
+Route::post('/cart/{id}/update', 'CartController@updatePreke')->name('updatePreke');
 
 //shopo rikiavimas
 Route::post('/shop1', 'ShopController@sort1')->name('sort1');
