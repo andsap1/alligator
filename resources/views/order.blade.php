@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('turinys')
+    <link href="{{ asset('pay') }}">
     <div>
         <div class="col-lg-10 offset-lg-1" style="margin-left: 100px;">
             <table id="cart" class="table table-hover table-condensed" >
@@ -34,7 +35,7 @@
                         <h3 id="antraste">Info details</h3>
                     </div>
                     <div class="row">
-                        <form class="form-horizontal" method="post" action="{{Route('orderInsert')}}">
+                        <form id="ived"class="form-horizontal" method="post" action="{{Route('orderInsert')}}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <div class="form-group col-sm-7">
                                 <label for="adresas">Adress</label>
@@ -59,19 +60,24 @@
                             <div class="form-group col-sm-7">
 
                                  <script>
-                                     var child
+                                     var child;
                                      var bu = document.getElementById("mygtukas2");
                                   function myPay() {
                                       child = window.open("pay", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=250,left=500,width=450, height=150");
 
                                       var id = setInterval(function () {
-                                          if (child.closed) {
-                                              clearInterval(id);
-                                              document.getElementById("mygtukas2").disabled = false;
-                                              document.getElementById("mygtukas1").disabled = true;
-                                          }
-                                      }, 100);
+                                           if (child.closed) {
+
+                                                  clearInterval(id);
+                                                  document.getElementById("mygtukas2").disabled = false;
+                                                  document.getElementById("mygtukas1").disabled = true;
+                                              }
+                                          }, 100);
+
+
+
                                   }
+
                                 </script>
 <style>
     #mygtukas1, #mygtukas2
