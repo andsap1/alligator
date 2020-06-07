@@ -16,7 +16,7 @@ a:hover{
 }
 
 a:active{
-    color: red;
+    color: #e32727;
 }
 .dropdown-item {
     display: block;
@@ -50,7 +50,7 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-    .galva {background: red;}
+    .galva {background: #efefef;}
 }
 
 .img-col{
@@ -386,7 +386,10 @@ footer {
         margin-left: 0;
     }
 }
-
+.formPaieskaProd
+{
+    color: #050505;
+}
 .formPaieska
 {
 
@@ -394,10 +397,10 @@ footer {
 }
 .formPaieskaVest
 {
-
-    border-radius: 5px;
-
-    color: #86C232;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom-color: #ffffff;
+    color: #ffffff;
 }
 .button
 {
@@ -638,4 +641,13 @@ hr{
 }
 .btn-link:hover{
     color: #86C232;
+}
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+    background-color: #61892F;
 }
