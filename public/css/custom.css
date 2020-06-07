@@ -618,7 +618,11 @@ hr{
         body {
             counter-reset: elementas;
         }
-
+#countas::before {
+    font-size: 15pt;
+    counter-increment: elementas;
+    content: counter(elementas) ".   ";
+}
 /*nuotrauku didinimas*/
 
  #zoom {
