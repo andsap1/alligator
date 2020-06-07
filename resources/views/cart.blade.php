@@ -37,18 +37,18 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">{{$resul->kaina}} €</td>
-                        <td data-th="Quantity" class="text-center">
+                        <td data-th="Price" id="lyg">{{$resul->kaina}} €</td>
+                        <td data-th="Quantity" id="lyg" class="text-center">
 
-                            <form method="POST" action="{{ Route('updatePreke',$resul->id_Tarpine) }}">
+                            <form method="POST" action="{{ Route('updatePreke',$resul->id_Tarpine) }}" >
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="submit" name="minus" value="-" class="minus">
                                 <label >{{$resul->kiekis}} </label>
                                 <input type="submit" name="plus" value="+" class="plus">
                             </form>
                         </td>
-                        <td data-th="Subtotal" class="text-center" >{{$resul->kiekis*$resul->kaina}} €</td>
-                        <td> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
+                        <td data-th="Subtotal" class="text-center" id="lyg">{{$resul->kiekis*$resul->kaina}} €</td>
+                        <td id="lyg"> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
                                 href="{{route('deletePreke', $resul->id_Tarpine)}}" >
                                 <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
                             </a>
