@@ -57,52 +57,46 @@
                             </div>
 
                             <div class="form-group col-sm-7">
-                            {{--    <script
-                                    src="https://www.paypal.com/sdk/js?client-id=ARgs-HAJc8YKzu4yLF3CfWHJs616kOemPfSB8pC053iucVrKBm67OjAz-7LuCcolKHa9qbAIyeCf3tuS&currency=EUR"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
-                                </script>
-                                <div id="paypal-button-container"></div>
 
-                                <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>--}}
-{{--                                <script>paypal.Buttons().render('#paypal-button-container');</script>--}}
-
-                                 {{--/*   @foreach($result as $kaina)--}}
-                                 {{--   <h2 class="total" style="text-align: end">Total &nbsp;<span class="kaina">{{$kaina->kr_kaina}} €</span></h2>--}}
-                                 {{--   @break--}}
-                                 {{--   @endforeach*/--}}
-                                {{--    paypal.Buttons({
-                                        createOrder: function(data, actions) {
-                                            // This function sets up the details of the transaction, including the amount and line item details.
-                                            return actions.order.create({
-                                                purchase_units: [{
-                                                    amount: {@foreach($result as $kaina)
-                                                        value:"{{$kaina->kr_kaina}}"
-                                                        @break
-                                                        @endforeach
-                                                    }
-                                                }]
-                                            });
-                                        },
-                                        onApprove: function(data, actions) {
-                                            // This function captures the funds from the transaction.
-                                            return actions.order.capture().then(function(details) {
-                                                // This function shows a transaction success message to your buyer.
-                                                alert('Transaction completed by ' + details.payer.name.given_name);
-
-                                            });
-                                        }
-                                    }).render('#paypal-button-container');--}}
                                  <script>
-                                  function myPay()
-                                 {
-                                     window.open("pay", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500,left=500,width=400, height=400");
-                                 }
+                                     var child
+                                     var bu = document.getElementById("mygtukas2");
+                                  function myPay() {
+                                      child = window.open("pay", "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=250,left=500,width=450, height=150");
 
+                                      var id = setInterval(function () {
+                                          if (child.closed) {
+                                              clearInterval(id);
+                                              document.getElementById("mygtukas2").disabled = false;
+                                              document.getElementById("mygtukas1").disabled = true;
+                                          }
+                                      }, 100);
+                                  }
                                 </script>
-
-                                <button type="submit"class="btn" id="mygtukas" onclick="myPay()">Order</button>
+<style>
+    #mygtukas1, #mygtukas2
+    {
+        background-color: #61892F;
+        margin-top: 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+    }
+    .myg{
+        text-align: end;
+    }
+</style>
+                            <div class="myg">
+                                <button type="button"class="btn" id="mygtukas1" onclick="myPay()">Pay</button>
+                                <button type="submit"class="btn" id="mygtukas2" disabled>End Order</button>
+                            </div>
                             </div>
 
+
                         </form>
+
                     </div>
 
                 </div>
