@@ -35,75 +35,63 @@
         });
     });
 </script>
-<div class="jumbotron ">
+<div class="fixed-top galva" style="border-bottom: white">
+    @if (count($errors) > 0)
+        <div class="alert alert-danger">
+            <p>There is an error in the data you are entering:</p>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
+</div>
+<div class="jumbotron " style="background-color: white; align-content: center">
     <div class="container-fluid">
         <div class="row vertical-align" >
             <div class=" col-sm-2 img-col">
                 <img class="log" src="{{asset('images/log.png')}}" />
             </div>
-            <div class="col-sm-8 ">
+            <div class="col-sm-4 ">
                 <h1 id="nameAlligator">Alligator PDR tools</h1>
             </div>
-            <div class="col-sm-2 img-col">
-                <a href="{{asset('cart')}}">
-                    <img class="cart" src="{{asset('images/cart.png')}}"  />
-                </a>
+        </div>
+    </div>
+</div>
 
+<nav class="navbar navbar-inverse" style="background-color: #222629;">
+    <div class="container-fluid" >
+        <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
+        </ul>
+    </div>
+</nav>
+{{--   /*kai sumazini atsidengia kitoje vietoje side bar*/--}}
+<div class="wrapper">
+    <nav id="sidebaradmin">
+        <div class="bg-dark p-4">
+
+            <ul class="list-unstyled components">
+                <a href="{{ action('AdminController@index')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-indent-left"></span><h5>Category</h5></div></a>
+                <a href="{{ action('AdminController@users')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-user"></span><h5>Users</h5></div></a>
+                <a href="{{ action('AdminController@product')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-list-alt"></span><h5>Products</h5></div></a>
+                <a href="{{ action('AdminController@orders')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-th-list"></span><h5>Orders</h5></div></a>
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="content">
+        <div class="container-fluid" >
+            <div class="row">
+                @yield('turinys')
             </div>
         </div>
+
     </div>
 </div>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid" >
 
-         <div class="navbar-header">
-
-             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-                 <span class="icon-bar"></span>
-             </button>
-
-         </div>
-        <ul class="nav navbar-nav">
-            <li><a href="#">&nbspAdmin</a></li>
-        </ul>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-                   <li> <a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
-            </ul>
-     </div>
-    </div>
-
- </nav>
-<div class="wrapper">
-<nav id="sidebaradmin">
-    <a href="{{ action('AdminController@index')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-home"></span><h5>Home</h5></div></a>
-    <a href="{{ action('AdminController@users')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-user"></span><h5>Users</h5></div></a>
-    <a href="{{ action('AdminController@product')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-list-alt"></span><h5>Products</h5></div></a>
-    <a href="{{ action('AdminController@orders')}}"><div style="text-align: center;"><span class="glyphicon glyphicon-th-list"></span><h5>Orders</h5></div></a>
-</nav>
-
-<div id="content">
-    <div class="container-fluid" >
-        <div class="row">
-            @yield('turinys')
-        </div>
-    </div>
-    {{--            <h2 class="sub-header">Section title</h2>--}}
-
-</div>
-</div>
-
-
-<footer class="container-fluid text-center">
-    <p>Online Store Copyright</p>
-    <form class="form-inline">Get deals:
-        <input type="email" class="form-control" size="50" placeholder="Email Address">
-        <button type="button" class="btn btn-danger">Sign In</button>
-    </form>
-</footer>
 <script>	/*Menu-toggle*/
     $("#menu-toggle").click(function(e) {
         e.preventDefault();

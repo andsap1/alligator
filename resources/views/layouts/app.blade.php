@@ -17,11 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
-    <style>
 
-    </style>
 </head>
-<body >
+<body>
 
 <script>
 
@@ -64,7 +62,7 @@
     @endif
 </div>
 
-<div class="jumbotron ">
+<div class="jumbotron " style="background-color: white">
     <div class="container-fluid">
     <div class="row vertical-align" >
         {{--class=" col-sm-2 img-col"--}}
@@ -95,13 +93,6 @@
 </div>
 <nav class="navbar navbar-inverse" style="background-color: #222629;">
     <div class="container-fluid" >
-        <div class="search-container" >
-            <form  class="formPaieska" action="/paieska.php"id ="paslepti" media="(min-width: 766px)">
-                <input class="formPaieskaVest" type="text" placeholder="Search..." name="search" id="paieska">
-                <button class="button" type="search">search</button>
-            </form>
-        </div >
-
         <div class="navbar-header">
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -149,7 +140,7 @@
     </button>
 
     <div class="bg-dark p-4">
-        <div  class="nav-item" id="navbarSide">
+        <div  class="nav-item collapse" id="navbarSide">
 
             <ul class="list-unstyled components"  style="margin-left: 40px;">
                 <li><a href="{{asset('shop1')}}">All products</a></li>

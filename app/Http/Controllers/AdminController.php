@@ -39,17 +39,23 @@ class AdminController extends Controller
     public function users()
     {
         $allNaud = User::all();
+        $allNaud = User::paginate(10);
         return view('users', compact('allNaud'));
     }
     public function product()
     {
+        $allcategory = Kategorija::all();
         $allPro = Preke::all();
-        return view('product', compact('allPro'));
+        $allPro = Preke::paginate(5);
+        return view('product', compact('allPro', 'allcategory'));
     }
     public function orders()
     {
-        $allUz = Uzsakymas::all();
-        return view('orders', compact('allUz'));
+        $allUz = Uzsakymas::orderByDesc('data')->paginate(10);
+        $links = $allUz ->appends(['sort' => 'data'])->links();
+
+
+        return view('orders', compact('allUz', 'links'));
     }
     public function confirmEditedUser(Request $request, $id)
     {

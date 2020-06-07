@@ -2,8 +2,8 @@
 
 @section('turinys')
 
-    <div class="container" id="cart_sonas">
-        <div class="col-lg-10 offset-lg-1">
+    <div class="container">
+        <div class="col-lg-8 offset-lg-1">
             <table id="cart" class="table table-hover table-condensed" >
                 <thead>
                 <tr>
@@ -31,6 +31,7 @@
                 @endforeach
                 </tbody>
             </table>
+    {{$allNaud->appends(request()->input())->links()}}
         </div>
     </div>
 
