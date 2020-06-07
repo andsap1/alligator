@@ -49,8 +49,8 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">{{$resul->kaina}} €</td>
-                        <td data-th="Quantity" class="text-center">{{$resul->kiekis}}</td>
+                        <td data-th="Price" id="lyg">{{$resul->kaina}} €</td>
+                        <td data-th="Quantity" class="text-center" id="lyg">{{$resul->kiekis}}</td>
                         {{--   <td data-th="Subtotal" class="text-center">{{$resul->kaina}} €</td>--}}
                         {{--                        <input type="number" class="form-control text-center" value="1">--}}
                         {{--                    </td>--}}
@@ -60,10 +60,10 @@
                                <div class="order_total_amount">{{ $sumele->Final_Kaina }} Eur</div>
                                {{session(['kaina'=>$sumele->Final_Kaina])}}
                                @endforeach--}}
-                        <td data-th="Subtotal" class="text-center" >{{$resul->kiekis*$resul->kaina}} €</td>
-                        <td> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
+                        <td data-th="Subtotal" class="text-center" id="lyg">{{$resul->kiekis*$resul->kaina}} €</td>
+                        <td id="lyg"> <a class="actions" onclick="return confirm('Do you really want to delete this?')"
                                 href="{{route('deletePreke', $resul->id_Tarpine)}}" >
-                                <button class="btn btn-sm"><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
+                                <button class="btn btn-sm" ><i class="glyphicon glyphicon-trash" style="color: red"></i></button>
                             </a>
                         </td>
 

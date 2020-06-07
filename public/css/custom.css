@@ -676,3 +676,8 @@ hr{
      padding: inherit;
      padding-left: 10px;
  }
+/*krepselio lenteles lygiavimas*/
+#lyg
+{
+    padding-top: 15px;
+}
