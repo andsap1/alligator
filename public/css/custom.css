@@ -18,6 +18,10 @@ a:hover{
 a:active{
     color: #e32727;
 }
+.navbar-inverse .navbar-nav>li>a{
+    color: #D7D7D7;
+}
+
 .dropdown-item {
     display: block;
     width: 100%;
@@ -52,7 +56,12 @@ footer {
 @media only screen and (max-width: 600px) {
     .galva {background: #efefef;}
 }
-
+.search{
+    height: 26px;
+    background: transparent;
+    border: 0px;
+    color: #D7D7D7;
+}
 .img-col{
     /*margin: auto 3%;*/
     /*padding: 0 0;*/
@@ -418,8 +427,8 @@ footer {
 {
     background-color: transparent;
     border-color: transparent;
-    border-bottom-color: #ffffff;
-    color: #ffffff;
+    border-bottom-color: #D7D7D7;
+    color: #D7D7D7;
 }
 .button
 {
@@ -429,6 +438,7 @@ footer {
 #button1
 {
     border-radius: 5px;
+    border: 1px solid #D7D7D7;
     height: 25px;
 }
 .wrapper {
