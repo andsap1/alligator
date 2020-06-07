@@ -670,3 +670,9 @@ hr{
 .pagination > .active > span:hover {
     background-color: #61892F;
 }
+/*sumazinus ekrana sonines kategorijos saraso styliui*/
+ .kateg
+ {
+     padding: inherit;
+     padding-left: 10px;
+ }
