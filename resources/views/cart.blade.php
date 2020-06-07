@@ -29,23 +29,11 @@
                 </thead>
                 <tbody>
                 <tr>
-                    {{--                    <h4 style="padding-left: 15px">{{$kr}} </h4>--}}
                     @foreach($result as $resul)
-                        {{--                        @foreach($mainphoto as $ph)--}}
                         <td data-th="Product">
                             <div class="row">
-                                {{--   <img src="{{ asset('/images') . '/' . $resul->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$resul->pavadinimas}}" >--}}
-                                {{--     <div class="col-sm-4 hidden-xs">--}}{{--<img src="http://placehold.it/100x100" alt="..." class="img-responsive"/>--}}{{--
-         --}}{{--                             @if($resul->fk_preke == $ph->fk_preke)--}}{{--
-         --}}{{--                               <img style="height: 100pt;width: 100pt" src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}" alt="paveiksliukas " >--}}{{--
-         --}}{{--                           @endif--}}{{--
-                                     </div>--}}
-
-
                                 <div class="col-sm-8">
-
                                     <h4 style="padding-left: 15px" id="countas"> &nbsp {{$resul->pavadinimas}} </h4>
-
                                 </div>
                             </div>
                         </td>
@@ -67,7 +55,6 @@
                         </td>
 
                 </tr>
-                {{--                @endforeach--}}
                 @endforeach
                 </tbody>
                 <tfoot>
@@ -79,13 +66,9 @@
 
                         <td class="hidden-xs text-center"><strong>{{$resul->kr_kaina}} €</strong>
                             @break
-
-
                         </td> @endforeach
                     <td>
                         <a href="{{ asset('/order') }}" class="btn btn-block" style="background-color: #61892F; color: white">Order</a>
-
-
                 </tr>
                 </tfoot>
             </table>
