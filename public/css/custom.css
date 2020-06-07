@@ -519,6 +519,13 @@ footer {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     margin-top: 0;
     margin-bottom: 15px;
+    padding-left: 15px;
+    font-size: 30px;
+}
+#antraste2 {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    margin-top: 0;
+    margin-bottom: 15px;
     padding-left: 30px;
     font-size: 30px;
 }
@@ -616,4 +623,19 @@ hr{
     padding-top: 2px;
     color: black;
 }
+#register{
+    color: #86C232;
+    /*height: 22px;*/
+    /*font-size: 14px;*/
+}
 
+.nopad{
+    padding-right: 0;
+}
+.btn-link{
+    color: black;
+
+}
+.btn-link:hover{
+    color: #86C232;
+}

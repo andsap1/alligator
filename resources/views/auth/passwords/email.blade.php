@@ -1,11 +1,14 @@
 @extends('layouts.app')
 
-@section('content')
+@section('turinys')
+
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <h1 id="antraste" >Reset Password</h1>
+        <div class="col-lg-8 col-md-8 col-sm-8">
+            <hr>
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+{{--                <div class="card-header">{{ __('Reset Password') }}</div>--}}
 
                 <div class="card-body">
                     @if (session('status'))
@@ -32,8 +35,8 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                            <div class="col-md-10 offset-md-4">
+                                <button type="submit" class="btn btn-primary" id="mygtukas">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

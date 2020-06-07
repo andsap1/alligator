@@ -113,7 +113,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="{{ action('ShopController@indexHome')}}/">Home</a></li>
+                <li><a href="{{ route('home1')}}/">Home</a></li>
                 <li><a id="products" href="{{ action('ShopController@index')}}">Products</a></li>
                 <li><a href="{{ action('AboutController@index')}}">About us</a></li>
             </ul>

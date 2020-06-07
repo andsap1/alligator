@@ -46,7 +46,7 @@
             <option value="asc">price low</option>
             <option value="desc">price high</option>
         </select>
-<button type="submit" class="btn" id="mygtukas" style="display: inherit; margin-top: 0px;">Order</button>
+<button type="submit" class="btn" id="green_btn" style="display: inherit; margin-top: 0px;">Order</button>
     </span>
 
 

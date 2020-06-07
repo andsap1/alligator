@@ -3,9 +3,9 @@
 @section('turinys')
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header" id="antraste">{{ __('Register') }}</div>
+        <div class="col-md-10">
+            <div class="card"style="padding-left: 15px">
+                <div class="card-header" id="antraste" style="padding-left: 0">{{ __('Register') }}</div>
                 <hr>
 
                 <div class="card-body">

@@ -28,7 +28,6 @@ class OrderController extends Controller
         $cate='null';
 
         $kr=session('krepselis');
-//        dd($kr);
 
         if(session()->has('krepselis')) {
             $result = DB::table('krepselis')->where('krepselis.id_krepselis', '=', $kr)->leftJoin('preke_krepselis', 'id_krepselis', '=', 'preke_krepselis.fk_krepselis')
@@ -36,7 +35,6 @@ class OrderController extends Controller
                 ->select('preke_krepselis.*', 'preke.kaina', 'preke.pavadinimas', 'preke.aprasymas', DB::raw('krepselis.kaina as kr_kaina'))->get();
 
         }
-
         return view('order', compact('allcategories','result', 'kr'));
     }
 
@@ -67,7 +65,6 @@ class OrderController extends Controller
         }
         else
         {
-            //date('Y-m-d')
             $allInfo = new Uzsakymas();
             $allInfo->adresas  = $request->input('adresas');
             $allInfo->vardas  = $request->input('vardas');
@@ -83,8 +80,8 @@ class OrderController extends Controller
 //            $krepselis->kaina = '10';//($kaina->kaina) * $request->input('kiekis');
 //            $krepselis->save();
             session()->forget('krepselis');
+            session(['kiekis'=>0]);
 
-//            session(['krepselis' => $krepselis->id_krepselis]);
         }
         return Redirect::to('shop1')->with('success', 'Order accepted');
     }

@@ -1,11 +1,7 @@
 @extends('layouts.adminapp')
 
 @section('turinys')
-    <style>
-        #sidebaradmin{
-            visibility: hidden;
-        }
-    </style>
+
 
     <h1 id="antraste" >Admin log in</h1>
 <div class="col-lg-10 col-md-10 offset-lg-2 offset-md-2 ">
