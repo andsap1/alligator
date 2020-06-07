@@ -61,8 +61,9 @@
 <nav class="navbar navbar-inverse" style="background-color: #222629;">
     <div class="container-fluid" >
         <ul class="nav navbar-nav navbar-right">
-
-            <li><a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
+            @auth('admin')
+                <li><a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
+            @endauth
         </ul>
     </div>
 </nav>

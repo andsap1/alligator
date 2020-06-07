@@ -27,10 +27,6 @@ class AdminController extends Controller
     {
         $this->middleware('auth:admin');
     }
-//    public function admin()
-//    {
-//        return view('adminLog');
-//    }
     public function index()
     {
         $allcategories=Kategorija::all();
