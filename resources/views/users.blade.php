@@ -31,7 +31,7 @@
                 @endforeach
                 </tbody>
             </table>
-            {{$allNaud->appends(request()->input())->links()}}
+    {{$allNaud->appends(request()->input())->links()}}
         </div>
     </div>
 

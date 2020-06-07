@@ -5,11 +5,11 @@
     <ul class="col-md-6">
         <h4 style="margin-left: 15px">Find order:</h4>
         @include('ordersearch')
-    </ul>
+
 
 
     @if($allUz->count() === 0)
-        <p>There is no orders.</p>
+        <p style="margin-left: 15px; padding-top: 10px">There is no orders.</p>
     @else
     <div class="container">
         <div class="col-lg-8 offset-lg-1" style="padding-top: 20px">
@@ -46,4 +46,5 @@
         </div>
     </div>
     @endif
+    </ul>
 @endsection

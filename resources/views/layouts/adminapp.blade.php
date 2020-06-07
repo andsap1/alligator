@@ -60,10 +60,6 @@
 
 <nav class="navbar navbar-inverse" style="background-color: #222629;">
     <div class="container-fluid" >
-        <ul class="nav navbar-nav">
-            <li><a>&nbspAdmin</a></li>
-        </ul>
-
         <ul class="nav navbar-nav navbar-right">
 
             <li><a href="{{ route('adminRoutes.admin.signout')}}">Sign out </a></li>
