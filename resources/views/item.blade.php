@@ -136,7 +136,7 @@
 @foreach($comments as$cm)
 @if($cm->vart_vardas!=null)
     <div align="center">
-        <table class="table">
+        <table class="table comments">
             <thead>
             <tr>
                 <th scope="col">{{$cm->vart_vardas}}</th>
