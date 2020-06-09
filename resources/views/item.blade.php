@@ -128,7 +128,7 @@
         <input type="text" class="form-control comment" name="vart_vardas" value=""  placeholder="Vardas">
         <textarea name="tekstas" type="text" class="form-control comment" required="required" placeholder="Rašyti komentarą"></textarea>
         <br>
-        <button type="submit" class="btn btn-primary" id="green_btn">Pateikti</button>
+        <button type="submit" class="btn btn-primary" id="green_btn">Comment</button>
     </form>
 </div>
     <hr>
