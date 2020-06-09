@@ -68,6 +68,7 @@ sessionStorage.removeItem("SelectedItem");
                     @if ($item->id_preke == $ph->fk_preke)
                            <img src="{{ asset('/images') . '/' . $ph->pavadinimas . '.jpg'}}"  alt="paveiksliukas {{$ph->pavadinimas}}" >
                        @break
+{{--                        @else {{'no photo'}} @break;--}}
                     @endif
 
                 @endforeach

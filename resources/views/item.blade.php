@@ -16,7 +16,6 @@
         <div class="col-lg-2 image_list">
             @foreach($allphotos as $photo)
             <div class=" list-unstyled components ">
-
            <img class="img-responsive" id="zoom"style="" src="../images/{{$photo->pavadinimas}}.jpg" alt="paveiksliukas {{$photo->pavadinimas}}">
 
             </div>
@@ -121,7 +120,6 @@
 </div>
 
 
-
 <div style="margin-top: 20px;" align="center">
     <p style="margin-bottom: 0px">Comment:</p>
     <form method="POST" action="{{ Route('insertKomentaras', $item->id_preke) }}" class="comment_form">
@@ -133,6 +131,26 @@
         <button type="submit" class="btn btn-primary" id="green_btn">Pateikti</button>
     </form>
 </div>
+    <hr>
 </div>
+@foreach($comments as$cm)
+@if($cm->vart_vardas!=null)
+    <div align="center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">{{$cm->vart_vardas}}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{$cm->tekstas}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+    @endif
+    @endforeach
 
 @endsection

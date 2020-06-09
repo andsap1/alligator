@@ -66,7 +66,8 @@ class ShopController extends Controller
         }
         $kiekft=Nuotrauka::where('fk_preke','=',$id)->count();
         $allphotos=Nuotrauka::where('fk_preke','=',$id)->offset(1)->take($kiekft)->get();
-        return view('item', compact('item','allcategories', 'categoryname','allphotos','mainphoto'));
+        $comments=Komentaras::where('fk_preke','=',$id)->get();
+        return view('item', compact('item','allcategories', 'categoryname','allphotos','mainphoto', 'comments'));
 
     }
 
@@ -95,7 +96,7 @@ class ShopController extends Controller
 
             $komentaras->save();
         }
-        return Redirect::back()->with('success', 'Komentaras pridėtas');
+        return Redirect::back()->with('success', 'Comment added');
     }
 
     public function insertPrekeVertinimas(Request $request, $ids)
@@ -120,7 +121,7 @@ class ShopController extends Controller
             ]);
         }
 
-        return Redirect::back()->with('success', 'Ivertinta');
+        return Redirect::back()->with('success', 'Rated');
     }
 
     public function insertPrekeKrepselis(Request $request)
@@ -145,9 +146,9 @@ class ShopController extends Controller
                 [
                     'kaina' => $naujakaina,
                 ]);
+            //prekes kiekio padidinimas jei tokia jau yra
             $vs=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->get();
             $skaicius=PrekeKrepselis::where('fk_krepselis', session('krepselis'))->count();
-
             $index=-1;
             for($i=0; $i<$skaicius; $i++)
                 if($vs[$i]->fk_preke == $request->input('preke')) {
@@ -156,7 +157,7 @@ class ShopController extends Controller
                 }
 
             if ($index == - 1){
-                     $tarpine = new PrekeKrepselis();
+                    $tarpine = new PrekeKrepselis();
                     $tarpine->kiekis = $request->input('kiekis');
                     $tarpine->fk_preke = $request->input('preke');
                     $tarpine->fk_krepselis = session('krepselis');
@@ -165,6 +166,7 @@ class ShopController extends Controller
                 PrekeKrepselis::where('id_Tarpine', $vs[$i]->id_Tarpine)->update([
                             'kiekis' => $request->input('kiekis')+$vs[$i]->kiekis]);
             }
+
             $kr=session('krepselis');
             $visosp = DB::table('preke_krepselis')->where('preke_krepselis.fk_krepselis','=',$kr)->get();
             $kiekelis=0;
@@ -175,6 +177,7 @@ class ShopController extends Controller
 
             return Redirect::back()->with('success', 'Item(s) added to cart');
         }
+
 
         else {
             if ($validator->fails()) {
@@ -215,6 +218,7 @@ class ShopController extends Controller
         $cate=Kategorija::where('id_kateg','=',$category)->first();
 
         $photo=Nuotrauka::all();
+
         if ($category) {
         switch( $_POST['orderBy'] ) {
            case '':

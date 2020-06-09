@@ -631,3 +631,6 @@ hr{
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
+.table{
+    width: 60%;
+}

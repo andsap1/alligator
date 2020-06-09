@@ -108,6 +108,7 @@ class CartController extends Controller
             PrekeKrepselis::where('id_Tarpine','=',$id)->delete();
             $visosp=PrekeKrepselis::where('fk_krepselis','=',$kr)->get();
             Krepselis::where('id_krepselis','=',$kr)->delete();
+
             $kiekelis=0;
             foreach ($visosp as $kk){
                 $kiekelis=$kiekelis+$kk->kiekis;
